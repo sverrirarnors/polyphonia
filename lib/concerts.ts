@@ -19,7 +19,7 @@ export interface ConcertMetadata {
 
 // Get all concert slugs by reading the concerts directory
 export function getAllConcertSlugs(): string[] {
-  const concertsDir = path.join(process.cwd(), 'app/[locale]/concerts/[slug]');
+  const concertsDir = path.join(process.cwd(), 'content/concerts');
   const entries = fs.readdirSync(concertsDir, { withFileTypes: true });
   
   return entries
@@ -31,7 +31,7 @@ export function getAllConcertSlugs(): string[] {
 export function getConcertMetadata(slug: string, locale: string): ConcertMetadata {
   const filePath = path.join(
     process.cwd(),
-    'app/[locale]/concerts/[slug]',
+    'content/concerts',
     slug,
     `${locale}.mdx`
   );
