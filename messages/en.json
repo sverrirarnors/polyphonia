@@ -1,0 +1,52 @@
+{
+  "Navigation": {
+    "home": "Home",
+    "concerts": "Concerts",
+    "schedule": "Schedule",
+    "about": "About",
+    "join": "Join Us",
+    "contact": "Contact"
+  },
+  "Home": {
+    "title": "Polyphonia Zürich",
+    "subtitle": "University Orchestra ETH & UZH",
+    "description": "A symphonic university orchestra composed of students and staff from ETH Zürich and the University of Zürich",
+    "upcomingConcerts": "Upcoming Concerts",
+    "viewAllConcerts": "View All Concerts",
+    "aboutUs": "About Us",
+    "learnMore": "Learn More"
+  },
+  "Concerts": {
+    "title": "Concerts",
+    "date": "Date",
+    "time": "Time",
+    "location": "Location",
+    "tickets": "Tickets",
+    "moreInfo": "More Information",
+    "program": "Program"
+  },
+  "About": {
+    "title": "About Us",
+    "ourMission": "Our Mission",
+    "rehearsals": "Rehearsals"
+  },
+  "Join": {
+    "title": "Join Us",
+    "weAreLookingFor": "We Are Looking For",
+    "auditions": "Auditions",
+    "contact": "Contact"
+  },
+  "Schedule": {
+    "title": "Rehearsal Schedule",
+    "subtitle": "Join us for our regular rehearsals as we prepare for upcoming concerts",
+    "location": "Location",
+    "repertoire": "Repertoire",
+    "notes": "Notes"
+  },
+  "Common": {
+    "readMore": "Read more",
+    "backToHome": "Back to home",
+    "language": "Language",
+    "email": "Email"
+  }
+}

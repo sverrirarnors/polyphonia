@@ -1,0 +1,52 @@
+{
+  "Navigation": {
+    "home": "Startseite",
+    "concerts": "Konzerte",
+    "schedule": "Probenplan",
+    "about": "Über uns",
+    "join": "Mitmachen",
+    "contact": "Kontakt"
+  },
+  "Home": {
+    "title": "Polyphonia Zürich",
+    "subtitle": "Universitätsorchester ETH & UZH",
+    "description": "Ein sinfonisches Hochschulorchester aus Studierenden und Mitarbeitenden der ETH Zürich und der Universität Zürich",
+    "upcomingConcerts": "Kommende Konzerte",
+    "viewAllConcerts": "Alle Konzerte ansehen",
+    "aboutUs": "Über uns",
+    "learnMore": "Mehr erfahren"
+  },
+  "Concerts": {
+    "title": "Konzerte",
+    "date": "Datum",
+    "time": "Uhrzeit",
+    "location": "Ort",
+    "tickets": "Karten",
+    "moreInfo": "Weitere Informationen",
+    "program": "Programm"
+  },
+  "About": {
+    "title": "Über uns",
+    "ourMission": "Unsere Mission",
+    "rehearsals": "Proben"
+  },
+  "Join": {
+    "title": "Mitmachen",
+    "weAreLookingFor": "Wir suchen",
+    "auditions": "Vorspiel",
+    "contact": "Kontakt"
+  },
+  "Schedule": {
+    "title": "Probenplan",
+    "subtitle": "Besuchen Sie unsere regelmäßigen Proben während wir uns auf die kommenden Konzerte vorbereiten",
+    "location": "Ort",
+    "repertoire": "Repertoire",
+    "notes": "Hinweise"
+  },
+  "Common": {
+    "readMore": "Weiterlesen",
+    "backToHome": "Zurück zur Startseite",
+    "language": "Sprache",
+    "email": "E-Mail"
+  }
+}
