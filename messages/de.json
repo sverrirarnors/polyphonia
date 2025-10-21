@@ -58,5 +58,9 @@
   },
   "Footer": {
     "supportedBy": "Unterstützt von"
+  },
+  "Notice": {
+    "recruitmentNotice": "🎻 Wir suchen derzeit Perkussion!",
+    "learnMore": "Mehr erfahren"
   }
 }

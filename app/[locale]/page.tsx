@@ -2,6 +2,7 @@
 import { getTranslations } from 'next-intl/server';
 import Link from 'next/link';
 import { getAllConcerts } from '@/lib/concerts';
+import NoticeBanner from '@/components/NoticeBanner';
 
 export default async function HomePage({
   params
@@ -21,7 +22,7 @@ export default async function HomePage({
   return (
     <div>
       {/* Hero Section with Image */}
-      <section className="relative -mx-6 -mt-20 mb-0 h-[60vh] min-h-[400px] flex items-end justify-center overflow-visible">
+      <section className="relative -mx-6 -mt-20 mb-0 h-[60vh] min-h-[400px] flex items-end justify-center">
         <div 
           className="absolute inset-0 bg-cover bg-center"
           style={{ 
@@ -38,7 +39,11 @@ export default async function HomePage({
         </div>
       </section>
 
-      <div className="space-y-20 mt-24">
+      <div className="flex justify-center mt-20 mb-8">
+        <NoticeBanner />
+      </div>
+
+      <div className="space-y-20">
 
       <section>
         <div className="flex items-center justify-between mb-6">
