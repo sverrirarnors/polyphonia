@@ -250,9 +250,3 @@ The banner appears on the home page when enabled.
 - Accents: `red-600`
 - Notice Banner: `amber-100`
 - Text: `neutral-900`, `neutral-600`
-
-## About Polyphonia
-
-Polyphonia is a symphonic university orchestra from ETH Zürich and University of Zürich. We rehearse every Wednesday from 18:00-21:00 and perform classical orchestral works at the end of each semester.
-
-For more information, visit [polyphonia.ch](https://polyphonia.ch)

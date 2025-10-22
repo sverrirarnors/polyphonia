@@ -26,16 +26,16 @@ export default function NoticeBanner() {
   };
 
   return (
-    <div className={`${typeStyles[noticeConfig.type]} px-6 py-2.5 rounded-3xl border shadow-lg flex flex-col sm:flex-row items-center justify-center gap-3`}>
-      <p className="text-sm font-medium text-center sm:text-left">
-        {t(noticeConfig.messageKey)}
+    <div className={`${typeStyles[noticeConfig.type]} px-6 py-2.5 rounded-3xl border shadow-lg flex items-center justify-center`}>
+      <p className="text-sm font-medium text-center">
+        {t(noticeConfig.messageKey)}{' '}
+        <Link 
+          href={`/${locale}/join`}
+          className={`${linkStyles[noticeConfig.type]} font-medium transition-colors whitespace-nowrap`}
+        >
+          {t('learnMore')} →
+        </Link>
       </p>
-      <Link 
-        href={`/${locale}/join`}
-        className={`${linkStyles[noticeConfig.type]} text-sm font-medium transition-colors whitespace-nowrap`}
-      >
-        {t('learnMore')} →
-      </Link>
     </div>
   );
 }

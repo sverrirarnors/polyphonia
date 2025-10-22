@@ -22,7 +22,7 @@ export default async function HomePage({
   return (
     <div>
       {/* Hero Section with Image */}
-      <section className="relative -mx-6 -mt-20 mb-0 h-[60vh] min-h-[400px] flex items-end justify-center">
+      <section className="relative -mx-6 -mt-20 mb-0 h-[60vh] min-h-[400px] max-h-[600px] flex items-end justify-center">
         <div 
           className="absolute inset-0 bg-cover bg-center"
           style={{ 
