@@ -19,8 +19,8 @@ export default async function ConcertPage({ params }: ConcertPageProps) {
   const { locale, slug } = await params;
 
   try {
-    // Dynamically import the MDX file based on locale from app/concerts directory
-    const Content = (await import(`@/app/concerts/${slug}/${locale}.mdx`)).default;
+    // Dynamically import the MDX file based on locale
+    const Content = (await import(`@/app/[locale]/concerts/${slug}/${locale}.mdx`)).default;
     return (
       <article className="prose prose-lg dark:prose-invert max-w-4xl mx-auto">
         <Content />
