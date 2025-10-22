@@ -6,15 +6,15 @@ import { locales } from '@/i18n';
 import Navigation from '@/components/Navigation';
 import Footer from '@/components/Footer';
 import type { Metadata } from 'next';
-import { Inter, Playfair_Display } from 'next/font/google';
+import { Work_Sans, Playfair_Display } from 'next/font/google';
 import '../globals.css';
 
-const inter = Inter({ 
+const workSans = Work_Sans({ 
   subsets: ['latin'],
-  variable: '--font-inter',
+  variable: '--font-work-sans',
 });
 
-const playfair = Playfair_Display({ 
+const playfair = Playfair_Display({
   subsets: ['latin'],
   variable: '--font-playfair',
   weight: ['400', '600', '700'],

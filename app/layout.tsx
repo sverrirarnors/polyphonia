@@ -1,10 +1,10 @@
 // app/layout.tsx
-import { Inter, Playfair_Display } from 'next/font/google';
+import { Work_Sans, Playfair_Display } from 'next/font/google';
 import './globals.css';
 
-const inter = Inter({ 
+const workSans = Work_Sans({ 
   subsets: ['latin'],
-  variable: '--font-inter',
+  variable: '--font-work-sans',
 });
 
 const playfair = Playfair_Display({ 
@@ -19,7 +19,7 @@ export default function RootLayout({
   children: React.ReactNode;
 }) {
   return (
-    <html lang="de" className={`${inter.variable} ${playfair.variable}`}>
+    <html lang="de" className={`${workSans.variable} ${playfair.variable}`}>
       <body className="bg-stone-200 text-neutral-900">
         {children}
       </body>
