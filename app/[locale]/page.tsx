@@ -52,7 +52,7 @@ export default async function HomePage({
           </h2>
           <Link
             href={`/${locale}/concerts`}
-            className="text-sm text-red-600 hover:text-red-700 transition-colors"
+            className="text-sm text-orange-600 hover:text-orange-700 transition-colors"
           >
             {t('viewAllConcerts')} →
           </Link>
@@ -69,7 +69,7 @@ export default async function HomePage({
                   href={`/${locale}/concerts/${concert.slug}`}
                   className="block group mb-6"
                 >
-                  <h3 className="text-xl font-serif font-semibold mb-2 text-neutral-900 group-hover:text-red-600 transition-colors">
+                  <h3 className="text-xl font-serif font-semibold mb-2 text-neutral-900 group-hover:text-orange-600 transition-colors">
                     {concert.title}
                   </h3>
                   <p className="text-neutral-700 mb-3">
@@ -109,7 +109,7 @@ export default async function HomePage({
                                 href={performance.ticketUrl}
                                 target="_blank"
                                 rel="noopener noreferrer"
-                                className="inline-block bg-red-600 text-white px-5 py-2 rounded-full text-sm font-medium hover:bg-red-700 transition-colors"
+                                className="inline-block bg-orange-600 text-white px-5 py-2 rounded-full text-sm font-medium hover:bg-orange-700 transition-colors"
                               >
                                 {tConcerts('buyTickets')} →
                               </a>
@@ -143,7 +143,7 @@ export default async function HomePage({
         </p>
         <Link
           href={`/${locale}/about`}
-          className="inline-block text-sm text-red-600 hover:text-red-700 transition-colors"
+          className="inline-block text-sm text-orange-600 hover:text-orange-700 transition-colors"
         >
           {t('learnMore')} →
         </Link>

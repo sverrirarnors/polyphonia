@@ -395,6 +395,6 @@ The banner appears on the home page when enabled.
 - Cards/Navigation: `stone-100`
 - Borders: `stone-300`
 - Footer: `stone-600`
-- Accents: `red-600`
+- Accents: `orange-600`
 - Notice Banner: `amber-100`
 - Text: `neutral-900`, `neutral-600`

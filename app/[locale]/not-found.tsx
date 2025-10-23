@@ -19,7 +19,7 @@ export default function NotFound() {
       </p>
         <Link
           href="/"
-          className="inline-block bg-red-600 text-white px-8 py-3 rounded-full text-sm font-medium hover:bg-red-700 transition-colors"
+          className="inline-block bg-orange-600 text-white px-8 py-3 rounded-full text-sm font-medium hover:bg-orange-700 transition-colors"
         >
           {t('returnHome')} →
         </Link>

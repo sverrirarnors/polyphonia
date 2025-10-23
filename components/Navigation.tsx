@@ -35,7 +35,7 @@ export default function Navigation() {
         <div className="container mx-auto px-6 py-4 max-w-4xl">
           <div className="flex items-center justify-between">
             {!isHomePage && (
-              <Link href={`/${locale}`} className="text-lg font-serif font-semibold text-neutral-700 hover:text-red-600 transition-colors">
+              <Link href={`/${locale}`} className="text-lg font-serif font-semibold text-neutral-700 hover:text-orange-600 transition-colors">
                 Universitätsorchester Polyphonia
               </Link>
             )}
@@ -45,7 +45,7 @@ export default function Navigation() {
                 <Link
                   key={link.href}
                   href={link.href}
-                  className="text-sm text-neutral-700 hover:text-red-600 transition-colors"
+                  className="text-sm text-neutral-700 hover:text-orange-600 transition-colors"
                 >
                   {link.label}
                 </Link>
@@ -56,8 +56,8 @@ export default function Navigation() {
                   href={switchLocale('de')}
                   className={`px-2.5 py-1 text-xs font-medium rounded-full transition-colors ${
                     locale === 'de'
-                      ? 'bg-red-600 text-white'
-                      : 'text-neutral-500 hover:text-red-600'
+                      ? 'bg-orange-600 text-white'
+                      : 'text-neutral-500 hover:text-orange-600'
                   }`}
                 >
                   DE
@@ -66,8 +66,8 @@ export default function Navigation() {
                   href={switchLocale('en')}
                   className={`px-2.5 py-1 text-xs font-medium rounded-full transition-colors ${
                     locale === 'en'
-                      ? 'bg-red-600 text-white'
-                      : 'text-neutral-500 hover:text-red-600'
+                      ? 'bg-orange-600 text-white'
+                      : 'text-neutral-500 hover:text-orange-600'
                   }`}
                 >
                   EN
@@ -116,7 +116,7 @@ export default function Navigation() {
               <Link
                 href={`/${locale}`}
                 onClick={() => setIsMenuOpen(false)}
-                className="text-sm text-neutral-700 hover:text-red-600 transition-colors py-2"
+                className="text-sm text-neutral-700 hover:text-orange-600 transition-colors py-2"
               >
                 {t('home')}
               </Link>
@@ -125,7 +125,7 @@ export default function Navigation() {
                   key={link.href}
                   href={link.href}
                   onClick={() => setIsMenuOpen(false)}
-                  className="text-sm text-neutral-700 hover:text-red-600 transition-colors py-2"
+                  className="text-sm text-neutral-700 hover:text-orange-600 transition-colors py-2"
                 >
                   {link.label}
                 </Link>
@@ -137,8 +137,8 @@ export default function Navigation() {
                   onClick={() => setIsMenuOpen(false)}
                   className={`px-3 py-1.5 text-xs font-medium rounded-full transition-colors ${
                     locale === 'de'
-                      ? 'bg-red-600 text-white'
-                      : 'text-neutral-500 hover:text-red-600 border border-stone-300'
+                      ? 'bg-orange-600 text-white'
+                      : 'text-neutral-500 hover:text-orange-600 border border-stone-300'
                   }`}
                 >
                   DE
@@ -148,8 +148,8 @@ export default function Navigation() {
                   onClick={() => setIsMenuOpen(false)}
                   className={`px-3 py-1.5 text-xs font-medium rounded-full transition-colors ${
                     locale === 'en'
-                      ? 'bg-red-600 text-white'
-                      : 'text-neutral-500 hover:text-red-600 border border-stone-300'
+                      ? 'bg-orange-600 text-white'
+                      : 'text-neutral-500 hover:text-orange-600 border border-stone-300'
                   }`}
                 >
                   EN

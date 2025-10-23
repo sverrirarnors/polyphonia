@@ -12,16 +12,16 @@
   }
 
   .prose :where(a):not(:where([class~="not-prose"] *)) {
-    color: #dc2626;
+    color: #ea580c;
     text-decoration: none;
     font-weight: 500;
-    border-bottom: 1px solid #fecaca;
+    border-bottom: 1px solid #fed7aa;
     transition: all 0.2s;
   }
 
   .prose :where(a):not(:where([class~="not-prose"] *)):hover {
-    color: #b91c1c;
-    border-bottom-color: #dc2626;
+    color: #c2410c;
+    border-bottom-color: #ea580c;
   }
 
   .prose :where(strong):not(:where([class~="not-prose"] *)) {

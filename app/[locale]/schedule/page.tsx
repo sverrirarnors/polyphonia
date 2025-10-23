@@ -79,7 +79,7 @@ export default async function SchedulePage({
       <div className="space-y-10">
         {Object.entries(groupedRehearsals).map(([month, monthRehearsals]) => (
           <div key={month}>
-            <h2 className="text-xl font-serif font-semibold mb-4 text-red-600">
+            <h2 className="text-xl font-serif font-semibold mb-4 text-orange-600">
               {month}
             </h2>
             

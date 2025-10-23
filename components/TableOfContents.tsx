@@ -36,7 +36,7 @@ export function TableOfContents({ items }: TableOfContentsProps) {
           <li key={item.id}>
             <button
               onClick={() => scrollToSection(item.id)}
-              className="text-sm text-neutral-600 hover:text-red-600 transition-colors text-left"
+              className="text-sm text-neutral-600 hover:text-orange-600 transition-colors text-left"
             >
               {item.title}
             </button>

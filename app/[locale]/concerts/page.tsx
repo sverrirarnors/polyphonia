@@ -30,7 +30,7 @@ export default async function ConcertsPage({
               href={`/concerts/${concert.slug}`}
               className="block group mb-6"
             >
-              <h2 className="text-2xl font-serif font-semibold mb-3 text-neutral-900 group-hover:text-red-600 transition-colors">
+              <h2 className="text-2xl font-serif font-semibold mb-3 text-neutral-900 group-hover:text-orange-600 transition-colors">
                 {concert.title}
               </h2>
               <p className="text-neutral-800">
@@ -70,7 +70,7 @@ export default async function ConcertsPage({
                             href={performance.ticketUrl}
                             target="_blank"
                             rel="noopener noreferrer"
-                            className="inline-block bg-red-600 text-white px-5 py-2 rounded-full text-sm font-medium hover:bg-red-700 transition-colors"
+                            className="inline-block bg-orange-600 text-white px-5 py-2 rounded-full text-sm font-medium hover:bg-orange-700 transition-colors"
                           >
                             {t('buyTickets')} →
                           </a>
