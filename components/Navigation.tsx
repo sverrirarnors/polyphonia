@@ -80,48 +80,29 @@ export default function Navigation() {
 
       {/* Mobile Header with Logo */}
       {!isHomePage && (
-        <div className="md:hidden bg-stone-200 px-6 py-4 flex items-center justify-between">
+        <div className="md:hidden bg-stone-200 px-6 pt-7 pb-4">
           <Link href={`/${locale}`} className="text-lg font-serif font-semibold text-neutral-700">
             Universitätsorchester Polyphonia
           </Link>
-          
-          {/* Hamburger button inline with header on non-home pages */}
-          <button
-            onClick={() => setIsMenuOpen(!isMenuOpen)}
-            className="w-10 h-10 bg-stone-300 text-neutral-900 rounded-full hover:bg-stone-400 transition-colors flex items-center justify-center"
-            aria-label="Toggle menu"
-          >
-            {isMenuOpen ? (
-              <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M6 18L18 6M6 6l12 12" />
-              </svg>
-            ) : (
-              <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M4 6h16M4 12h16M4 18h16" />
-              </svg>
-            )}
-          </button>
         </div>
       )}
 
-      {/* Mobile Floating Menu Button - Only show on homepage */}
-      {isHomePage && (
-        <button
-          onClick={() => setIsMenuOpen(!isMenuOpen)}
-          className="md:hidden fixed top-6 right-6 z-50 w-14 h-14 bg-stone-300 text-neutral-900 rounded-full shadow-lg hover:bg-stone-400 transition-colors flex items-center justify-center"
-          aria-label="Toggle menu"
-        >
-          {isMenuOpen ? (
-            <svg className="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-              <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M6 18L18 6M6 6l12 12" />
-            </svg>
-          ) : (
-            <svg className="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-              <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M4 6h16M4 12h16M4 18h16" />
-            </svg>
-          )}
-        </button>
-      )}
+      {/* Mobile Floating Menu Button */}
+      <button
+        onClick={() => setIsMenuOpen(!isMenuOpen)}
+        className="md:hidden fixed right-6 top-4 z-50 w-14 h-14 bg-stone-300 text-neutral-900 rounded-full shadow-lg hover:bg-stone-400 transition-colors flex items-center justify-center"
+        aria-label="Toggle menu"
+      >
+        {isMenuOpen ? (
+          <svg className="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M6 18L18 6M6 6l12 12" />
+          </svg>
+        ) : (
+          <svg className="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M4 6h16M4 12h16M4 18h16" />
+          </svg>
+        )}
+      </button>
 
       {/* Mobile Navigation Overlay */}
       {isMenuOpen && (
@@ -130,8 +111,15 @@ export default function Navigation() {
             className="md:hidden fixed inset-0 bg-neutral-900/50 z-40"
             onClick={() => setIsMenuOpen(false)}
           />
-          <div className="md:hidden fixed top-6 right-6 bg-stone-100 rounded-2xl shadow-xl z-40 p-6 min-w-[200px]">
+          <div className="md:hidden fixed top-24 right-6 bg-stone-100 rounded-2xl shadow-xl z-40 p-6 min-w-[200px]">
             <div className="flex flex-col gap-3">
+              <Link
+                href={`/${locale}`}
+                onClick={() => setIsMenuOpen(false)}
+                className="text-sm text-neutral-700 hover:text-red-600 transition-colors py-2"
+              >
+                {t('home')}
+              </Link>
               {links.map((link) => (
                 <Link
                   key={link.href}

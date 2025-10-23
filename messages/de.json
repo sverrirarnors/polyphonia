@@ -50,7 +50,8 @@
     "readMore": "Weiterlesen",
     "backToHome": "Zurück zur Startseite",
     "language": "Sprache",
-    "email": "E-Mail"
+    "email": "E-Mail",
+    "onThisPage": "Auf dieser Seite"
   },
   "NotFound": {
     "title": "Seite nicht gefunden",

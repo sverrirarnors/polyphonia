@@ -25,7 +25,7 @@ export default async function ConcertPage({ params }: ConcertPageProps) {
     // Dynamically import the MDX file based on locale from content directory
     const Content = (await import(`@/content/concerts/${slug}/${locale}.mdx`)).default;
     return (
-      <div className="max-w-4xl mx-auto px-6 py-8">
+      <div className="max-w-4xl mx-auto px-6 pb-8">
         <Link 
           href={`/${locale}/concerts`}
           className="inline-flex items-center gap-2 text-neutral-700 hover:text-red-600 transition-colors mb-8"
