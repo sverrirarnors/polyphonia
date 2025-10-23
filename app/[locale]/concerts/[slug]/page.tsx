@@ -25,12 +25,15 @@ export default async function ConcertPage({ params }: ConcertPageProps) {
     // Dynamically import the MDX file based on locale from content directory
     const Content = (await import(`@/content/concerts/${slug}/${locale}.mdx`)).default;
     return (
-      <div className="max-w-4xl mx-auto">
+      <div className="max-w-4xl mx-auto px-6 py-8">
         <Link 
           href={`/${locale}/concerts`}
-          className="inline-flex items-center gap-2 text-sm text-neutral-600 hover:text-neutral-900 transition-colors mb-6"
+          className="inline-flex items-center gap-2 text-neutral-700 hover:text-red-600 transition-colors mb-8"
         >
-          ← {t('backToConcerts')}
+          <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M15 19l-7-7 7-7" />
+          </svg>
+          {t('backToConcerts')}
         </Link>
         <article className="prose prose-lg dark:prose-invert">
           <Content />

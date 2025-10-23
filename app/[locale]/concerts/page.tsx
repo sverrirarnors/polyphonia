@@ -33,7 +33,7 @@ export default async function ConcertsPage({
               <h2 className="text-2xl font-serif font-semibold mb-3 text-neutral-900 group-hover:text-red-600 transition-colors">
                 {concert.title}
               </h2>
-              <p className="text-neutral-700">
+              <p className="text-neutral-800">
                 {concert.composers}
               </p>
             </Link>
@@ -57,7 +57,7 @@ export default async function ConcertsPage({
                         })}
                       </p>
                       {(performance.time || performance.location) && (
-                        <p className="text-neutral-600">
+                        <p className="text-neutral-700">
                           {[performance.time, performance.location].filter(Boolean).join(' · ')}
                         </p>
                       )}

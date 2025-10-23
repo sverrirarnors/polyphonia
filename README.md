@@ -238,7 +238,7 @@ The banner appears on the home page when enabled.
 - **Styling**: Tailwind CSS v4
 - **Content**: MDX with gray-matter for frontmatter
 - **i18n**: next-intl
-- **Fonts**: Inter (body), Playfair Display (headings)
+- **Fonts**: Work Sans (body), Playfair Display (headings)
 - **Deployment**: Vercel (optimized for)
 
 ## Color Palette

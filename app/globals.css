@@ -1,14 +1,11 @@
 @import 'tailwindcss';
 
+@theme {
+  --font-display: "Playfair Display", serif;
+  --font-serif: "Playfair Display", serif;
+}
+
 @layer base {
-  body {
-    font-family: var(--font-work-sans), sans-serif;
-  }
-
-  .font-serif {
-    font-family: var(--font-playfair), serif;
-  }
-
   .prose {
     color: var(--tw-prose-body);
     max-width: 65ch;
@@ -32,7 +29,7 @@
     font-weight: 600;
   }
 
-  .prose :where(h1):not(:where([class~="not-prose"] *)) {
+  .prose h1 {
     font-size: 2.25em;
     margin-top: 0;
     margin-bottom: 0.8888889em;
@@ -41,7 +38,7 @@
     font-family: var(--font-playfair), serif;
   }
 
-  .prose :where(h2):not(:where([class~="not-prose"] *)) {
+  .prose h2 {
     font-size: 1.5em;
     margin-top: 2em;
     margin-bottom: 1em;
@@ -50,7 +47,7 @@
     font-family: var(--font-playfair), serif;
   }
 
-  .prose :where(h3):not(:where([class~="not-prose"] *)) {
+  .prose h3 {
     font-size: 1.25em;
     margin-top: 1.6em;
     margin-bottom: 0.6em;

@@ -72,7 +72,7 @@ export default async function SchedulePage({
       <h1 className="text-4xl font-serif font-semibold mb-3 text-neutral-900">
         {t('title')}
       </h1>
-      <p className="text-neutral-600 mb-10 text-sm">
+      <p className="text-neutral-800 mb-10 text-sm">
         {t('subtitle')}
       </p>
       
@@ -103,7 +103,7 @@ export default async function SchedulePage({
                         <div className="text-xs text-neutral-500">
                           {date.toLocaleDateString(locale, { weekday: 'long' })}
                         </div>
-                        <div className="text-sm text-neutral-700 mt-1">
+                        <div className="text-sm text-neutral-800 mt-1">
                           {rehearsal.time}
                         </div>
                       </div>
@@ -122,14 +122,14 @@ export default async function SchedulePage({
                           <span className="text-xs uppercase tracking-wider text-neutral-500">
                             {t('repertoire')}
                           </span>
-                          <p className="text-neutral-700">
+                          <p className="text-neutral-800">
                             {rehearsal.repertoire}
                           </p>
                         </div>
                         
                         {rehearsal.notes && (
                           <div className="pt-2 mt-2 border-t border-stone-300">
-                            <p className="text-neutral-600">
+                            <p className="text-neutral-700">
                               {rehearsal.notes}
                             </p>
                           </div>

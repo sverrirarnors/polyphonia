@@ -72,7 +72,7 @@ export default async function HomePage({
                   <h3 className="text-xl font-serif font-semibold mb-2 text-neutral-900 group-hover:text-red-600 transition-colors">
                     {concert.title}
                   </h3>
-                  <p className="text-neutral-600 mb-3">
+                  <p className="text-neutral-700 mb-3">
                     {concert.composers}
                   </p>
                 </Link>
@@ -96,7 +96,7 @@ export default async function HomePage({
                             })}
                           </p>
                           {(performance.time || performance.location) && (
-                            <p className="text-neutral-600">
+                            <p className="text-neutral-700">
                               {[performance.time, performance.location].filter(Boolean).join(' · ')}
                             </p>
                           )}
@@ -114,7 +114,7 @@ export default async function HomePage({
                                 {tConcerts('buyTickets')} →
                               </a>
                             ) : (
-                              <span className="inline-block text-sm text-neutral-500 italic">
+                              <span className="inline-block text-sm text-neutral-700 italic">
                                 {tConcerts('ticketsSoonAvailable')}
                               </span>
                             )}
@@ -127,7 +127,7 @@ export default async function HomePage({
               </div>
             ))
           ) : (
-            <p className="text-neutral-600 text-center py-8">
+            <p className="text-neutral-700 text-center py-8">
               {t('noUpcomingConcerts')}
             </p>
           )}
@@ -138,7 +138,7 @@ export default async function HomePage({
         <h2 className="text-2xl md:text-3xl font-serif font-semibold mb-4 text-neutral-900">
           {t('aboutUs')}
         </h2>
-        <p className="text-neutral-700 mb-5 leading-relaxed max-w-2xl">
+        <p className="text-neutral-800 mb-5 leading-relaxed max-w-2xl">
           {t('description')}
         </p>
         <Link
