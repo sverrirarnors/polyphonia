@@ -73,6 +73,12 @@ export const routing = defineRouting({
     '/contact': {
       en: '/contact',
       de: '/kontakt'
+    },
+    
+    // Sponsor/support page
+    '/sponsor': {
+      en: '/sponsor',
+      de: '/unterstuetzen'
     }
   }
 });
