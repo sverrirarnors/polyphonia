@@ -12,8 +12,26 @@ export default async function SchedulePage({
   const { locale } = await params;
   const t = await getTranslations("Schedule");
 
-  // Group rehearsals by month
-  const groupedRehearsals = rehearsals.reduce((acc, rehearsal) => {
+  // Group rehearsals by month: This seams like a convoluted way of doing this.
+  // In particular since the following line orders the list chronologically b
+  
+  // Order rehearsals chronologically but put past rehearsal at the end
+  const now = new Date();
+  const chrono_rehearsals = rehearsals.sort((a, b) => {
+    // Extract the start time (before the "–")
+    const tA = a.time.trim().split("–")[0];
+    const tB = b.time.trim().split("–")[0];
+
+    const dateTimeA = new Date(`${a.date}T${tA}`);
+    const dateTimeB = new Date(`${b.date}T${tB}`);
+
+    // If one is past and the other isn't, put past ones last
+    if (dateTimeA < now && dateTimeB > now) return 1;
+    if (dateTimeB < now && dateTimeA > now) return -1;
+    return dateTimeA.getTime() - dateTimeB.getTime();
+  });
+
+  const groupedRehearsals = chrono_rehearsals.reduce((acc, rehearsal) => {
     const date = new Date(rehearsal.date);
     const monthKey = date.toLocaleDateString(locale, {
       year: "numeric",

@@ -17,8 +17,10 @@ export function RehearsalListItem({
   locale,
   t,
 }: RehearsalListItemProps) {
-  const date = new Date(rehearsal.date);
+  const time = rehearsal.time.trim().split("-")[0];
+  const date = new Date(`${rehearsal.date}T${time}`);
   const isPast = date < new Date();
+
 
   return (
     <li
