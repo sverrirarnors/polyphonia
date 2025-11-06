@@ -44,7 +44,9 @@
     "subtitle": "Besuchen Sie unsere regelmäßigen Proben während wir uns auf die kommenden Konzerte vorbereiten",
     "location": "Ort",
     "repertoire": "Repertoire",
-    "notes": "Hinweise"
+    "notes": "Hinweise",
+    "boxView": "Box Ansicht",
+    "listView": "Listen Ansicht"
   },
   "Common": {
     "readMore": "Weiterlesen",

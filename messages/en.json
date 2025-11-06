@@ -44,7 +44,9 @@
     "subtitle": "Join us for our regular rehearsals as we prepare for upcoming concerts",
     "location": "Location",
     "repertoire": "Repertoire",
-    "notes": "Notes"
+    "notes": "Notes",
+    "boxView": "Box View",
+    "listView": "List View"
   },
   "Common": {
     "readMore": "Read more",
