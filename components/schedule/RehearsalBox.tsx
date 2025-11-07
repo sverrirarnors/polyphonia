@@ -1,7 +1,6 @@
 // components/schedule/RehearsalBox.tsx
 // This draws the box view of a single rehearsal 
 
-// import React from "react";
 import { Rehearsal } from "@/types";
 
 interface RehearsalBoxProps {
@@ -37,7 +36,6 @@ export function RehearsalBox({ rehearsal, index, locale, t }: RehearsalBoxProps)
         <div className="flex-1 space-y-2 text-sm">
           <RehearsalDetail label={t("location")} value={rehearsal.location} />
           <RehearsalDetail label={t("repertoire")} value={rehearsal.repertoire} />
-
           {rehearsal.notes && (
             <div className="pt-2 mt-2 border-t border-stone-300">
               <p className="text-neutral-700">{rehearsal.notes}</p>

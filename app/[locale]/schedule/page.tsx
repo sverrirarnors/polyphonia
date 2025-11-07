@@ -1,8 +1,8 @@
 // app/[locale]/schedule/page.tsx
 import { getTranslations } from "next-intl/server";
-import { get_chrono_rehearsals } from "@/lib/schedule/get_chrono_rehearsals";
-import { get_grouped_rehearsals } from "@/lib/schedule/get_grouped_rehearsals";
-import { RehearsalItem } from "@/components/schedule/RehearsalItem";
+import { get_chrono_rehearsals } from "@/lib/schedule";
+import { get_grouped_rehearsals } from "@/lib/schedule";
+import { RehearsalItems } from "@/components/schedule/RehearsalItems";
 
 export default async function SchedulePage({
   params,
@@ -22,7 +22,7 @@ export default async function SchedulePage({
       </h1>
       <p className="text-neutral-800 mb-10 text-sm">{t("subtitle")}</p>
 
-      <RehearsalItem groupedRehearsals={groupedRehearsals} locale={locale} />
+      <RehearsalItems groupedRehearsals={groupedRehearsals} locale={locale} />
     </div>
   );
 }
