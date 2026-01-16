@@ -36,7 +36,7 @@ export function RehearsalMillenialGray({
               month: "short",
             })}
           </div>
-          <div className="text-xs text-neutral-500">{rehearsal.time}</div>
+          <div className="text-xs tex-neutral-500">{rehearsal.time}</div>
         </div>
         <div className="flex flex-col">
           <RehearsalInline label={t("location")} value={rehearsal.location} />

@@ -48,7 +48,7 @@ export function RehearsalListItem({
         </div>
       </div>
 
-      <div className="text-xs text-neutral-600 mt-2 md:mt-0 md:ml-4 italic">
+      <div className="text-xs text-neutral-600 mt-2 md:mt-0 md:ml-4 italic gap-5">
         {rehearsal.register}
       </div>
 
