@@ -141,7 +141,7 @@ export default async function HomePage({
         <h2 className="text-2xl md:text-3xl font-serif font-semibold mb-4 text-neutral-900">
           {t('aboutUs')}
         </h2>
-        <p className="text-neutral-800 mb-5 leading-relaxed max-w-2xl">
+        <p className="text-neutral-800 mb-5 leading-relaxed whitespace-pre-line text-justify hyphens-auto">
           {t('description')}
         </p>
         <Link

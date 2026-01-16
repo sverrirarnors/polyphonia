@@ -10,7 +10,7 @@
   "Home": {
     "title": "Polyphonia Zürich",
     "subtitle": "Universitätsorchester ETH & UZH",
-    "description": "Ein sinfonisches Hochschulorchester aus Studierenden und Mitarbeitenden der ETH Zürich und der Universität Zürich",
+    "description": "Das Universitätsorchester Polyphonia Zürich ist ein sinfonisches Hochschulorchester, das sich aus Studierenden und Mitarbeitenden der ETH Zürich und der Universität Zürich zusammensetzt. Wir erarbeiten jedes Semester während der Vorlesungszeit Werke aus der klassischen Orchesterliteratur und führen diese am Ende des Semesters in unseren Konzerten auf.",
     "upcomingConcerts": "Kommende Konzerte",
     "viewAllConcerts": "Alle Konzerte ansehen",
     "aboutUs": "Über uns",
@@ -23,10 +23,11 @@
     "location": "Ort",
     "tickets": "Karten",
     "buyTickets": "Tickets kaufen",
-    "ticketsSoonAvailable": "Kartenvorverkauf startet bald",
+    "ticketsSoonAvailable": "Tickets noch nicht verfügbar",
     "moreInfo": "Weitere Informationen",
     "program": "Programm",
-    "backToConcerts": "Zurück zu Konzerten"
+    "backToConcerts": "Zurück zu Konzerten",
+    "olderConcertsNote": "Ältere Konzerte werden in Kürze hinzugefügt."
   },
   "About": {
     "title": "Über uns",
@@ -41,10 +42,12 @@
   },
   "Schedule": {
     "title": "Probenplan",
-    "subtitle": "Besuchen Sie unsere regelmäßigen Proben während wir uns auf die kommenden Konzerte vorbereiten",
+    "subtitle": "Sofern nicht anders angegeben, finden die Proben im Aki, Hirschengraben 86, 8001 Zürich statt.",
+    "date": "Datum",
+    "time": "Zeit",
     "location": "Ort",
     "repertoire": "Repertoire",
-    "notes": "Hinweise",
+    "notes": "Kommentar",
     "boxView": "Box Ansicht",
     "listView": "Listen Ansicht"
   },
@@ -64,7 +67,7 @@
     "supportedBy": "Unterstützt von"
   },
   "Notice": {
-    "recruitmentNotice": "🥁 Wir suchen derzeit Perkussion!",
+    "recruitmentNotice": "Wir suchen derzeit neue Mitglieder!",
     "learnMore": "Mehr erfahren"
   }
 }

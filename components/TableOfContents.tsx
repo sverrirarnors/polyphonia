@@ -29,20 +29,17 @@ export function TableOfContents({ items }: TableOfContentsProps) {
   };
 
   return (
-    <nav className="border-l-2 border-stone-300 pl-4 mb-8">
-      <p className="text-xs uppercase tracking-wide text-neutral-500 mb-3">{t('onThisPage')}</p>
-      <ul className="space-y-2">
-        {items.map((item) => (
-          <li key={item.id}>
-            <button
-              onClick={() => scrollToSection(item.id)}
-              className="text-sm text-neutral-600 hover:text-orange-600 transition-colors text-left"
-            >
-              {item.title}
-            </button>
-          </li>
-        ))}
-      </ul>
+    <nav className="mb-8 flex flex-wrap items-center gap-2">
+      <span className="text-sm font-semibold text-neutral-600">{t('onThisPage')}</span>
+      {items.map((item) => (
+        <button
+          key={item.id}
+          onClick={() => scrollToSection(item.id)}
+          className="text-sm px-3 py-1 rounded-full bg-stone-200 text-neutral-700 hover:bg-orange-100 hover:text-orange-700 transition-colors"
+        >
+          {item.title}
+        </button>
+      ))}
     </nav>
   );
 }

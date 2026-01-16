@@ -25,12 +25,12 @@ export default function NoticeBanner() {
   };
 
   return (
-    <div className={`${typeStyles[noticeConfig.type]} px-6 py-2.5 rounded-3xl border shadow-lg flex items-center justify-center`}>
-      <p className="text-sm font-medium text-center">
+    <div className="inline-block px-5 py-2 rounded-full border border-stone-300 bg-stone-100">
+      <p className="text-sm text-neutral-700 text-center">
         {t(noticeConfig.messageKey)}{' '}
-        <Link 
+        <Link
           href="/join"
-          className={`${linkStyles[noticeConfig.type]} font-medium transition-colors whitespace-nowrap`}
+          className="text-orange-600 hover:text-orange-700 font-medium transition-colors"
         >
           {t('learnMore')} →
         </Link>
