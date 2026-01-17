@@ -67,7 +67,15 @@
     "supportedBy": "Unterstützt von"
   },
   "Notice": {
-    "recruitmentNotice": "Wir suchen derzeit neue Mitglieder!",
-    "learnMore": "Mehr erfahren"
+    "recruitmentNotice": "Wir suchen neue Mitglieder für das Frühlingssemester 2026!",
+    "strings": "Streicher",
+    "stringsInstruments": "Violine, Bratsche, Kontrabass",
+    "winds": "Holzbläser",
+    "windsInstruments": "Klarinette, Englischhorn, Bassklarinette",
+    "brass": "Blechbläser",
+    "brassInstruments": "Horn, Trompete",
+    "percussion": "Schlagzeug",
+    "learnMore": "Mehr erfahren",
+    "joinUs": "Mehr über das Mitmachen"
   }
 }

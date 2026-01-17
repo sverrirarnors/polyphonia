@@ -39,11 +39,11 @@ export default async function HomePage({
         </div>
       </section>
 
-      <div className="flex justify-center mt-20 mb-8">
+      <div className="space-y-10 mt-16">
         <NoticeBanner />
       </div>
 
-      <div className="space-y-20">
+      <div className="space-y-20 mt-10">
 
       <section>
         <div className="flex items-center justify-between mb-6">

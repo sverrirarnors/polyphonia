@@ -67,7 +67,15 @@
     "supportedBy": "Supported by"
   },
   "Notice": {
-    "recruitmentNotice": "We are currently recruiting new members!",
-    "learnMore": "Learn More"
+    "recruitmentNotice": "We are recruiting new members for spring 2026!",
+    "strings": "Strings",
+    "stringsInstruments": "Violin, Viola, Double bass",
+    "winds": "Winds",
+    "windsInstruments": "Clarinet, English horn, Bass clarinet",
+    "brass": "Brass",
+    "brassInstruments": "Horn, Trumpet",
+    "percussion": "Percussion",
+    "learnMore": "Learn More",
+    "joinUs": "Learn more about joining"
   }
 }
