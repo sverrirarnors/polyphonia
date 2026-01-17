@@ -88,10 +88,6 @@ export default async function ConcertsPage({
           </div>
         ))}
       </div>
-
-      <p className="text-sm text-neutral-500 italic">
-        {t("olderConcertsNote")}
-      </p>
     </div>
   );
 }
