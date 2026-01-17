@@ -10,11 +10,18 @@ export function DownloadICSButton({
   rehearsals: Rehearsal[];
   locale: string;
 }) {
-  function formatICSDate(date: Date): string {
-    return date
-      .toISOString()
-      .replace(/[-:]/g, "")
-      .split(".")[0] + "Z";
+  // Locale-dependent orchestra name and email
+  const ORCHESTRA_NAME = locale === "de" ? "Universitätsorchester Polyphonia Zürich" : "University Orchestra Polyphonia Zürich";
+  const ORCHESTRA_EMAIL = locale === "de" ? "kontakt@polyphonia.ch" : "contact@polyphonia.ch";
+  
+    function formatICSDate(date: Date, allDay = false): string {
+    if (allDay) {
+      // YYYYMMDD format for all-day events
+      return date.toISOString().split("T")[0].replace(/-/g, "");
+    } else {
+      // full date-time UTC
+      return date.toISOString().replace(/[-:]/g, "").split(".")[0] + "Z";
+    }
   }
 
   function escapeText(text: string): string {
@@ -28,36 +35,48 @@ export function DownloadICSButton({
   function generateICS(): string {
     const events = rehearsals
       .map((rehearsal) => {
-        const displayTime =
-          rehearsal.time_de ||
-          rehearsal.time_en ||
-          rehearsal.time ||
-          "12:00";
+        // etermine localized notes
+        const summaryText = locale === "de" ? rehearsal.notes_de : rehearsal.notes_en;
+        const summary = `Polyphonia – ${summaryText}`;
+        const location = rehearsal.location;
 
-        const match = displayTime.match(/^(\d{1,2}):(\d{2})/);
-        const hours = match ? match[1].padStart(2, "0") : "12";
-        const minutes = match ? match[2] : "00";
+        let start: Date;
+        let end: Date;
+        let allDay = false;
 
-        const start = new Date(
-          `${rehearsal.date}T${hours}:${minutes}:00`
-        );
-
-        // Default duration: 2 hours
-        const end = new Date(start.getTime() + 2 * 60 * 60 * 1000);
-
-        const summary =
-          rehearsal.notes_de ||
-          rehearsal.notes_en ||
-          rehearsal.notes ||
-          "Rehearsal";
+        if (rehearsal.time) {
+          // Single-day timed event HH:MM-HH:MM
+          const match = rehearsal.time.match(/^(\d{1,2}):(\d{2})-(\d{1,2}):(\d{2})$/);
+          if (match) {
+            const [_, sh, sm, eh, em] = match;
+            start = new Date(`${rehearsal.date}T${sh.padStart(2, "0")}:${sm}:00`);
+            end = new Date(`${rehearsal.date}T${eh.padStart(2, "0")}:${em}:00`);
+          } else {
+            start = new Date(`${rehearsal.date}T12:00:00`);
+            end = new Date(`${rehearsal.date}T13:00:00`);
+          }
+        } else if (rehearsal.date_end) {
+          // Multi-day all-day event
+          start = new Date(rehearsal.date);
+          end = new Date(rehearsal.date_end);
+          end.setDate(end.getDate() + 1); // ICS DTEND exclusive
+          allDay = true;
+        } else {
+          // Single-day all-day event without time
+          start = new Date(rehearsal.date);
+          end = new Date(start);
+          end.setDate(end.getDate() + 1);
+          allDay = true;
+        }
 
         return `
 BEGIN:VEVENT
 UID:${crypto.randomUUID()}
-DTSTAMP:${formatICSDate(new Date())}
-DTSTART:${formatICSDate(start)}
+DTSTART${allDay ? ";VALUE=DATE" : ""}:${formatICSDate(start, allDay)}
+DTEND${allDay ? ";VALUE=DATE" : ""}:${formatICSDate(end, allDay)}
 DTEND:${formatICSDate(end)}
 SUMMARY:${escapeText(summary)}
+ORGANIZER;CN=${ORCHESTRA_NAME}:mailto:${ORCHESTRA_EMAIL}
 ${rehearsal.location ? `LOCATION:${escapeText(rehearsal.location)}` : ""}
 END:VEVENT`;
       })
