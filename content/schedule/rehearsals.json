@@ -3,71 +3,106 @@
     "date": "2026-02-18",
     "time": "18:00-21:00",
     "location": "Aki Hirschengraben 86, 8001 Zürich",
-    "notes_de": "Leseprobe",
-    "notes_en": "Sight-reading rehearsal"
-  },
-  {
-    "date": "2026-02-22",
-    "time": "10:00-15:00",
-    "location": "TBD",
-    "notes_de": "Streicher Leseprobe",
-    "notes_en": "Strings sight-reading"
+    "notes_de": "Leseprobe (Tutti)",
+    "notes_en": "Sight-reading rehearsal (Tutti)"
   },
   {
     "date": "2026-02-25",
     "time": "18:00-21:00",
     "location": "Aki Hirschengraben 86, 8001 Zürich",
-    "notes_de": "Tutti",
-    "notes_en": "Tutti"
+    "notes_de": "Tutti (Márquez & Gershwin)",
+    "notes_en": "Tutti (Márquez & Gershwin)"
   },
   {
-    "date": "2026-03-02",
+    "date": "2026-03-04",
     "time": "18:00-21:00",
     "location": "Aki Hirschengraben 86, 8001 Zürich",
-    "notes_de": "Sectionals Week (Vl1, Vl2, Va, Vlc / Holz / Blech) 2.-8.03",
-    "notes_en": "Sectionals Week (Vl1, Vl2, Va, Vlc / Woodwinds / Brass) 2-8 Mar"
+    "notes_de": "Tutti (Anderson & Still)",
+    "notes_en": "Tutti (Anderson & Still)"
+  },
+  {
+    "date": "2026-03-05",
+    "time": "18:00-21:00",
+    "location": "Aki Hirschengraben 86, 8001 Zürich",
+    "notes_de": "Holzbläser (Márquez & Gershwin)",
+    "notes_en": "Woodwinds (Márquez & Gershwin)"
+  },
+  {
+    "date": "2026-03-10",
+    "time": "18:00-21:00",
+    "location": "Aki Hirschengraben 86, 8001 Zürich",
+    "notes_de": "Blechbläser (Márquez & Gershwin)",
+    "notes_en": "Brass (Márquez & Gershwin)"
   },
   {
     "date": "2026-03-11",
     "time": "18:00-21:00",
     "location": "Aki Hirschengraben 86, 8001 Zürich",
-    "notes_de": "Tutti",
-    "notes_en": "Tutti"
+    "notes_de": "Streicher (Márquez & Gershwin)",
+    "notes_en": "Strings (Márquez & Gershwin)"
+  },
+  {
+    "date": "2026-03-12",
+    "time": "18:00-21:00",
+    "location": "Aki Hirschengraben 86, 8001 Zürich",
+    "notes_de": "Holzbläser (Anderson & Still)",
+    "notes_en": "Woodwinds (Anderson & Still)"
   },
   {
     "date": "2026-03-18",
     "time": "18:00-21:00",
     "location": "Aki Hirschengraben 86, 8001 Zürich",
-    "notes_de": "Tutti",
-    "notes_en": "Tutti"
+    "notes_de": "Streicher (Anderson & Still)",
+    "notes_en": "Strings (Anderson & Still)"
+  },
+  {
+    "date": "2026-03-19",
+    "time": "18:00-21:00",
+    "location": "Aki Hirschengraben 86, 8001 Zürich",
+    "notes_de": "Blechbläser (Anderson & Still)",
+    "notes_en": "Brass (Anderson & Still)"
   },
   {
     "date": "2026-03-25",
     "time": "18:00-21:00",
     "location": "Aki Hirschengraben 86, 8001 Zürich",
-    "notes_de": "Tutti",
-    "notes_en": "Tutti"
+    "notes_de": "Tutti (Márquez & Gershwin)",
+    "notes_en": "Tutti (Márquez & Gershwin)"
+  },
+  {
+    "date": "2026-04-1",
+    "time": "18:00-21:00",
+    "location": "Aki Hirschengraben 86, 8001 Zürich",
+    "notes_de": "Tutti (Anderson & Still)",
+    "notes_en": "Tutti (Anderson & Still)"
   },
   {
     "date": "2026-04-15",
     "time": "18:00-21:00",
     "location": "Aki Hirschengraben 86, 8001 Zürich",
-    "notes_de": "Tutti",
-    "notes_en": "Tutti"
+    "notes_de": "Streicherregisterprobe (mit Stimmführern) / Bläser & Perkussion (mit Gregor)",
+    "notes_en": "String Sectionals (with section leader) / Winds & Percussion (with Gregor)"
   },
   {
     "date": "2026-04-22",
     "time": "18:00-21:00",
     "location": "Aki Hirschengraben 86, 8001 Zürich",
-    "notes_de": "Tutti",
-    "notes_en": "Tutti"
+    "notes_de": "Tutti (Márquez & Gershwin)",
+    "notes_en": "Tutti (Márquez & Gershwin)"
   },
   {
-    "date": "2026-04-27",
+    "date": "2026-04-23",
+    "time": "18:00-21:00",
+    "location": "Aki Hirschengraben 86, 8001 Zürich",
+    "notes_de": "Bläser",
+    "notes_en": "Winds"
+  },
+  {
+    "date": "2026-04-29",
     "time": "18:00",
-    "location": "",
-    "notes_de": "Sectionals Week (Bläser / Streicher) 27.-30.04",
-    "notes_en": "Sectionals Week (Winds / Strings) 27-30 Apr"
+    "location": "Aki Hirschengraben 86, 8001 Zürich",
+    "notes_de": "Tutti (Anderson & Still)",
+    "notes_en": "Tutti (Anderson & Still)"
   },
   {
     "date": "2026-05-01",
