@@ -18,9 +18,8 @@ export function RehearsalBox({ rehearsal, index, locale, t }: RehearsalBoxProps)
   return (
     <div
       key={index}
-      className={`bg-stone-100 p-6 rounded-lg border border-stone-300 ${
-        isPast ? "opacity-40" : ""
-      }`}
+      className={`bg-stone-100 p-6 rounded-lg border border-stone-300 ${isPast ? "opacity-40" : ""
+        }`}
     >
       <div className="flex flex-col md:flex-row md:items-start gap-5">
         <div className="min-w-[120px]">
@@ -42,6 +41,11 @@ export function RehearsalBox({ rehearsal, index, locale, t }: RehearsalBoxProps)
             </div>
           )}
         </div>
+        {rehearsal.notes && (
+          <div className="text-lg text-neutral-600 mt-2 md:mt-0 md:ml-4 italic">
+            {rehearsal.register}
+          </div>
+        )}
       </div>
     </div>
   );

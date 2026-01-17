@@ -1,7 +1,6 @@
-// components/schedule/RehearsalListItem.tsx
-// This draws a list entry in the list view for a single rehearsal
+// components/schedule/RehearsalMillenialGray.tsx
+// This draws the box view of a single rehearsal
 
-// import React from "react";
 import { Rehearsal } from "@/types";
 
 interface RehearsalListItemProps {
@@ -11,7 +10,7 @@ interface RehearsalListItemProps {
   t: (key: string) => string;
 }
 
-export function RehearsalListItem({
+export function RehearsalMillenialGray({
   rehearsal,
   index,
   locale,
@@ -25,10 +24,10 @@ export function RehearsalListItem({
   return (
     <li
       key={index}
-      className={`flex md:items-center justify-between py-4 px-4 ${isPast ? "opacity-50" : ""
-        } ${index % 2 === 1 ? "bg-amber-50" : "bg-white"}`}
+      className={`flex md:items-center justify-between py-4 px-4 bg-white ${isPast ? "opacity-50" : ""}`
+      }
     >
-      <div className="flex flex-col md:flex-row md:items-center gap-5">
+      <div className="flex flex-col md:flex-row md:items-center gap-5 hover:opacity-60">
         <div className="min-w-[120px]">
           <div className="text-sm font-medium text-neutral-900">
             {date.toLocaleDateString(locale, {
@@ -37,7 +36,7 @@ export function RehearsalListItem({
               month: "short",
             })}
           </div>
-          <div className="text-xs text-neutral-500">{rehearsal.time}</div>
+          <div className="text-xs tex-neutral-500">{rehearsal.time}</div>
         </div>
         <div className="flex flex-col">
           <RehearsalInline label={t("location")} value={rehearsal.location} />
@@ -48,7 +47,7 @@ export function RehearsalListItem({
         </div>
       </div>
 
-      <div className="text-xs text-neutral-600 mt-2 md:mt-0 md:ml-4 italic gap-5">
+      <div className="text-xs text-neutral-600 mt-2 md:mt-0 md:ml-4 italic">
         {rehearsal.register}
       </div>
 

@@ -45,8 +45,10 @@
     "location": "Location",
     "repertoire": "Repertoire",
     "notes": "Notes",
+    "register": "Register",
     "boxView": "Box View",
-    "listView": "List View"
+    "listView": "List View",
+    "millenialgray": "Millenial Gray"
   },
   "Common": {
     "readMore": "Read more",

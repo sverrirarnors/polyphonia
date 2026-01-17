@@ -45,8 +45,10 @@
     "location": "Ort",
     "repertoire": "Repertoire",
     "notes": "Hinweise",
+    "register": "Register",
     "boxView": "Box Ansicht",
-    "listView": "Listen Ansicht"
+    "listView": "Listen Ansicht",
+    "millenialgray": "Millenial Gray"
   },
   "Common": {
     "readMore": "Weiterlesen",
