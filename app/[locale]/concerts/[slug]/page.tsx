@@ -1,9 +1,10 @@
 // app/[locale]/concerts/[slug]/page.tsx
 import { notFound } from 'next/navigation';
 import Image from 'next/image';
-import { getAllConcertSlugs, getConcertMetadata } from '@/lib/concerts';
+import { getAllConcertSlugs, getConcertMetadata, getConcertGalleryImages } from '@/lib/concerts';
 import { Link } from '@/routing';
 import { getTranslations } from 'next-intl/server';
+import Gallery from '@/components/Gallery';
 
 interface ConcertPageProps {
   params: Promise<{
@@ -25,6 +26,7 @@ export default async function ConcertPage({ params }: ConcertPageProps) {
   try {
     // Get metadata for poster
     const metadata = getConcertMetadata(slug, locale);
+    const galleryImages = getConcertGalleryImages(slug);
 
     // Dynamically import the MDX file based on locale from content directory
     const Content = (await import(`@/content/concerts/${slug}/${locale}.mdx`)).default;
@@ -59,6 +61,15 @@ export default async function ConcertPage({ params }: ConcertPageProps) {
             </div>
           )}
         </div>
+
+        {galleryImages.length > 0 && (
+          <div className="mt-12">
+            <h2 className="text-2xl font-serif font-semibold mb-4 text-neutral-900">
+              {t('gallery')}
+            </h2>
+            <Gallery images={galleryImages} alt={metadata.title} />
+          </div>
+        )}
       </div>
     );
   } catch (error) {

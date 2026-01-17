@@ -2,6 +2,7 @@ import type { MDXComponents } from 'mdx/types';
 import { BoardMember, BoardGrid } from '@/components/BoardMember';
 import { TableOfContents } from '@/components/TableOfContents';
 import { ProfileImage } from '@/components/ProfileImage';
+import Gallery from '@/components/Gallery';
 import { Link } from '@/routing';
 
 export function useMDXComponents(components: MDXComponents): MDXComponents {
@@ -10,6 +11,7 @@ export function useMDXComponents(components: MDXComponents): MDXComponents {
     BoardGrid,
     TableOfContents,
     ProfileImage,
+    Gallery,
     Link,
     a: ({ href, children, ...props }) => {
       // External links or anchors use regular <a>

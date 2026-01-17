@@ -52,7 +52,7 @@ export function getConcertMetadata(slug: string, locale: string): ConcertMetadat
 // Get all concerts with their metadata for a specific locale
 export function getAllConcerts(locale: string): ConcertMetadata[] {
   const slugs = getAllConcertSlugs();
-  
+
   return slugs
     .map(slug => getConcertMetadata(slug, locale))
     .sort((a, b) => {
@@ -61,4 +61,19 @@ export function getAllConcerts(locale: string): ConcertMetadata[] {
       const dateB = b.performances[0]?.date || '';
       return new Date(dateB).getTime() - new Date(dateA).getTime();
     });
+}
+
+// Get gallery images for a specific concert
+export function getConcertGalleryImages(slug: string): string[] {
+  const galleryDir = path.join(process.cwd(), 'public/images/gallery', slug);
+
+  try {
+    const files = fs.readdirSync(galleryDir);
+    return files
+      .filter(file => /\.(jpg|jpeg|png|webp)$/i.test(file))
+      .map(file => `/images/gallery/${slug}/${file}`)
+      .sort();
+  } catch {
+    return [];
+  }
 }

@@ -8,22 +8,22 @@ export default function Footer() {
   const sponsors = [
     {
       name: 'AKI',
-      logo: 'https://polyphonia.ch/assets/img/layout/aki_logo.svg',
-      url: 'https://www.aki.ethz.ch/'
+      logo: '/images/layout/aki_logo.svg',
+      url: 'https://aki-zh.ch'
     },
     {
       name: 'VSETH',
-      logo: 'https://polyphonia.ch/assets/img/layout/vseth_logo.svg',
+      logo: '/images/layout/vseth_logo.svg',
       url: 'https://vseth.ethz.ch/'
     },
     {
       name: 'VSUZH',
-      logo: 'https://polyphonia.ch/assets/img/layout/vsuzh_logo.svg',
+      logo: '/images/layout/vsuzh_logo.svg',
       url: 'https://www.vsuzh.ch/'
     },
     {
       name: 'UZH',
-      logo: 'https://polyphonia.ch/assets/img/layout/uzh_logo.svg',
+      logo: '/images/layout/uzh_logo.svg',
       url: 'https://www.uzh.ch/'
     }
   ];

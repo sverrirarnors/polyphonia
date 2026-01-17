@@ -26,7 +26,7 @@ export default async function HomePage({
         <div 
           className="absolute inset-0 bg-cover bg-center"
           style={{ 
-            backgroundImage: 'url(https://polyphonia.ch/assets/img/layout/header_background.jpg)',
+            backgroundImage: 'url(/images/layout/header_background.jpg)',
           }}
         >
           <div className="absolute inset-0 bg-gradient-to-t from-stone-200 via-transparent to-transparent" style={{ backgroundImage: 'linear-gradient(to top, rgb(231 229 228) 0%, transparent 30%)' }} />
