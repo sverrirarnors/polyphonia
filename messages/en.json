@@ -51,8 +51,8 @@
     "notes": "Notes",
     "boxView": "Box View",
     "listView": "List View",
-    "subscribeCalendar": "Subscribe to calendar",
-    "downloadCalendar": "Download (.ics)"
+    "subscribeCalendar": "Subscribe to calendar (webcal)",
+    "downloadCalendar": "Download calendar (.ics)"
   },
   "Common": {
     "readMore": "Read more",
