@@ -50,7 +50,9 @@
     "repertoire": "Repertoire",
     "notes": "Kommentar",
     "boxView": "Box Ansicht",
-    "listView": "Listen Ansicht"
+    "listView": "Listen Ansicht",
+    "subscribeCalendar": "Kalender abonnieren",
+    "downloadCalendar": "Herunterladen (.ics)"
   },
   "Common": {
     "readMore": "Weiterlesen",

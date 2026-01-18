@@ -99,13 +99,14 @@
   },
   {
     "date": "2026-04-29",
-    "time": "18:00",
+    "time": "18:00-21:00",
     "location": "Aki Hirschengraben 86, 8001 Zürich",
     "notes_de": "Tutti (Anderson & Still)",
     "notes_en": "Tutti (Anderson & Still)"
   },
   {
     "date": "2026-05-01",
+    "date_end": "2026-05-03",
     "time": "",
     "time_de": "Fr 1. - So 3. Mai",
     "time_en": "Fri 1 - Sun 3 May",
@@ -137,7 +138,7 @@
   },
   {
     "date": "2026-05-22",
-    "time": "19:30",
+    "time": "19:30-22:00",
     "location": "Kirche Neumünster",
     "notes_de": "Konzert",
     "notes_en": "Concert",
@@ -145,7 +146,7 @@
   },
   {
     "date": "2026-05-26",
-    "time": "19:30",
+    "time": "19:30-22:00",
     "location": "Kirche St. Peter",
     "notes_de": "Konzert",
     "notes_en": "Concert",
