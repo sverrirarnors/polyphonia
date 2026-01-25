@@ -1,106 +1,155 @@
 [
   {
-    "date": "2025-10-03",
-    "time": "19:00-20:00",
-    "location": "Aki Hirschengraben 86, 8001 Zürich",
-    "repertoire": "Borodin: Polovtsian Dances",
-    "register": "",
-    "notes": ""
-  },
-  {
-    "date": "2025-12-05",
-    "time": "20:00-22:00",
-    "location": "Aki Hirschengraben 86, 8001 Zürich",
-    "repertoire": "Borodin: Polovtsian Dances",
-    "register": "Tutti Rehearsal",
-    "notes": "This is just an increadibly long note. Don't read this. This is just some random text. Why are you reading this!! Come on. I already said this is just some long text!!! Just for good measure."
-  },
-  {
-    "date": "2025-11-12",
-    "time": "19:00-22:00",
-    "location": "Aki",
-    "repertoire": "Bruch: Kol Nidrei",
-    "register": "Tutti Rehearsal",
-    "notes": "Strings focus"
-  },
-  {
-    "date": "2025-11-19",
-    "time": "19:00-22:00",
-    "location": "Aki",
-    "repertoire": "Kalinnikov: Symphony No. 1",
-    "register": "Tutti Rehearsal",
-    "notes": ""
-  },
-  {
-    "date": "2025-11-26",
-    "time": "19:00-22:00",
-    "location": "Aki",
-    "repertoire": "Full program run-through",
-    "register": "Tutti Rehearsal",
-    "notes": ""
-  },
-  {
-    "date": "2025-12-03",
-    "time": "19:00-22:00",
-    "location": "Aki",
-    "repertoire": "Full program",
-    "register": "Tutti Rehearsal",
-    " notes": "Final touches"
-  },
-  {
-    "date": "2025-10-12",
-    "time": "19:00-22:00",
-    "location": "Kirche Neumünster",
-    "repertoire": "Full Program (duh)",
-    "register": "Tutti (duh)",
-    "notes": "Concert"
-  },
-  {
-    "date": "2025-12-10",
-    "time": "tba",
-    "location": "Kirche Neumünster",
-    "repertoire": "General rehearsal",
-    "register": "Tutti",
-    "notes": "In concert venue"
-  },
-  {
-    "date": "2025-10-15",
-    "time": "19:00-21:00",
-    "location": "Main Hall, City Arts Center",
-    "repertoire": "Mozart Requiem (full run)",
-    "register": "",
-    "notes": "Dress rehearsal — wear concert attire."
-  },
-  {
-    "date": "2025-10-22",
-    "time": "19:00-21:00",
-    "location": "Community Hall",
-    "repertoire": "Beethoven Symphony No. 7, movements 1–2",
-    "register": "",
-    "notes": ""
-  },
-  {
-    "date": "2025-11-05",
-    "time": "18:30-21:00",
-    "location": "St. Mary's Church",
-    "repertoire": "Brahms German Requiem",
-    "register": "Strings",
-    "notes": "Sectional with choir and strings."
-  },
-  {
-    "date": "2025-11-12",
-    "time": "19:00-21:30",
-    "location": "City Arts Center",
-    "repertoire": "Mahler Symphony No. 1",
-    "register": "",
-    "notes": ""
-  },
-  {
-    "date": "2025-11-03",
+    "date": "2026-02-18",
     "time": "18:00-21:00",
-    "location": "Aki",
-    "repertoire": "Bruch Kol Nidrei",
-    "register": "",
-    "notes": ""
+    "location": "Aki Hirschengraben 86, 8001 Zürich",
+    "notes_de": "Leseprobe (Tutti)",
+    "notes_en": "Sight-reading rehearsal (Tutti)"
+  },
+  {
+    "date": "2026-02-25",
+    "time": "18:00-21:00",
+    "location": "Aki Hirschengraben 86, 8001 Zürich",
+    "notes_de": "Tutti (Márquez & Gershwin)",
+    "notes_en": "Tutti (Márquez & Gershwin)"
+  },
+  {
+    "date": "2026-03-04",
+    "time": "18:00-21:00",
+    "location": "Aki Hirschengraben 86, 8001 Zürich",
+    "notes_de": "Tutti (Anderson & Still)",
+    "notes_en": "Tutti (Anderson & Still)"
+  },
+  {
+    "date": "2026-03-05",
+    "time": "18:00-21:00",
+    "location": "Aki Hirschengraben 86, 8001 Zürich",
+    "notes_de": "Holzbläser (Márquez & Gershwin)",
+    "notes_en": "Woodwinds (Márquez & Gershwin)"
+  },
+  {
+    "date": "2026-03-10",
+    "time": "18:00-21:00",
+    "location": "Aki Hirschengraben 86, 8001 Zürich",
+    "notes_de": "Blechbläser (Márquez & Gershwin)",
+    "notes_en": "Brass (Márquez & Gershwin)"
+  },
+  {
+    "date": "2026-03-11",
+    "time": "18:00-21:00",
+    "location": "Aki Hirschengraben 86, 8001 Zürich",
+    "notes_de": "Streicher (Márquez & Gershwin)",
+    "notes_en": "Strings (Márquez & Gershwin)"
+  },
+  {
+    "date": "2026-03-12",
+    "time": "18:00-21:00",
+    "location": "Aki Hirschengraben 86, 8001 Zürich",
+    "notes_de": "Holzbläser (Anderson & Still)",
+    "notes_en": "Woodwinds (Anderson & Still)"
+  },
+  {
+    "date": "2026-03-18",
+    "time": "18:00-21:00",
+    "location": "Aki Hirschengraben 86, 8001 Zürich",
+    "notes_de": "Streicher (Anderson & Still)",
+    "notes_en": "Strings (Anderson & Still)"
+  },
+  {
+    "date": "2026-03-19",
+    "time": "18:00-21:00",
+    "location": "Aki Hirschengraben 86, 8001 Zürich",
+    "notes_de": "Blechbläser (Anderson & Still)",
+    "notes_en": "Brass (Anderson & Still)"
+  },
+  {
+    "date": "2026-03-25",
+    "time": "18:00-21:00",
+    "location": "Aki Hirschengraben 86, 8001 Zürich",
+    "notes_de": "Tutti (Márquez & Gershwin)",
+    "notes_en": "Tutti (Márquez & Gershwin)"
+  },
+  {
+    "date": "2026-04-01",
+    "time": "18:00-21:00",
+    "location": "Aki Hirschengraben 86, 8001 Zürich",
+    "notes_de": "Tutti (Anderson & Still)",
+    "notes_en": "Tutti (Anderson & Still)"
+  },
+  {
+    "date": "2026-04-15",
+    "time": "18:00-21:00",
+    "location": "Aki Hirschengraben 86, 8001 Zürich",
+    "notes_de": "Streicherregisterprobe (mit Stimmführern) / Bläser & Perkussion (mit Gregor)",
+    "notes_en": "String Sectionals (with section leader) / Winds & Percussion (with Gregor)"
+  },
+  {
+    "date": "2026-04-22",
+    "time": "18:00-21:00",
+    "location": "Aki Hirschengraben 86, 8001 Zürich",
+    "notes_de": "Tutti (Márquez & Gershwin)",
+    "notes_en": "Tutti (Márquez & Gershwin)"
+  },
+  {
+    "date": "2026-04-23",
+    "time": "18:00-21:00",
+    "location": "Aki Hirschengraben 86, 8001 Zürich",
+    "notes_de": "Bläser",
+    "notes_en": "Winds"
+  },
+  {
+    "date": "2026-04-29",
+    "time": "18:00-21:00",
+    "location": "Aki Hirschengraben 86, 8001 Zürich",
+    "notes_de": "Tutti (Anderson & Still)",
+    "notes_en": "Tutti (Anderson & Still)"
+  },
+  {
+    "date": "2026-05-01",
+    "date_end": "2026-05-03",
+    "time": "",
+    "time_de": "Fr 1. - So 3. Mai",
+    "time_en": "Fri 1 - Sun 3 May",
+    "location": "Vignogn",
+    "notes_de": "Probewochenende",
+    "notes_en": "Rehearsal weekend",
+    "highlight": true
+  },
+  {
+    "date": "2026-05-06",
+    "time": "18:00-21:00",
+    "location": "Aki Hirschengraben 86, 8001 Zürich",
+    "notes_de": "Tutti",
+    "notes_en": "Tutti"
+  },
+  {
+    "date": "2026-05-13",
+    "time": "18:00-21:00",
+    "location": "Aki Hirschengraben 86, 8001 Zürich",
+    "notes_de": "Tutti",
+    "notes_en": "Tutti"
+  },
+  {
+    "date": "2026-05-20",
+    "time": "18:00-21:00",
+    "location": "TBD",
+    "notes_de": "Generalprobe",
+    "notes_en": "Dress rehearsal"
+  },
+  {
+    "date": "2026-05-22",
+    "time": "19:30-22:00",
+    "location": "Kirche Neumünster",
+    "notes_de": "Konzert",
+    "notes_en": "Concert",
+    "highlight": true
+  },
+  {
+    "date": "2026-05-26",
+    "time": "19:30-22:00",
+    "location": "Kirche St. Peter",
+    "notes_de": "Konzert",
+    "notes_en": "Concert",
+    "highlight": true
   }
 ]

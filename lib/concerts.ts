@@ -15,6 +15,7 @@ export interface ConcertMetadata {
   title: string;
   composers: string;
   performances: Performance[];
+  poster?: string;
 }
 
 // Get all concert slugs by reading the concerts directory
@@ -44,6 +45,7 @@ export function getConcertMetadata(slug: string, locale: string): ConcertMetadat
     title: data.title,
     composers: data.composers,
     performances: data.performances || [],
+    poster: data.poster,
   };
 }
 
@@ -59,5 +61,13 @@ export function getAllConcerts(locale: string): ConcertMetadata[] {
       const dateB = b.performances[0]?.date || '';
       return new Date(dateB).getTime() - new Date(dateA).getTime();
     });
+}
+
+// Gallery manifest generated at build time
+import galleryManifest from './gallery-manifest.json';
+
+// Get gallery images for a specific concert
+export function getConcertGalleryImages(slug: string): string[] {
+  return (galleryManifest as Record<string, string[]>)[slug] || [];
 }
 

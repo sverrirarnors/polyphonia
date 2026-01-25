@@ -24,17 +24,31 @@ export default function NoticeBanner() {
     urgent: 'text-red-900 hover:text-red-950',
   };
 
+  const sections = [
+    { label: t('strings'), instruments: t('stringsInstruments') },
+    { label: t('winds'), instruments: t('windsInstruments') },
+    { label: t('brass'), instruments: t('brassInstruments') },
+    { label: t('percussion'), instruments: '' },
+  ];
+
   return (
-    <div className={`${typeStyles[noticeConfig.type]} px-6 py-2.5 rounded-3xl border shadow-lg flex items-center justify-center`}>
-      <p className="text-sm font-medium text-center">
-        {t(noticeConfig.messageKey)}{' '}
-        <Link 
-          href="/join"
-          className={`${linkStyles[noticeConfig.type]} font-medium transition-colors whitespace-nowrap`}
-        >
-          {t('learnMore')} →
-        </Link>
-      </p>
+    <div className="bg-stone-100 p-8 rounded-lg border border-stone-300">
+      <Link href="/join" className="block group">
+        <h3 className="text-xl font-serif font-semibold mb-4 text-neutral-900 group-hover:text-orange-600 transition-colors">
+          {t(noticeConfig.messageKey)}
+        </h3>
+        <div className="text-neutral-700 mb-4 space-y-2">
+          {sections.map((section, index) => (
+            <div key={index}>
+              <span className="font-medium">{section.label}</span>
+              {section.instruments && <>: {section.instruments}</>}
+            </div>
+          ))}
+        </div>
+        <span className="text-sm text-orange-600 group-hover:text-orange-700 transition-colors">
+          {t('joinUs')} →
+        </span>
+      </Link>
     </div>
   );
 }

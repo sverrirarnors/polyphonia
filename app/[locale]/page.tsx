@@ -26,7 +26,7 @@ export default async function HomePage({
         <div 
           className="absolute inset-0 bg-cover bg-center"
           style={{ 
-            backgroundImage: 'url(https://polyphonia.ch/assets/img/layout/header_background.jpg)',
+            backgroundImage: 'url(/images/layout/header_background.jpg)',
           }}
         >
           <div className="absolute inset-0 bg-gradient-to-t from-stone-200 via-transparent to-transparent" style={{ backgroundImage: 'linear-gradient(to top, rgb(231 229 228) 0%, transparent 30%)' }} />
@@ -39,11 +39,11 @@ export default async function HomePage({
         </div>
       </section>
 
-      <div className="flex justify-center mt-20 mb-8">
+      <div className="space-y-10 mt-16">
         <NoticeBanner />
       </div>
 
-      <div className="space-y-20">
+      <div className="space-y-20 mt-10">
 
       <section>
         <div className="flex items-center justify-between mb-6">
@@ -141,7 +141,7 @@ export default async function HomePage({
         <h2 className="text-2xl md:text-3xl font-serif font-semibold mb-4 text-neutral-900">
           {t('aboutUs')}
         </h2>
-        <p className="text-neutral-800 mb-5 leading-relaxed max-w-2xl">
+        <p className="text-neutral-800 mb-5 leading-relaxed whitespace-pre-line text-justify hyphens-auto">
           {t('description')}
         </p>
         <Link

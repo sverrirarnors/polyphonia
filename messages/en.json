@@ -10,7 +10,7 @@
   "Home": {
     "title": "Polyphonia Zürich",
     "subtitle": "University Orchestra ETH & UZH",
-    "description": "A symphonic university orchestra composed of students and staff from ETH Zürich and the University of Zürich",
+    "description": "The University Orchestra Polyphonia Zürich is a symphonic university orchestra composed of students and staff from ETH Zürich and the University of Zürich. Each semester during the lecture period, we prepare works from the classical orchestral repertoire and perform them in our concerts at the end of the semester.",
     "upcomingConcerts": "Upcoming Concerts",
     "viewAllConcerts": "View All Concerts",
     "aboutUs": "About Us",
@@ -23,10 +23,12 @@
     "location": "Location",
     "tickets": "Tickets",
     "buyTickets": "Buy Tickets",
-    "ticketsSoonAvailable": "Ticket sales starting soon",
+    "ticketsSoonAvailable": "Tickets not yet available",
     "moreInfo": "More Information",
     "program": "Program",
-    "backToConcerts": "Back to Concerts"
+    "backToConcerts": "Back to Concerts",
+    "gallery": "Gallery",
+    "olderConcertsNote": "Older concerts will be added soon."
   },
   "About": {
     "title": "About Us",
@@ -41,14 +43,17 @@
   },
   "Schedule": {
     "title": "Rehearsal Schedule",
-    "subtitle": "Join us for our regular rehearsals as we prepare for upcoming concerts",
+    "subtitle": "Unless specifically indicated, rehearsals take place at Aki, Hirschengraben 86, 8001 Zürich",
+    "date": "Date",
+    "time": "Time",
     "location": "Location",
     "repertoire": "Repertoire",
     "notes": "Notes",
     "register": "Register",
     "boxView": "Box View",
     "listView": "List View",
-    "millenialgray": "Millenial Gray"
+    "subscribeCalendar": "Subscribe to calendar (webcal)",
+    "downloadCalendar": "Download calendar (.ics)"
   },
   "Common": {
     "readMore": "Read more",
@@ -66,7 +71,15 @@
     "supportedBy": "Supported by"
   },
   "Notice": {
-    "recruitmentNotice": "🥁 We are currently looking for percussion players!",
-    "learnMore": "Learn More"
+    "recruitmentNotice": "We are recruiting new members for spring 2026!",
+    "strings": "Strings",
+    "stringsInstruments": "Violin, Viola, Double bass",
+    "winds": "Winds",
+    "windsInstruments": "Clarinet, English horn, Bass clarinet",
+    "brass": "Brass",
+    "brassInstruments": "Horn, Trumpet",
+    "percussion": "Percussion, Banjo",
+    "learnMore": "Learn More",
+    "joinUs": "Learn more about joining"
   }
 }
