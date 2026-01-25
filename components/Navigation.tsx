@@ -20,6 +20,7 @@ export default function Navigation() {
     { href: '/schedule' as const, label: t('schedule') },
     { href: '/about' as const, label: t('about') },
     { href: '/join' as const, label: t('join') },
+    { href: '/sponsor' as const, label: t('sponsor') },
     { href: '/contact' as const, label: t('contact') },
   ];
 
