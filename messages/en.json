@@ -49,6 +49,7 @@
     "location": "Location",
     "repertoire": "Repertoire",
     "notes": "Notes",
+    "register": "Register",
     "boxView": "Box View",
     "listView": "List View",
     "subscribeCalendar": "Subscribe to calendar (webcal)",

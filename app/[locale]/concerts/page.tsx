@@ -9,6 +9,7 @@ export default async function ConcertsPage({
   params: Promise<{ locale: string }>;
 }) {
   const { locale } = await params;
+
   const t = await getTranslations("Concerts");
 
   // Get all concerts with metadata from MDX frontmatter
@@ -91,3 +92,4 @@ export default async function ConcertsPage({
     </div>
   );
 }
+

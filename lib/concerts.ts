@@ -22,7 +22,7 @@ export interface ConcertMetadata {
 export function getAllConcertSlugs(): string[] {
   const concertsDir = path.join(process.cwd(), 'content/concerts');
   const entries = fs.readdirSync(concertsDir, { withFileTypes: true });
-  
+
   return entries
     .filter(entry => entry.isDirectory() && !entry.name.startsWith('.'))
     .map(entry => entry.name);
@@ -36,10 +36,10 @@ export function getConcertMetadata(slug: string, locale: string): ConcertMetadat
     slug,
     `${locale}.mdx`
   );
-  
+
   const fileContents = fs.readFileSync(filePath, 'utf8');
   const { data } = matter(fileContents);
-  
+
   return {
     slug,
     title: data.title,
@@ -70,3 +70,4 @@ import galleryManifest from './gallery-manifest.json';
 export function getConcertGalleryImages(slug: string): string[] {
   return (galleryManifest as Record<string, string[]>)[slug] || [];
 }
+

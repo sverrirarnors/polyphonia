@@ -76,3 +76,4 @@ export default async function ConcertPage({ params }: ConcertPageProps) {
     notFound();
   }
 }
+

@@ -27,7 +27,7 @@ export function get_chrono_rehearsals() {
   });
 
   future = future.sort((a, b) => getDateTime(a) - getDateTime(b));
-  past = past.sort((a, b) => getDateTime(a) - getDateTime(b));
+  past = past.sort((a, b) => getDateTime(b) - getDateTime(a));
   const sorted = future.concat(past);
 
   return sorted;

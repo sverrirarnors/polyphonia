@@ -38,6 +38,7 @@ export function RehearsalItems({
               const date = new Date(`${rehearsal.date}T${timeForDate}`);
               const isPast = date < new Date();
               const note = getNote(rehearsal, locale);
+              const location = rehearsal.location
               const hasValidTime = timeMatch !== null;
 
               const formattedDate = date.toLocaleDateString(locale, {
@@ -83,7 +84,7 @@ export function RehearsalItems({
                   key={index}
                   className={`border-b border-stone-300 py-3 ${isPast ? "opacity-50" : ""}`}
                 >
-                  <div className="flex flex-col sm:flex-row sm:items-center sm:justify-between gap-1 sm:gap-0">
+                  <div className="flex flex-col sm:flex-row sm:items-center sm:justify-between gap-1">
                     <div className="flex items-center gap-4">
                       <span className="font-medium text-neutral-900 min-w-[120px]">
                         {formattedDate}
@@ -91,7 +92,14 @@ export function RehearsalItems({
                       <span className="text-neutral-800">
                         {displayTime}
                       </span>
+
+                      {!location.includes('Aki') && (
+                        <div className="text-sm font-medium text-neutral-900">
+                          {location}
+                        </div>
+                      )}
                     </div>
+
                     {note && (
                       <span className="text-sm font-medium text-neutral-700">
                         {note}

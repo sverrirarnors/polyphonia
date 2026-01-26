@@ -1,4 +1,5 @@
 // app/[locale]/schedule/page.tsx
+
 import { getTranslations } from "next-intl/server";
 import { get_chrono_rehearsals } from "@/lib/schedule";
 import { get_grouped_rehearsals } from "@/lib/schedule";
