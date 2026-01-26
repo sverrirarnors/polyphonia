@@ -1,8 +1,8 @@
 @import 'tailwindcss';
 
 @theme {
-  --font-display: "Playfair Display", serif;
-  --font-serif: "Playfair Display", serif;
+  --font-display: 'Playfair Display', serif;
+  --font-serif: 'Playfair Display', serif;
 }
 
 @layer base {
@@ -11,7 +11,7 @@
     max-width: 65ch;
   }
 
-  .prose :where(a):not(:where([class~="not-prose"] *)) {
+  .prose :where(a):not(:where([class~='not-prose'] *)) {
     color: #ea580c;
     text-decoration: none;
     font-weight: 500;
@@ -19,12 +19,12 @@
     transition: all 0.2s;
   }
 
-  .prose :where(a):not(:where([class~="not-prose"] *)):hover {
+  .prose :where(a):not(:where([class~='not-prose'] *)):hover {
     color: #c2410c;
     border-bottom-color: #ea580c;
   }
 
-  .prose :where(strong):not(:where([class~="not-prose"] *)) {
+  .prose :where(strong):not(:where([class~='not-prose'] *)) {
     color: var(--tw-prose-bold);
     font-weight: 600;
   }
@@ -56,21 +56,19 @@
     font-family: var(--font-playfair), serif;
   }
 
-  .prose :where(p):not(:where([class~="not-prose"] *)) {
+  .prose :where(p):not(:where([class~='not-prose'] *)) {
     margin-top: 1.25em;
     margin-bottom: 1.25em;
   }
 
-  .prose :where(ul):not(:where([class~="not-prose"] *)) {
+  .prose :where(ul):not(:where([class~='not-prose'] *)) {
     margin-top: 1.25em;
     margin-bottom: 1.25em;
     padding-left: 1.625em;
   }
 
-  .prose :where(li):not(:where([class~="not-prose"] *)) {
+  .prose :where(li):not(:where([class~='not-prose'] *)) {
     margin-top: 0.5em;
     margin-bottom: 0.5em;
   }
 }
-
-

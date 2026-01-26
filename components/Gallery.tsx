@@ -9,7 +9,10 @@ interface GalleryProps {
   alt?: string;
 }
 
-export default function Gallery({ images, alt = 'Concert photo' }: GalleryProps) {
+export default function Gallery({
+  images,
+  alt = 'Concert photo',
+}: GalleryProps) {
   const [selectedIndex, setSelectedIndex] = useState<number | null>(null);
 
   const close = useCallback(() => setSelectedIndex(null), []);
@@ -83,7 +86,10 @@ export default function Gallery({ images, alt = 'Concert photo' }: GalleryProps)
           {/* Previous button */}
           <button
             className="absolute left-4 top-1/2 -translate-y-1/2 text-white text-5xl hover:text-gray-300 transition-colors p-2"
-            onClick={(e) => { e.stopPropagation(); goPrev(); }}
+            onClick={(e) => {
+              e.stopPropagation();
+              goPrev();
+            }}
             aria-label="Previous"
           >
             ‹
@@ -107,7 +113,10 @@ export default function Gallery({ images, alt = 'Concert photo' }: GalleryProps)
           {/* Next button */}
           <button
             className="absolute right-4 top-1/2 -translate-y-1/2 text-white text-5xl hover:text-gray-300 transition-colors p-2"
-            onClick={(e) => { e.stopPropagation(); goNext(); }}
+            onClick={(e) => {
+              e.stopPropagation();
+              goNext();
+            }}
             aria-label="Next"
           >
             ›

@@ -1,7 +1,7 @@
 // app/[locale]/concerts/page.tsx
-import { getTranslations } from "next-intl/server";
-import { Link } from "@/routing";
-import { getAllConcerts } from "@/lib/concerts";
+import { getTranslations } from 'next-intl/server';
+import { Link } from '@/routing';
+import { getAllConcerts } from '@/lib/concerts';
 
 export default async function ConcertsPage({
   params,
@@ -10,7 +10,7 @@ export default async function ConcertsPage({
 }) {
   const { locale } = await params;
 
-  const t = await getTranslations("Concerts");
+  const t = await getTranslations('Concerts');
 
   // Get all concerts with metadata from MDX frontmatter
   const concerts = getAllConcerts(locale);
@@ -18,7 +18,7 @@ export default async function ConcertsPage({
   return (
     <div>
       <h1 className="text-4xl font-serif font-semibold mb-10 text-neutral-900">
-        {t("title")}
+        {t('title')}
       </h1>
 
       <div className="space-y-6 mb-10">
@@ -29,7 +29,7 @@ export default async function ConcertsPage({
           >
             <Link
               href={{
-                pathname: "/concerts/[slug]",
+                pathname: '/concerts/[slug]',
                 params: { slug: concert.slug },
               }}
               className="block group mb-6"
@@ -52,17 +52,21 @@ export default async function ConcertsPage({
                   >
                     <span className="font-medium text-neutral-900">
                       {new Date(performance.date).toLocaleDateString(locale, {
-                        weekday: "short",
-                        year: "numeric",
-                        month: "short",
-                        day: "numeric",
+                        weekday: 'short',
+                        year: 'numeric',
+                        month: 'short',
+                        day: 'numeric',
                       })}
                     </span>
                     {performanceIsUpcoming && performance.time && (
-                      <span className="text-neutral-700">{performance.time}</span>
+                      <span className="text-neutral-700">
+                        {performance.time}
+                      </span>
                     )}
                     {performance.location && (
-                      <span className="text-neutral-600">{performance.location}</span>
+                      <span className="text-neutral-600">
+                        {performance.location}
+                      </span>
                     )}
                     {performanceIsUpcoming && (
                       <>
@@ -73,11 +77,11 @@ export default async function ConcertsPage({
                             rel="noopener noreferrer"
                             className="text-orange-600 hover:text-orange-700 font-medium"
                           >
-                            {t("buyTickets")} →
+                            {t('buyTickets')} →
                           </a>
                         ) : (
                           <span className="text-neutral-500 italic">
-                            {t("ticketsSoonAvailable")}
+                            {t('ticketsSoonAvailable')}
                           </span>
                         )}
                       </>
@@ -92,4 +96,3 @@ export default async function ConcertsPage({
     </div>
   );
 }
-

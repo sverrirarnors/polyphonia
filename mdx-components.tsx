@@ -15,11 +15,23 @@ export function useMDXComponents(components: MDXComponents): MDXComponents {
     Link,
     a: ({ href, children, ...props }) => {
       // External links or anchors use regular <a>
-      if (href?.startsWith('http') || href?.startsWith('#') || href?.startsWith('mailto:')) {
-        return <a href={href} {...props}>{children}</a>;
+      if (
+        href?.startsWith('http') ||
+        href?.startsWith('#') ||
+        href?.startsWith('mailto:')
+      ) {
+        return (
+          <a href={href} {...props}>
+            {children}
+          </a>
+        );
       }
       // Internal links use locale-aware Link
-      return <Link href={href as any} {...props}>{children}</Link>;
+      return (
+        <Link href={href as any} {...props}>
+          {children}
+        </Link>
+      );
     },
     ...components,
   };

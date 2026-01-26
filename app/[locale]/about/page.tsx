@@ -2,11 +2,10 @@
 import { MDXPage } from '@/lib/mdx-page';
 
 export default async function AboutPage({
-  params
+  params,
 }: {
-  params: Promise<{ locale: string }>
+  params: Promise<{ locale: string }>;
 }) {
   const { locale } = await params;
   return <MDXPage locale={locale} segment="about" />;
 }
-

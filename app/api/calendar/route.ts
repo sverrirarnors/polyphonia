@@ -29,7 +29,8 @@ function escapeText(text: string): string {
 function generateICS(rehearsals: Rehearsal[], locale: string): string {
   const events = rehearsals
     .map((rehearsal) => {
-      const summaryText = locale === 'de' ? rehearsal.notes_de : rehearsal.notes_en;
+      const summaryText =
+        locale === 'de' ? rehearsal.notes_de : rehearsal.notes_en;
       const summary = `Polyphonia – ${summaryText}`;
       const uid = `${rehearsal.date}-${summaryText.replace(/\s/g, '-').toLowerCase()}@polyphonia.ch`;
 
@@ -38,7 +39,9 @@ function generateICS(rehearsals: Rehearsal[], locale: string): string {
       let allDay = false;
 
       if (rehearsal.time) {
-        const match = rehearsal.time.match(/^(\d{1,2}):(\d{2})-(\d{1,2}):(\d{2})$/);
+        const match = rehearsal.time.match(
+          /^(\d{1,2}):(\d{2})-(\d{1,2}):(\d{2})$/
+        );
         if (match) {
           const [_, sh, sm, eh, em] = match;
           start = new Date(`${rehearsal.date}T${sh.padStart(2, '0')}:${sm}:00`);

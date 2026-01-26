@@ -29,7 +29,10 @@ export default function Navigation() {
       if (pathname === '/concerts/[slug]' && params.slug) {
         // For dynamic routes, pass the slug as a parameter
         router.replace(
-          { pathname: '/concerts/[slug]', params: { slug: params.slug as string } },
+          {
+            pathname: '/concerts/[slug]',
+            params: { slug: params.slug as string },
+          },
           { locale: newLocale }
         );
       } else {
@@ -49,12 +52,17 @@ export default function Navigation() {
         <div className="container mx-auto px-6 py-4 max-w-4xl">
           <div className="flex items-center justify-between">
             {!isHomePage && (
-              <Link href="/" className="text-lg font-serif font-semibold text-neutral-700 hover:text-orange-600 transition-colors">
+              <Link
+                href="/"
+                className="text-lg font-serif font-semibold text-neutral-700 hover:text-orange-600 transition-colors"
+              >
                 Universitätsorchester Polyphonia
               </Link>
             )}
-            
-            <div className={`flex items-center gap-6 ${isHomePage ? 'ml-auto' : ''}`}>
+
+            <div
+              className={`flex items-center gap-6 ${isHomePage ? 'ml-auto' : ''}`}
+            >
               {links.map((link) => (
                 <Link
                   key={link.href}
@@ -64,7 +72,7 @@ export default function Navigation() {
                   {link.label}
                 </Link>
               ))}
-              
+
               <div className="flex items-center gap-1 ml-2 pl-2 border-l border-stone-300">
                 <button
                   onClick={() => handleLocaleChange('de')}
@@ -97,7 +105,10 @@ export default function Navigation() {
       {/* Mobile Header with Logo */}
       {!isHomePage && (
         <div className="md:hidden bg-stone-200 px-6 pt-7 pb-4">
-          <Link href="/" className="text-lg font-serif font-semibold text-neutral-700">
+          <Link
+            href="/"
+            className="text-lg font-serif font-semibold text-neutral-700"
+          >
             Universitätsorchester Polyphonia
           </Link>
         </div>
@@ -110,12 +121,32 @@ export default function Navigation() {
         aria-label="Toggle menu"
       >
         {isMenuOpen ? (
-          <svg className="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-            <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M6 18L18 6M6 6l12 12" />
+          <svg
+            className="w-6 h-6"
+            fill="none"
+            stroke="currentColor"
+            viewBox="0 0 24 24"
+          >
+            <path
+              strokeLinecap="round"
+              strokeLinejoin="round"
+              strokeWidth={2}
+              d="M6 18L18 6M6 6l12 12"
+            />
           </svg>
         ) : (
-          <svg className="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-            <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M4 6h16M4 12h16M4 18h16" />
+          <svg
+            className="w-6 h-6"
+            fill="none"
+            stroke="currentColor"
+            viewBox="0 0 24 24"
+          >
+            <path
+              strokeLinecap="round"
+              strokeLinejoin="round"
+              strokeWidth={2}
+              d="M4 6h16M4 12h16M4 18h16"
+            />
           </svg>
         )}
       </button>
@@ -123,7 +154,7 @@ export default function Navigation() {
       {/* Mobile Navigation Overlay */}
       {isMenuOpen && (
         <>
-          <div 
+          <div
             className="md:hidden fixed inset-0 bg-neutral-900/50 z-40"
             onClick={() => setIsMenuOpen(false)}
           />
@@ -146,7 +177,7 @@ export default function Navigation() {
                   {link.label}
                 </Link>
               ))}
-              
+
               <div className="flex items-center gap-2 pt-2 mt-2 border-t border-stone-300">
                 <button
                   onClick={() => {

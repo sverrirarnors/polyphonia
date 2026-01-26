@@ -5,6 +5,7 @@ This document explains how internationalization (i18n) and routing works in the 
 ## Overview
 
 The site uses [next-intl](https://next-intl-docs.vercel.app/) for internationalization with localized pathnames. This means:
+
 - URLs are different for each language
 - German (default locale) doesn't have a language prefix
 - English URLs have the `/en` prefix
@@ -20,15 +21,15 @@ Routes are configured in `routing.ts` using the `pathnames` option. This maps in
 
 ### Route Mappings
 
-| Internal Route | German URL | English URL | Purpose |
-|----------------|------------|-------------|---------|
-| `/` | `/` | `/en` | Homepage |
-| `/concerts` | `/konzerte` | `/en/concerts` | Concerts list |
+| Internal Route     | German URL         | English URL           | Purpose              |
+| ------------------ | ------------------ | --------------------- | -------------------- |
+| `/`                | `/`                | `/en`                 | Homepage             |
+| `/concerts`        | `/konzerte`        | `/en/concerts`        | Concerts list        |
 | `/concerts/[slug]` | `/konzerte/[slug]` | `/en/concerts/[slug]` | Concert detail pages |
-| `/schedule` | `/spielplan` | `/en/schedule` | Rehearsal schedule |
-| `/about` | `/ueber-uns` | `/en/about` | About the orchestra |
-| `/join` | `/mitmachen` | `/en/join` | Join information |
-| `/contact` | `/kontakt` | `/en/contact` | Contact page |
+| `/schedule`        | `/spielplan`       | `/en/schedule`        | Rehearsal schedule   |
+| `/about`           | `/ueber-uns`       | `/en/about`           | About the orchestra  |
+| `/join`            | `/mitmachen`       | `/en/join`            | Join information     |
+| `/contact`         | `/kontakt`         | `/en/contact`         | Contact page         |
 
 ## Usage in Code
 
@@ -40,7 +41,7 @@ Use the `Link` component from `@/routing` (not `next/link`):
 import { Link } from '@/routing';
 
 // Simple link - automatically localizes to current locale
-<Link href="/concerts">Concerts</Link>
+<Link href="/concerts">Concerts</Link>;
 
 // German user sees: /konzerte
 // English user sees: /en/concerts
@@ -53,14 +54,14 @@ For routes with parameters (like concert detail pages), use object notation:
 ```tsx
 import { Link } from '@/routing';
 
-<Link 
+<Link
   href={{
     pathname: '/concerts/[slug]',
-    params: { slug: 'hs25' }
+    params: { slug: 'hs25' },
   }}
 >
   Concert Details
-</Link>
+</Link>;
 
 // German user sees: /konzerte/hs25
 // English user sees: /en/concerts/hs25
@@ -81,7 +82,7 @@ router.push('/concerts');
 // Navigate with parameters
 router.push({
   pathname: '/concerts/[slug]',
-  params: { slug: 'hs25' }
+  params: { slug: 'hs25' },
 });
 ```
 
@@ -115,7 +116,7 @@ const handleLocaleChange = (newLocale: string) => {
   });
 };
 
-<button onClick={() => handleLocaleChange('en')}>EN</button>
+<button onClick={() => handleLocaleChange('en')}>EN</button>;
 ```
 
 ## File Structure
@@ -145,13 +146,13 @@ app/
 When using `pathnames`, TypeScript enforces type-safe routing. You must:
 
 1. Use exact pathname strings or type them with `as const`:
+
 ```tsx
-const links = [
-  { href: '/concerts' as const, label: 'Concerts' }
-];
+const links = [{ href: '/concerts' as const, label: 'Concerts' }];
 ```
 
 2. Use object notation for dynamic routes:
+
 ```tsx
 // ✅ Correct
 href={{ pathname: '/concerts/[slug]', params: { slug: 'hs25' } }}
@@ -163,6 +164,7 @@ href={`/concerts/${slug}`}
 ## Middleware
 
 The middleware in `middleware.ts` handles:
+
 - Locale detection from browser preferences
 - Redirects to appropriate localized URLs
 - Maintaining locale across navigation
@@ -189,6 +191,7 @@ Navigation labels are stored in `messages/[locale].json`:
 To add a new localized route:
 
 1. **Update `routing.ts`:**
+
 ```typescript
 export const routing = defineRouting({
   // ... existing config
@@ -196,18 +199,20 @@ export const routing = defineRouting({
     // ... existing routes
     '/new-page': {
       en: '/new-page',
-      de: '/neue-seite'
-    }
-  }
+      de: '/neue-seite',
+    },
+  },
 });
 ```
 
 2. **Create the page component:**
+
 ```
 app/[locale]/new-page/page.tsx
 ```
 
 3. **Add translations:**
+
 ```json
 // messages/en.json
 {
@@ -225,10 +230,11 @@ app/[locale]/new-page/page.tsx
 ```
 
 4. **Add to navigation:**
+
 ```tsx
 const links = [
   // ... existing links
-  { href: '/new-page' as const, label: t('newPage') }
+  { href: '/new-page' as const, label: t('newPage') },
 ];
 ```
 
@@ -247,14 +253,17 @@ const links = [
 ## Common Issues
 
 ### Issue: TypeScript error on dynamic routes
+
 **Problem:** `Type string is not assignable to href`
 **Solution:** Use object notation with pathname and params
 
 ### Issue: Locale switching doesn't work
+
 **Problem:** Using Next.js's `usePathname` instead of next-intl's
 **Solution:** Import from `@/routing`
 
 ### Issue: 404 on locale-switched page
+
 **Problem:** Trying to manually construct URLs with locale prefixes
 **Solution:** Let next-intl handle locale prefixes automatically
 

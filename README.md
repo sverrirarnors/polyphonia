@@ -77,13 +77,15 @@ polyphonia/
 
 Concert MDX files live in `content/concerts/` rather than alongside their route in `app/[locale]/concerts/` for a critical production reason:
 
-**The Problem**: 
+**The Problem**:
+
 - The concert system uses `fs.readdirSync()` to dynamically scan and list all concerts
 - During production builds (e.g., on Vercel), the `app/` directory gets transformed and optimized
 - The literal folder structure `app/[locale]/concerts/[slug]` doesn't exist in production - the brackets `[locale]` and `[slug]` are route parameters, not actual folders
 - File system operations fail when trying to read from transformed/bundled app directories
 
 **The Solution**:
+
 - Static content files go in `content/` directory
 - Build systems preserve `content/` in the production bundle
 - File system operations (`fs.readdirSync`, `fs.readFileSync`) work reliably
@@ -116,20 +118,23 @@ The project includes custom React components that can be used directly in MDX fi
 Display individual board members with photos and roles.
 
 **Props:**
+
 - `name` (string, required): Member's name
 - `role` (string, required): Role/position (e.g., "President", "Treasurer")
 - `image` (string, optional): Path to photo (e.g., "/images/board/member1.jpg")
 
 **Usage in MDX:**
+
 ```mdx
-<BoardMember 
-  name="Jane Smith" 
-  role="President" 
-  image="/images/board/member1.jpg" 
+<BoardMember
+  name="Jane Smith"
+  role="President"
+  image="/images/board/member1.jpg"
 />
 ```
 
 **Features:**
+
 - Displays circular avatar (128px)
 - Shows first initial as fallback if no image provided
 - Responsive design with name and role below photo
@@ -139,15 +144,25 @@ Display individual board members with photos and roles.
 Wrapper component for displaying multiple board members in a responsive grid.
 
 **Usage in MDX:**
+
 ```mdx
 <BoardGrid>
-  <BoardMember name="Jane Smith" role="President" image="/images/board/member1.jpg" />
-  <BoardMember name="John Doe" role="Vice President" image="/images/board/member2.jpg" />
+  <BoardMember
+    name="Jane Smith"
+    role="President"
+    image="/images/board/member1.jpg"
+  />
+  <BoardMember
+    name="John Doe"
+    role="Vice President"
+    image="/images/board/member2.jpg"
+  />
   <BoardMember name="Alice Johnson" role="Treasurer" />
 </BoardGrid>
 ```
 
 **Features:**
+
 - Responsive grid: 2 columns (mobile), 3 columns (tablet), 4 columns (desktop)
 - Automatic spacing and alignment
 - Gap between items: 2rem (gap-8)
@@ -157,22 +172,27 @@ Wrapper component for displaying multiple board members in a responsive grid.
 Creates an in-page navigation menu with smooth scrolling to sections.
 
 **Props:**
+
 - `items` (array, required): Array of navigation items
   - Each item needs: `{ id: string, title: string }`
   - `id` must match the anchor ID in the page
   - `title` is the display text
 
 **Usage in MDX:**
+
 ```mdx
-<TableOfContents items={[
-  { id: "orchestra", title: "The Orchestra" },
-  { id: "conductor", title: "Our Conductor" },
-  { id: "board", title: "The Board" },
-  { id: "join", title: "Join Us" }
-]} />
+<TableOfContents
+  items={[
+    { id: 'orchestra', title: 'The Orchestra' },
+    { id: 'conductor', title: 'Our Conductor' },
+    { id: 'board', title: 'The Board' },
+    { id: 'join', title: 'Join Us' },
+  ]}
+/>
 ```
 
 **Features:**
+
 - Minimal design with left border
 - Smooth scroll to sections with 80px offset (for fixed headers)
 - Hover effects with accent color
@@ -184,6 +204,7 @@ Creates an in-page navigation menu with smooth scrolling to sections.
 To enable the Table of Contents navigation, you need to add anchor IDs to your headings. Use span tags within markdown headings:
 
 **Correct Syntax:**
+
 ```mdx
 ## <span id="orchestra">The Orchestra</span>
 
@@ -195,17 +216,21 @@ Content about the conductor...
 ```
 
 **Why this syntax?**
+
 - MDX parser is strict about curly braces `{#id}` (causes parse errors)
 - Using `<h2 id="...">` works but loses markdown semantics
 - Span tags within markdown headings are clean and MDX-compatible
 
 **Example: Complete About Page Structure**
+
 ```mdx
-<TableOfContents items={[
-  { id: "orchestra", title: "The Orchestra" },
-  { id: "conductor", title: "Our Conductor" },
-  { id: "board", title: "The Board" }
-]} />
+<TableOfContents
+  items={[
+    { id: 'orchestra', title: 'The Orchestra' },
+    { id: 'conductor', title: 'Our Conductor' },
+    { id: 'board', title: 'The Board' },
+  ]}
+/>
 
 ## <span id="orchestra">The Orchestra</span>
 
@@ -218,9 +243,21 @@ Our conductor brings years of experience...
 ## <span id="board">The Board</span>
 
 <BoardGrid>
-  <BoardMember name="Jane Smith" role="President" image="/images/board/member1.jpg" />
-  <BoardMember name="John Doe" role="Vice President" image="/images/board/member2.jpg" />
-  <BoardMember name="Alice Johnson" role="Treasurer" image="/images/board/member3.jpg" />
+  <BoardMember
+    name="Jane Smith"
+    role="President"
+    image="/images/board/member1.jpg"
+  />
+  <BoardMember
+    name="John Doe"
+    role="Vice President"
+    image="/images/board/member2.jpg"
+  />
+  <BoardMember
+    name="Alice Johnson"
+    role="Treasurer"
+    image="/images/board/member3.jpg"
+  />
 </BoardGrid>
 ```
 
@@ -231,9 +268,10 @@ To add a new globally-available MDX component:
 1. **Create the component** in `components/YourComponent.tsx`
 
 2. **Register it** in `mdx-components.tsx`:
+
    ```tsx
    import { YourComponent } from '@/components/YourComponent';
-   
+
    export function useMDXComponents(components: MDXComponents): MDXComponents {
      return {
        ...components,
@@ -249,6 +287,7 @@ To add a new globally-available MDX component:
    ```
 
 **Note:** Components are registered globally via the `useMDXComponents` hook pattern from Next.js MDX integration. This means:
+
 - No per-file imports needed
 - All MDX files have access to all registered components
 - Component changes automatically reflect across all MDX files
@@ -258,18 +297,20 @@ To add a new globally-available MDX component:
 ### Adding a New Static Page
 
 1. **Create the page structure:**
+
    ```bash
    mkdir app/[locale]/your-page-name
    ```
 
 2. **Create `page.tsx`:**
+
    ```tsx
    import { MDXPage } from '@/lib/mdx-page';
 
-   export default async function YourPage({ 
-     params 
-   }: { 
-     params: Promise<{ locale: string }> 
+   export default async function YourPage({
+     params,
+   }: {
+     params: Promise<{ locale: string }>;
    }) {
      const { locale } = await params;
      return <MDXPage locale={locale} segment="your-page-name" />;
@@ -295,22 +336,22 @@ Concerts require special handling because they're dynamically generated from a l
    ```bash
    mkdir content/concerts/your-slug
    ```
-   
 2. **Create MDX files with frontmatter:**
-   
+
    `content/concerts/your-slug/de.mdx`:
+
    ```mdx
    ---
-   title: "Konzertname"
-   composers: "Komponist 1, Komponist 2"
+   title: 'Konzertname'
+   composers: 'Komponist 1, Komponist 2'
    performances:
-     - date: "2025-06-15"
-       time: "19:30"
-       location: "Konzertsaal"
-       ticketUrl: "https://tickets.example.com"
-     - date: "2025-06-16"
-       time: "19:30"
-       location: "Konzertsaal"
+     - date: '2025-06-15'
+       time: '19:30'
+       location: 'Konzertsaal'
+       ticketUrl: 'https://tickets.example.com'
+     - date: '2025-06-16'
+       time: '19:30'
+       location: 'Konzertsaal'
    ---
 
    # Programm
@@ -319,18 +360,19 @@ Concerts require special handling because they're dynamically generated from a l
    ```
 
    `content/concerts/your-slug/en.mdx`:
+
    ```mdx
    ---
-   title: "Concert Name"
-   composers: "Composer 1, Composer 2"
+   title: 'Concert Name'
+   composers: 'Composer 1, Composer 2'
    performances:
-     - date: "2025-06-15"
-       time: "19:30"
-       location: "Concert Hall"
-       ticketUrl: "https://tickets.example.com"
-     - date: "2025-06-16"
-       time: "19:30"
-       location: "Concert Hall"
+     - date: '2025-06-15'
+       time: '19:30'
+       location: 'Concert Hall'
+       ticketUrl: 'https://tickets.example.com'
+     - date: '2025-06-16'
+       time: '19:30'
+       location: 'Concert Hall'
    ---
 
    # Program
@@ -346,6 +388,7 @@ Concerts require special handling because they're dynamically generated from a l
    - Shows it on the home page if it's upcoming
 
 **Concert Frontmatter Fields:**
+
 - `title` (required): Concert title
 - `composers` (required): Composer names
 - `performances` (required): Array of performance objects
@@ -360,9 +403,9 @@ Edit `lib/notice.ts`:
 
 ```typescript
 export const noticeConfig: Notice = {
-  enabled: true,  // Set to false to hide
-  type: 'info',   // 'info' | 'warning' | 'urgent'
-  messageKey: 'recruitmentNotice'  // Key in messages/*/Notice
+  enabled: true, // Set to false to hide
+  type: 'info', // 'info' | 'warning' | 'urgent'
+  messageKey: 'recruitmentNotice', // Key in messages/*/Notice
 };
 ```
 

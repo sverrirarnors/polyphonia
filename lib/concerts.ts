@@ -24,12 +24,15 @@ export function getAllConcertSlugs(): string[] {
   const entries = fs.readdirSync(concertsDir, { withFileTypes: true });
 
   return entries
-    .filter(entry => entry.isDirectory() && !entry.name.startsWith('.'))
-    .map(entry => entry.name);
+    .filter((entry) => entry.isDirectory() && !entry.name.startsWith('.'))
+    .map((entry) => entry.name);
 }
 
 // Get metadata for a specific concert in a specific locale
-export function getConcertMetadata(slug: string, locale: string): ConcertMetadata {
+export function getConcertMetadata(
+  slug: string,
+  locale: string
+): ConcertMetadata {
   const filePath = path.join(
     process.cwd(),
     'content/concerts',
@@ -54,7 +57,7 @@ export function getAllConcerts(locale: string): ConcertMetadata[] {
   const slugs = getAllConcertSlugs();
 
   return slugs
-    .map(slug => getConcertMetadata(slug, locale))
+    .map((slug) => getConcertMetadata(slug, locale))
     .sort((a, b) => {
       // Sort by first performance date, newest first
       const dateA = a.performances[0]?.date || '';
@@ -70,4 +73,3 @@ import galleryManifest from './gallery-manifest.json';
 export function getConcertGalleryImages(slug: string): string[] {
   return (galleryManifest as Record<string, string[]>)[slug] || [];
 }
-

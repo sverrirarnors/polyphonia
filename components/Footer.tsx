@@ -9,23 +9,23 @@ export default function Footer() {
     {
       name: 'AKI',
       logo: '/images/layout/aki_logo.svg',
-      url: 'https://aki-zh.ch'
+      url: 'https://aki-zh.ch',
     },
     {
       name: 'VSETH',
       logo: '/images/layout/vseth_logo.svg',
-      url: 'https://vseth.ethz.ch/'
+      url: 'https://vseth.ethz.ch/',
     },
     {
       name: 'VSUZH',
       logo: '/images/layout/vsuzh_logo.svg',
-      url: 'https://www.vsuzh.ch/'
+      url: 'https://www.vsuzh.ch/',
     },
     {
       name: 'UZH',
       logo: '/images/layout/uzh_logo.svg',
-      url: 'https://www.uzh.ch/'
-    }
+      url: 'https://www.uzh.ch/',
+    },
   ];
 
   return (

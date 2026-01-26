@@ -11,12 +11,10 @@ export default function NotFound() {
         <h1 className="text-6xl font-serif font-semibold mb-4 text-neutral-900">
           404
         </h1>
-              <h1 className="text-4xl font-serif font-bold mb-4 text-neutral-900">
-        {t('title')}
-      </h1>
-      <p className="text-neutral-700 mb-8">
-        {t('description')}
-      </p>
+        <h1 className="text-4xl font-serif font-bold mb-4 text-neutral-900">
+          {t('title')}
+        </h1>
+        <p className="text-neutral-700 mb-8">{t('description')}</p>
         <Link
           href="/"
           className="inline-block bg-orange-600 text-white px-8 py-3 rounded-full text-sm font-medium hover:bg-orange-700 transition-colors"

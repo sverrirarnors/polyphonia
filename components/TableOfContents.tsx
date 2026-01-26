@@ -23,14 +23,16 @@ export function TableOfContents({ items }: TableOfContentsProps) {
 
       window.scrollTo({
         top: offsetPosition,
-        behavior: 'smooth'
+        behavior: 'smooth',
       });
     }
   };
 
   return (
     <nav className="mb-8 flex flex-wrap items-center gap-2">
-      <span className="text-sm font-semibold text-neutral-600">{t('onThisPage')}</span>
+      <span className="text-sm font-semibold text-neutral-600">
+        {t('onThisPage')}
+      </span>
       {items.map((item) => (
         <button
           key={item.id}

@@ -1,23 +1,23 @@
 // routing.ts
 /**
  * Internationalized routing configuration for the Polyphonia website.
- * 
+ *
  * This file configures next-intl's routing with localized pathnames.
- * 
+ *
  * Supported locales:
  * - German (de): Default locale, no URL prefix
  * - English (en): URLs prefixed with /en
- * 
+ *
  * Example URLs:
  * - Homepage: / (de), /en (en)
  * - Concerts: /konzerte (de), /en/concerts (en)
  * - Concert detail: /konzerte/hs25 (de), /en/concerts/hs25 (en)
- * 
+ *
  * Usage:
  * Always import Link, usePathname, useRouter from this file (not from Next.js):
- * 
+ *
  * import { Link, usePathname, useRouter } from '@/routing';
- * 
+ *
  * For dynamic routes, use object notation:
  * <Link href={{ pathname: '/concerts/[slug]', params: { slug: 'hs25' } }}>
  */
@@ -38,47 +38,46 @@ export const routing = defineRouting({
   pathnames: {
     // Homepage
     '/': '/',
- 
+
     // Concerts listing
     '/concerts': {
       en: '/concerts',
-      de: '/konzerte'
+      de: '/konzerte',
     },
- 
+
     // Concert detail pages with slug parameter
     '/concerts/[slug]': {
       en: '/concerts/[slug]',
-      de: '/konzerte/[slug]'
+      de: '/konzerte/[slug]',
     },
- 
+
     // Rehearsal schedule
     '/schedule': {
       en: '/schedule',
-      de: '/probeplan'
+      de: '/probeplan',
     },
- 
+
     // About page
     '/about': {
       en: '/about',
-      de: '/ueber-uns'  // über-uns as ueber-uns for URL safety
+      de: '/ueber-uns', // über-uns as ueber-uns for URL safety
     },
- 
+
     // Join/recruitment page
     '/join': {
       en: '/join',
-      de: '/mitmachen'
+      de: '/mitmachen',
     },
- 
+
     // Contact page
     '/contact': {
       en: '/contact',
-      de: '/kontakt'
-    }
-  }
+      de: '/kontakt',
+    },
+  },
 });
 
 // Export navigation utilities - these are locale-aware
 // Always use these instead of Next.js's built-in versions
 export const { Link, redirect, usePathname, useRouter } =
   createNavigation(routing);
-

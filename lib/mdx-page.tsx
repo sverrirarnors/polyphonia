@@ -8,7 +8,8 @@ interface MDXPageProps {
 
 export async function MDXPage({ locale, segment }: MDXPageProps) {
   try {
-    const Content = (await import(`@/app/[locale]/${segment}/${locale}.mdx`)).default;
+    const Content = (await import(`@/app/[locale]/${segment}/${locale}.mdx`))
+      .default;
     return (
       <article className="prose prose-lg dark:prose-invert max-w-4xl mx-auto">
         <Content />
