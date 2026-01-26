@@ -2,12 +2,18 @@
 'use client';
 
 import { useTranslations } from 'next-intl';
+import { useState, useEffect } from 'react';
 
 export function DownloadICSButton({ locale }: { locale: string }) {
   const t = useTranslations('Schedule');
+  const [host, setHost] = useState('polyphonia.ch');
+
+  useEffect(() => {
+    setHost(window.location.host);
+  }, []);
 
   const calendarUrl = `/api/calendar?locale=${locale}`;
-  const webcalUrl = `webcal://${typeof window !== 'undefined' ? window.location.host : 'polyphonia.ch'}${calendarUrl}`;
+  const webcalUrl = `webcal://${host}${calendarUrl}`;
 
   return (
     <div className="mb-8 flex flex-wrap gap-3">

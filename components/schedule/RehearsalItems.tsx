@@ -60,8 +60,8 @@ export function RehearsalItems({
                             {displayTime}
                           </span>
                         )}
-                        {rehearsal.location && (
-                          <span className="text-neutral-600">
+                        {rehearsal.location && !location.includes('Aki') && (
+                          <span className="text-sm font-medium text-neutral-900">
                             {rehearsal.location}
                           </span>
                         )}

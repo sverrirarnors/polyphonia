@@ -47,11 +47,7 @@
     "date": "Date",
     "time": "Time",
     "location": "Location",
-    "repertoire": "Repertoire",
     "notes": "Notes",
-    "register": "Register",
-    "boxView": "Box View",
-    "listView": "List View",
     "subscribeCalendar": "Subscribe to calendar (webcal)",
     "downloadCalendar": "Download calendar (.ics)"
   },

@@ -47,10 +47,7 @@
     "date": "Datum",
     "time": "Zeit",
     "location": "Ort",
-    "repertoire": "Repertoire",
     "notes": "Kommentar",
-    "boxView": "Box Ansicht",
-    "listView": "Listen Ansicht",
     "subscribeCalendar": "Kalender abonnieren (webcal)",
     "downloadCalendar": "Kalender Herunterladen (.ics)"
   },
