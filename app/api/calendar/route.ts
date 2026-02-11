@@ -6,11 +6,13 @@ import type { PlayerSection, Rehearsal } from '@/types/index';
 
 const VALID_SECTIONS: PlayerSection[] = ["all", "strings", "woodwinds", "brass"];
 
-function formatICSDate(date: Date, allDay = false): string {
-  if (allDay) {
-    return date.toISOString().split('T')[0].replace(/-/g, '');
+function formatICSDate(dateStr: string, time?: string): string {
+  // All-day event: just the date digits
+  if (!time) {
+    return dateStr.replace(/-/g, '');
   }
-  return date.toISOString().replace(/[-:]/g, '').split('.')[0] + 'Z';
+  // Timed event: use local Zurich time (no UTC conversion)
+  return dateStr.replace(/-/g, '') + 'T' + time.replace(/:/g, '') + '00';
 }
 
 function escapeText(text: string): string {
@@ -30,38 +32,48 @@ function generateICS(rehearsals: Rehearsal[], locale: string): string {
       const summary = `Polyphonia – ${summaryText}`;
       const uid = `${rehearsal.date}-${summaryText.replace(/\s/g, '-').toLowerCase()}@polyphonia.ch`;
 
-      let start: Date;
-      let end: Date;
+      let dtstart: string;
+      let dtend: string;
       let allDay = false;
 
       if (rehearsal.time) {
         const match = rehearsal.time.match(/^(\d{1,2}):(\d{2})-(\d{1,2}):(\d{2})$/);
         if (match) {
           const [_, sh, sm, eh, em] = match;
-          start = new Date(`${rehearsal.date}T${sh.padStart(2, '0')}:${sm}:00`);
-          end = new Date(`${rehearsal.date}T${eh.padStart(2, '0')}:${em}:00`);
+          const startTime = `${sh.padStart(2, '0')}:${sm}`;
+          const endTime = `${eh.padStart(2, '0')}:${em}`;
+          dtstart = formatICSDate(rehearsal.date, startTime);
+          dtend = formatICSDate(rehearsal.date, endTime);
         } else {
-          start = new Date(`${rehearsal.date}T12:00:00`);
-          end = new Date(`${rehearsal.date}T13:00:00`);
+          dtstart = formatICSDate(rehearsal.date, '12:00');
+          dtend = formatICSDate(rehearsal.date, '13:00');
         }
       } else if (rehearsal.date_end) {
-        start = new Date(rehearsal.date);
-        end = new Date(rehearsal.date_end);
+        const end = new Date(rehearsal.date_end);
         end.setDate(end.getDate() + 1);
+        const endStr = end.toISOString().split('T')[0];
+        dtstart = formatICSDate(rehearsal.date);
+        dtend = formatICSDate(endStr);
         allDay = true;
       } else {
-        start = new Date(rehearsal.date);
-        end = new Date(start);
+        const end = new Date(rehearsal.date);
         end.setDate(end.getDate() + 1);
+        const endStr = end.toISOString().split('T')[0];
+        dtstart = formatICSDate(rehearsal.date);
+        dtend = formatICSDate(endStr);
         allDay = true;
       }
+
+      const now = new Date();
+      const dtstamp = now.toISOString().replace(/[-:]/g, '').split('.')[0] + 'Z';
+      const tzProp = allDay ? ';VALUE=DATE' : ';TZID=Europe/Zurich';
 
       const lines = [
         'BEGIN:VEVENT',
         `UID:${uid}`,
-        `DTSTAMP:${formatICSDate(new Date())}`,
-        `DTSTART${allDay ? ';VALUE=DATE' : ''}:${formatICSDate(start, allDay)}`,
-        `DTEND${allDay ? ';VALUE=DATE' : ''}:${formatICSDate(end, allDay)}`,
+        `DTSTAMP:${dtstamp}`,
+        `DTSTART${tzProp}:${dtstart}`,
+        `DTEND${tzProp}:${dtend}`,
         `SUMMARY:${escapeText(summary)}`,
       ];
 
