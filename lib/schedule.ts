@@ -1,5 +1,6 @@
 // lib/schedule
 import { Rehearsal } from "@/types/index";
+import type { RehearsalFilter } from "@/types/index";
 import fs from "fs";
 import path from "path";
 
@@ -10,6 +11,7 @@ export function get_rehearsals(): Rehearsal[] {
 }
 
 export function get_chrono_rehearsals() {
+
   const now = new Date();
   const rehearsals = get_rehearsals();
 
@@ -22,7 +24,7 @@ export function get_chrono_rehearsals() {
     return b < now;
   });
   let future = rehearsals.filter(a => {
-    const  b = new Date(`${a.date}`);
+    const b = new Date(`${a.date}`);
     return b >= now;
   });
 
@@ -31,6 +33,21 @@ export function get_chrono_rehearsals() {
   const sorted = future.concat(past);
 
   return sorted;
+}
+
+/* return true, if rehearsal.section belongs to filters */
+function fil(rehearsal: Rehearsal, filters: RehearsalFilter[]) {
+  for (const f of filters) {
+    if (rehearsal.section === f) {
+      return true
+    }
+  }
+  return false;
+}
+export function filter_rehearsals(rehearsals: Rehearsal[], filters: RehearsalFilter[]) {
+  return rehearsals.filter(
+    r => fil(r, filters)
+  );
 }
 
 export function get_grouped_rehearsals(
@@ -45,7 +62,7 @@ export function get_grouped_rehearsals(
     // be at the end & make them opaque of course this is very susceptible to trimming
     // I bet this is gonna haunt somebody in the feature... 
     // ... shit it is probably gonna be me, right? right.
-    
+
     let t = "";
     if (date < now) t = " ";
 

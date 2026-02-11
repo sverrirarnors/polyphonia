@@ -1,15 +1,10 @@
 // app/api/calendar/route.ts
 import { NextResponse } from 'next/server';
 import rehearsalsData from '@/content/schedule/rehearsals.json';
+import { getFiltersForSection } from '@/types/index';
+import type { PlayerSection, Rehearsal } from '@/types/index';
 
-interface Rehearsal {
-  date: string;
-  date_end?: string;
-  time?: string;
-  location?: string;
-  notes_de: string;
-  notes_en: string;
-}
+const VALID_SECTIONS: PlayerSection[] = ["all", "strings", "woodwinds", "brass"];
 
 function formatICSDate(date: Date, allDay = false): string {
   if (allDay) {
@@ -29,7 +24,9 @@ function escapeText(text: string): string {
 function generateICS(rehearsals: Rehearsal[], locale: string): string {
   const events = rehearsals
     .map((rehearsal) => {
-      const summaryText = locale === 'de' ? rehearsal.notes_de : rehearsal.notes_en;
+      const summaryText =
+        (locale === 'de' ? rehearsal.notes_de : rehearsal.notes_en)
+        ?? rehearsal.notes ?? '';
       const summary = `Polyphonia – ${summaryText}`;
       const uid = `${rehearsal.date}-${summaryText.replace(/\s/g, '-').toLowerCase()}@polyphonia.ch`;
 
@@ -94,7 +91,19 @@ export async function GET(request: Request) {
   const { searchParams } = new URL(request.url);
   const locale = searchParams.get('locale') || 'en';
 
-  const ics = generateICS(rehearsalsData as Rehearsal[], locale);
+  const sectionParam = searchParams.get("section");
+  const section: PlayerSection = VALID_SECTIONS.includes(sectionParam as PlayerSection)
+    ? (sectionParam as PlayerSection)
+    : "all";
+
+  const filters = getFiltersForSection(section);
+
+  // filter rehearsals by type
+  const filteredRehearsals = (rehearsalsData as Rehearsal[]).filter((r) =>
+    filters.includes(r.section)
+  );
+
+  const ics = generateICS(filteredRehearsals, locale);
 
   return new NextResponse(ics, {
     headers: {

@@ -49,7 +49,14 @@
     "location": "Ort",
     "notes": "Kommentar",
     "subscribeCalendar": "Kalender abonnieren (webcal)",
-    "downloadCalendar": "Kalender Herunterladen (.ics)"
+    "downloadCalendar": "Kalender Herunterladen (.ics)",
+    "tutti": "Tutti",
+    "winds": "Bläser",
+    "strings": "Streicher",
+    "woodwinds": "Holzbläser",
+    "brass": "Blechbläser",
+    "filterLabel": "Anzeigen für:",
+    "filterAll": "Alle"
   },
   "Common": {
     "readMore": "Weiterlesen",

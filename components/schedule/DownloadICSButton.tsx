@@ -3,16 +3,26 @@
 
 import { useTranslations } from "next-intl";
 import { useState, useEffect } from "react";
+import { useSearchParams } from "next/navigation";
 
 export function DownloadICSButton({ locale }: { locale: string }) {
   const t = useTranslations("Schedule");
+  const searchParams = useSearchParams();
   const [host, setHost] = useState("polyphonia.ch");
 
   useEffect(() => {
     setHost(window.location.host);
   }, []);
 
-  const calendarUrl = `/api/calendar?locale=${locale}`;
+  const params = new URLSearchParams();
+  params.set("locale", locale);
+
+  const section = searchParams.get("section");
+  if (section) {
+    params.set("section", section);
+  }
+
+  const calendarUrl = `/api/calendar?${params.toString()}`;
   const webcalUrl = `webcal://${host}${calendarUrl}`;
 
   return (
