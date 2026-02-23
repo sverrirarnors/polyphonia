@@ -12,7 +12,10 @@ export function get_rehearsals(): Rehearsal[] {
 
 export function get_chrono_rehearsals() {
 
-  const now = new Date();
+  const now = new Date()
+  const yesterday = new Date(now);
+  yesterday.setDate(now.getDate() - 1); // subtract 1 day; we want to display all events that happen today as well.
+  
   const rehearsals = get_rehearsals();
 
   const getDateTime = (rehearsal: { date: string; time: string }) => {
@@ -21,11 +24,11 @@ export function get_chrono_rehearsals() {
   }
   let past = rehearsals.filter(a => {
     const b = new Date(`${a.date}`);
-    return b < now;
+    return b < yesterday;
   });
   let future = rehearsals.filter(a => {
     const b = new Date(`${a.date}`);
-    return b >= now;
+    return b >= yesterday;
   });
 
   future = future.sort((a, b) => getDateTime(a) - getDateTime(b));
@@ -57,14 +60,17 @@ export function get_grouped_rehearsals(
   return rehearsals.reduce((acc, rehearsal) => {
     const date = new Date(rehearsal.date);
     const now = new Date();
+    const yesterday = new Date(now);
+    yesterday.setDate(now.getDate() - 1); // subtract 1 day
 
     // this is a very ugly fix to distinguish between past and current months
     // be at the end & make them opaque of course this is very susceptible to trimming
     // I bet this is gonna haunt somebody in the feature... 
     // ... shit it is probably gonna be me, right? right.
+    // It wasn't you, it was me...
 
     let t = "";
-    if (date < now) t = " ";
+    if (date < yesterday) t = " ";
 
     let monthKey = date.toLocaleDateString(locale, {
       year: "numeric",
