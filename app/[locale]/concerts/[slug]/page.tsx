@@ -5,6 +5,7 @@ import { getAllConcertSlugs, getConcertMetadata, getConcertGalleryImages } from 
 import { Link } from '@/routing';
 import { getTranslations } from 'next-intl/server';
 import Gallery from '@/components/Gallery';
+import Lightbox from '@/components/Lightbox';
 
 interface ConcertPageProps {
   params: Promise<{
@@ -48,16 +49,7 @@ export default async function ConcertPage({ params }: ConcertPageProps) {
           </article>
           {metadata.poster && (
             <div className="md:w-1/3 flex-shrink-0 order-last">
-              <Image
-                src={metadata.poster}
-                alt={metadata.title}
-                width={300}
-                height={424}
-                className="rounded-lg shadow-lg w-full h-auto"
-                priority
-                placeholder="blur"
-                blurDataURL="data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iMzAwIiBoZWlnaHQ9IjQyNCIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIj48cmVjdCB3aWR0aD0iMTAwJSIgaGVpZ2h0PSIxMDAlIiBmaWxsPSIjZTdlNWU0Ii8+PC9zdmc+"
-              />
+              <Lightbox src={metadata.poster} alt={metadata.title} />
             </div>
           )}
         </div>
