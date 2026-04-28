@@ -68,7 +68,7 @@ export default async function HomePage({
               >
                 <div className="flex flex-col-reverse md:flex-row md:items-center gap-6 md:gap-8">
                   {concert.poster && (
-                    <div className="md:flex-shrink-0 max-w-[200px] w-full mx-auto md:mx-0">
+                    <div className="md:flex-shrink-0 max-w-[280px] md:max-w-[200px] w-full mx-auto md:mx-0">
                       <Lightbox src={concert.poster} alt={concert.title} />
                     </div>
                   )}
@@ -95,7 +95,7 @@ export default async function HomePage({
                         return (
                           <div
                             key={index}
-                            className="flex flex-row items-center justify-between gap-3 pb-4 border-b border-stone-300 last:border-0 last:pb-0"
+                            className="flex flex-col sm:flex-row sm:items-center sm:justify-between gap-3 pb-4 border-b border-stone-300 last:border-0 last:pb-0"
                           >
                             <div className="text-sm">
                               <p className="font-medium text-neutral-900">
