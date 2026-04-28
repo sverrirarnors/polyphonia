@@ -66,7 +66,7 @@ export default async function HomePage({
                 key={concert.slug}
                 className="bg-stone-100 p-8 rounded-lg border border-stone-300"
               >
-                <div className="flex flex-col md:flex-row md:items-center gap-6 md:gap-8">
+                <div className="flex flex-col-reverse md:flex-row md:items-center gap-6 md:gap-8">
                   {concert.poster && (
                     <div className="md:flex-shrink-0 max-w-[200px] w-full mx-auto md:mx-0">
                       <Lightbox src={concert.poster} alt={concert.title} />
