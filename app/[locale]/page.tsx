@@ -95,7 +95,7 @@ export default async function HomePage({
                         return (
                           <div
                             key={index}
-                            className="flex flex-col sm:flex-row sm:items-center sm:justify-between gap-3 pb-4 border-b border-stone-300 last:border-0 last:pb-0"
+                            className="flex flex-row items-center justify-between gap-3 pb-4 border-b border-stone-300 last:border-0 last:pb-0"
                           >
                             <div className="text-sm">
                               <p className="font-medium text-neutral-900">
