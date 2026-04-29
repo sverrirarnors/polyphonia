@@ -30,6 +30,10 @@ export default async function ConcertPage({ params }: ConcertPageProps) {
 
     // Dynamically import the MDX file based on locale from content directory
     const Content = (await import(`@/content/concerts/${slug}/${locale}.mdx`)).default;
+    const upcomingPerformances = metadata.performances.filter(
+      p => new Date(p.date) >= new Date()
+    );
+
     return (
       <div className="max-w-4xl mx-auto px-6 pb-8">
         <Link
@@ -52,6 +56,52 @@ export default async function ConcertPage({ params }: ConcertPageProps) {
             </div>
           )}
         </div>
+
+        {upcomingPerformances.length > 0 && (
+          <div className="bg-stone-100 p-6 md:p-8 rounded-lg border border-stone-300 mt-10">
+            <div className="space-y-4">
+              {upcomingPerformances.map((performance, index) => (
+                <div
+                  key={index}
+                  className="flex flex-col sm:flex-row sm:items-center sm:justify-between gap-3 pb-4 border-b border-stone-300 last:border-0 last:pb-0"
+                >
+                  <div className="text-sm">
+                    <p className="font-medium text-neutral-900">
+                      {new Date(performance.date).toLocaleDateString(locale, {
+                        weekday: 'long',
+                        year: 'numeric',
+                        month: 'long',
+                        day: 'numeric'
+                      })}
+                    </p>
+                    {(performance.time || performance.location) && (
+                      <p className="text-neutral-700">
+                        {[performance.time, performance.location].filter(Boolean).join(' · ')}
+                      </p>
+                    )}
+                  </div>
+
+                  <div className="flex-shrink-0">
+                    {performance.ticketUrl ? (
+                      <a
+                        href={performance.ticketUrl}
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        className="inline-block bg-orange-600 text-white px-5 py-2 rounded-full text-sm font-medium hover:bg-orange-700 transition-colors"
+                      >
+                        {t('buyTickets')} →
+                      </a>
+                    ) : (
+                      <span className="inline-block text-sm text-neutral-700 italic">
+                        {t('ticketsSoonAvailable')}
+                      </span>
+                    )}
+                  </div>
+                </div>
+              ))}
+            </div>
+          </div>
+        )}
 
         {galleryImages.length > 0 && (
           <div className="mt-12">
