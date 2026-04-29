@@ -1,6 +1,5 @@
 // components/Footer.tsx
 import { useTranslations } from 'next-intl';
-import Image from 'next/image';
 
 export default function Footer() {
   const t = useTranslations('Footer');
@@ -9,22 +8,30 @@ export default function Footer() {
     {
       name: 'AKI',
       logo: '/images/layout/aki_logo.svg',
-      url: 'https://aki-zh.ch'
+      url: 'https://aki-zh.ch',
+      width: 245,
+      height: 76,
     },
     {
       name: 'VSETH',
       logo: '/images/layout/vseth_logo.svg',
-      url: 'https://vseth.ethz.ch/'
+      url: 'https://vseth.ethz.ch/',
+      width: 458,
+      height: 121,
     },
     {
       name: 'VSUZH',
       logo: '/images/layout/vsuzh_logo.svg',
-      url: 'https://www.vsuzh.ch/'
+      url: 'https://www.vsuzh.ch/',
+      width: 4637,
+      height: 4863,
     },
     {
       name: 'UZH',
       logo: '/images/layout/uzh_logo.svg',
-      url: 'https://www.uzh.ch/'
+      url: 'https://www.uzh.ch/',
+      width: 248,
+      height: 81,
     }
   ];
 
@@ -49,6 +56,8 @@ export default function Footer() {
                 <img
                   src={sponsor.logo}
                   alt={sponsor.name}
+                  width={sponsor.width}
+                  height={sponsor.height}
                   className="h-16 md:h-20 w-auto"
                 />
               </a>

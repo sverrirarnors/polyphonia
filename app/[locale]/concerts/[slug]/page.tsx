@@ -1,6 +1,5 @@
 // app/[locale]/concerts/[slug]/page.tsx
 import { notFound } from 'next/navigation';
-import Image from 'next/image';
 import { getAllConcertSlugs, getConcertMetadata, getConcertGalleryImages } from '@/lib/concerts';
 import { Link } from '@/routing';
 import { getTranslations } from 'next-intl/server';
