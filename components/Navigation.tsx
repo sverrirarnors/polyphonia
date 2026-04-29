@@ -25,16 +25,13 @@ export default function Navigation() {
 
   const handleLocaleChange = (newLocale: string) => {
     startTransition(() => {
-      // Check if we're on a dynamic route (has [slug] parameter)
       if (pathname === '/concerts/[slug]' && params.slug) {
-        // For dynamic routes, pass the slug as a parameter
         router.replace(
           { pathname: '/concerts/[slug]', params: { slug: params.slug as string } },
           { locale: newLocale }
         );
-      } else {
-        // For static routes, just pass the pathname
-        router.replace(pathname as any, { locale: newLocale });
+      } else if (pathname !== '/concerts/[slug]') {
+        router.replace(pathname, { locale: newLocale });
       }
     });
   };
@@ -47,7 +44,7 @@ export default function Navigation() {
       {/* Desktop Navigation */}
       <nav className="hidden md:block bg-stone-200">
         <div className="container mx-auto px-6 py-4 max-w-4xl">
-          <div className="flex items-center justify-between">
+          <div className="flex items-center justify-between min-h-7">
             {!isHomePage && (
               <Link href="/" className="text-lg font-serif font-semibold text-neutral-700 hover:text-orange-600 transition-colors">
                 Universitätsorchester Polyphonia
