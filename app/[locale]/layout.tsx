@@ -51,7 +51,7 @@ export default async function LocaleLayout({
       <body className={`bg-stone-200 text-neutral-900 font-sans`}>
         <NextIntlClientProvider messages={messages}>
           <Navigation />
-          <main className="container mx-auto px-6 py-20 max-w-4xl">
+          <main className="container mx-auto px-6 py-10 md:py-20 max-w-4xl">
             {children}
           </main>
           <Footer />

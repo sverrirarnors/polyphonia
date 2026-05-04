@@ -35,7 +35,7 @@ export default async function ConcertPage({ params }: ConcertPageProps) {
     );
 
     return (
-      <div className="max-w-4xl mx-auto px-6 pb-8">
+      <div>
         <Link
           href="/concerts"
           className="inline-flex items-center gap-2 text-neutral-700 hover:text-orange-600 transition-colors mb-8"
@@ -47,7 +47,7 @@ export default async function ConcertPage({ params }: ConcertPageProps) {
         </Link>
 
         <div className="flex flex-col md:flex-row gap-8">
-          <article className={`prose prose-lg dark:prose-invert ${metadata.poster ? 'md:w-2/3' : 'w-full'}`}>
+          <article className={`prose prose-lg dark:prose-invert break-words hyphens-auto ${metadata.poster ? 'md:w-2/3' : 'w-full'}`}>
             <Content />
           </article>
           {metadata.poster && (

@@ -34,7 +34,7 @@ export default async function ConcertsPage({
               }}
               className="block group mb-6"
             >
-              <h2 className="text-2xl font-serif font-semibold mb-3 text-neutral-900 group-hover:text-orange-600 transition-colors">
+              <h2 className="text-2xl font-serif font-semibold mb-3 text-neutral-900 group-hover:text-orange-600 transition-colors break-words hyphens-auto">
                 {concert.title}
               </h2>
               <p className="text-neutral-800">{concert.composers}</p>
