@@ -8,6 +8,13 @@ const withNextIntl = createNextIntlPlugin('./i18n.ts');
 
 const nextConfig: NextConfig = {
   pageExtensions: ['mdx', 'ts', 'tsx'],
+  async redirects() {
+    return [
+      { source: '/kontakt', destination: '/ueber-uns', permanent: true },
+      { source: '/contact', destination: '/ueber-uns', permanent: true },
+      { source: '/en/contact', destination: '/en/about', permanent: true },
+    ];
+  },
 };
 
 const withMDX = createMDX({

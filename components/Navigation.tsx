@@ -20,7 +20,7 @@ export default function Navigation() {
     { href: '/schedule' as const, label: t('schedule') },
     { href: '/about' as const, label: t('about') },
     { href: '/join' as const, label: t('join') },
-    { href: '/contact' as const, label: t('contact') },
+    { href: '/sponsor' as const, label: t('sponsor') },
   ];
 
   const handleLocaleChange = (newLocale: string) => {

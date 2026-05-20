@@ -68,11 +68,11 @@ export const routing = defineRouting({
       en: '/join',
       de: '/mitmachen'
     },
- 
-    // Contact page
-    '/contact': {
-      en: '/contact',
-      de: '/kontakt'
+
+    // Sponsor / support page
+    '/sponsor': {
+      en: '/sponsor',
+      de: '/unterstuetzen'
     }
   }
 });
