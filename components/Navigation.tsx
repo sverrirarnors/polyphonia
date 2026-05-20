@@ -51,7 +51,7 @@ export default function Navigation() {
               </Link>
             )}
             
-            <div className={`flex items-center gap-6 ${isHomePage ? 'ml-auto' : ''}`}>
+            <div className={`flex items-center gap-4 lg:gap-6 ${isHomePage ? 'ml-auto' : ''}`}>
               {links.map((link) => (
                 <Link
                   key={link.href}
