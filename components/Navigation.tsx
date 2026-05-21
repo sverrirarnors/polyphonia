@@ -20,7 +20,7 @@ export default function Navigation() {
     { href: '/schedule' as const, label: t('schedule') },
     { href: '/about' as const, label: t('about') },
     { href: '/join' as const, label: t('join') },
-    { href: '/contact' as const, label: t('contact') },
+    { href: '/sponsor' as const, label: t('sponsor') },
   ];
 
   const handleLocaleChange = (newLocale: string) => {
@@ -46,17 +46,18 @@ export default function Navigation() {
         <div className="container mx-auto px-6 py-4 max-w-4xl">
           <div className="flex items-center justify-between min-h-7">
             {!isHomePage && (
-              <Link href="/" className="text-lg font-serif font-semibold text-neutral-700 hover:text-orange-600 transition-colors">
-                Universitätsorchester Polyphonia
+              <Link href="/" className="text-lg font-serif font-semibold text-neutral-700 hover:text-orange-600 transition-colors whitespace-nowrap">
+                <span className="lg:hidden">UO Polyphonia</span>
+                <span className="hidden lg:inline">Universitätsorchester Polyphonia</span>
               </Link>
             )}
             
-            <div className={`flex items-center gap-6 ${isHomePage ? 'ml-auto' : ''}`}>
+            <div className={`flex items-center gap-4 lg:gap-5 ${isHomePage ? 'ml-auto' : ''}`}>
               {links.map((link) => (
                 <Link
                   key={link.href}
                   href={link.href}
-                  className="text-sm text-neutral-700 hover:text-orange-600 transition-colors"
+                  className="text-sm text-neutral-700 hover:text-orange-600 transition-colors whitespace-nowrap"
                 >
                   {link.label}
                 </Link>

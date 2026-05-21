@@ -3,6 +3,13 @@ import { BoardMember, BoardGrid } from '@/components/BoardMember';
 import { TableOfContents } from '@/components/TableOfContents';
 import { ProfileImage } from '@/components/ProfileImage';
 import Gallery from '@/components/Gallery';
+import {
+  SponsorTier,
+  SponsorTiers,
+  SponsorCost,
+  SponsorCosts,
+} from '@/components/SponsorTier';
+import { SponsorFormEmbed } from '@/components/SponsorFormEmbed';
 import { Link } from '@/routing';
 
 export function useMDXComponents(components: MDXComponents): MDXComponents {
@@ -12,6 +19,11 @@ export function useMDXComponents(components: MDXComponents): MDXComponents {
     TableOfContents,
     ProfileImage,
     Gallery,
+    SponsorTier,
+    SponsorTiers,
+    SponsorCost,
+    SponsorCosts,
+    SponsorFormEmbed,
     Link,
     a: ({ href, children, ...props }) => {
       // External links or anchors use regular <a>
