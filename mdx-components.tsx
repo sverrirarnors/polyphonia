@@ -9,6 +9,7 @@ import {
   SponsorCost,
   SponsorCosts,
 } from '@/components/SponsorTier';
+import { SponsorFormEmbed } from '@/components/SponsorFormEmbed';
 import { Link } from '@/routing';
 
 export function useMDXComponents(components: MDXComponents): MDXComponents {
@@ -22,6 +23,7 @@ export function useMDXComponents(components: MDXComponents): MDXComponents {
     SponsorTiers,
     SponsorCost,
     SponsorCosts,
+    SponsorFormEmbed,
     Link,
     a: ({ href, children, ...props }) => {
       // External links or anchors use regular <a>
