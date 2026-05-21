@@ -46,8 +46,9 @@ export default function Navigation() {
         <div className="container mx-auto px-6 py-4 max-w-4xl">
           <div className="flex items-center justify-between min-h-7">
             {!isHomePage && (
-              <Link href="/" className="text-lg font-serif font-semibold text-neutral-700 hover:text-orange-600 transition-colors">
-                Universitätsorchester Polyphonia
+              <Link href="/" className="text-lg font-serif font-semibold text-neutral-700 hover:text-orange-600 transition-colors whitespace-nowrap">
+                <span className="lg:hidden">Polyphonia</span>
+                <span className="hidden lg:inline">Universitätsorchester Polyphonia</span>
               </Link>
             )}
             
@@ -56,7 +57,7 @@ export default function Navigation() {
                 <Link
                   key={link.href}
                   href={link.href}
-                  className="text-sm text-neutral-700 hover:text-orange-600 transition-colors"
+                  className="text-sm text-neutral-700 hover:text-orange-600 transition-colors whitespace-nowrap"
                 >
                   {link.label}
                 </Link>
