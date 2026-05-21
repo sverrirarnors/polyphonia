@@ -1,17 +1,11 @@
 // components/SponsorTier.tsx
+'use client';
+
 import type { ReactNode } from 'react';
-
-const FORM_BASE_URL =
-  'https://docs.google.com/forms/d/e/1FAIpQLSdlYAIAX4qS_ElPS7oFiqoGedZPdnTdHIFPhQSSBZWH_t949A/viewform?usp=pp_url';
-const TIER_ENTRY = 'entry.366340186';
-const COST_ENTRY = 'entry.1013453428';
-
-function buildFormUrl(entry: string, value: string) {
-  return `${FORM_BASE_URL}&${entry}=${encodeURIComponent(value)}`;
-}
+import { useSponsorForm } from '@/components/SponsorFormEmbed';
 
 const rowBase =
-  'flex flex-col sm:flex-row sm:items-center gap-2 sm:gap-4 px-5 py-3';
+  'flex flex-col sm:flex-row sm:items-center gap-2 sm:gap-4 px-5 py-3 w-full text-left';
 const rowInteractive =
   'hover:bg-stone-100 focus-visible:bg-stone-100 focus-visible:outline-none transition-colors cursor-pointer';
 
@@ -28,6 +22,8 @@ export function SponsorTier({
   amount,
   formValue,
 }: SponsorTierProps) {
+  const ctx = useSponsorForm();
+
   const inner = (
     <>
       <div className="flex-1 min-w-0">
@@ -42,16 +38,15 @@ export function SponsorTier({
     </>
   );
 
-  if (formValue) {
+  if (formValue && ctx) {
     return (
-      <a
-        href={buildFormUrl(TIER_ENTRY, formValue)}
-        target="_blank"
-        rel="noopener noreferrer"
+      <button
+        type="button"
+        onClick={() => ctx.state.selectTier(formValue)}
         className={`${rowBase} ${rowInteractive}`}
       >
         {inner}
-      </a>
+      </button>
     );
   }
   return <div className={rowBase}>{inner}</div>;
@@ -65,15 +60,17 @@ export function SponsorTiers({ children }: { children: ReactNode }) {
   );
 }
 
+const costRowBase = 'flex items-center gap-4 px-5 py-3 w-full text-left';
+
 interface SponsorCostProps {
   amount: string;
   description: string;
   formValue?: string;
 }
 
-const costRowBase = 'flex items-center gap-4 px-5 py-3';
-
 export function SponsorCost({ amount, description, formValue }: SponsorCostProps) {
+  const ctx = useSponsorForm();
+
   const inner = (
     <>
       <span className="inline-flex items-center justify-center shrink-0 bg-orange-50 text-orange-900 text-sm font-serif italic font-semibold rounded-md px-3 py-1 min-w-[5.5rem] text-center whitespace-nowrap">
@@ -83,16 +80,15 @@ export function SponsorCost({ amount, description, formValue }: SponsorCostProps
     </>
   );
 
-  if (formValue) {
+  if (formValue && ctx) {
     return (
-      <a
-        href={buildFormUrl(COST_ENTRY, formValue)}
-        target="_blank"
-        rel="noopener noreferrer"
+      <button
+        type="button"
+        onClick={() => ctx.state.selectCost(formValue)}
         className={`${costRowBase} ${rowInteractive}`}
       >
         {inner}
-      </a>
+      </button>
     );
   }
   return <div className={costRowBase}>{inner}</div>;

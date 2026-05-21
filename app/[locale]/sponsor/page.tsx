@@ -1,5 +1,6 @@
 // app/[locale]/sponsor/page.tsx
 import { MDXPage } from '@/lib/mdx-page';
+import { SponsorFormProvider } from '@/components/SponsorFormEmbed';
 
 export default async function SponsorPage({
   params,
@@ -7,5 +8,9 @@ export default async function SponsorPage({
   params: Promise<{ locale: string }>;
 }) {
   const { locale } = await params;
-  return <MDXPage locale={locale} segment="sponsor" />;
+  return (
+    <SponsorFormProvider>
+      <MDXPage locale={locale} segment="sponsor" />
+    </SponsorFormProvider>
+  );
 }
