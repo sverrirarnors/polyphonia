@@ -47,7 +47,7 @@ export default function Navigation() {
           <div className="flex items-center justify-between min-h-7">
             {!isHomePage && (
               <Link href="/" className="text-lg font-serif font-semibold text-neutral-700 hover:text-orange-600 transition-colors whitespace-nowrap">
-                <span className="lg:hidden">Polyphonia</span>
+                <span className="lg:hidden">UO Polyphonia</span>
                 <span className="hidden lg:inline">Universitätsorchester Polyphonia</span>
               </Link>
             )}
