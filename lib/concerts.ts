@@ -16,6 +16,7 @@ export interface ConcertMetadata {
   composers: string;
   performances: Performance[];
   poster?: string;
+  program?: string;
 }
 
 // Get all concert slugs by reading the concerts directory
@@ -46,6 +47,7 @@ export function getConcertMetadata(slug: string, locale: string): ConcertMetadat
     composers: data.composers,
     performances: data.performances || [],
     poster: data.poster,
+    program: data.program,
   };
 }
 

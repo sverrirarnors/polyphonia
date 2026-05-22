@@ -50,9 +50,24 @@ export default async function ConcertPage({ params }: ConcertPageProps) {
         </Link>
 
         <div className="flex flex-col md:flex-row gap-8">
-          <article className={`prose prose-lg dark:prose-invert break-words hyphens-auto ${metadata.poster ? 'md:w-2/3' : 'w-full'}`}>
-            <Content />
-          </article>
+          <div className={`flex flex-col gap-6 ${metadata.poster ? 'md:w-2/3' : 'w-full'}`}>
+            <article className="prose prose-lg dark:prose-invert break-words hyphens-auto">
+              <Content />
+            </article>
+            {metadata.program && (
+              <a
+                href={metadata.program}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="inline-flex items-center gap-2 text-orange-600 hover:text-orange-700 font-medium self-start"
+              >
+                <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M12 10v6m0 0l-3-3m3 3l3-3M4 6h16M4 6a2 2 0 01-2-2V4a2 2 0 012-2h16a2 2 0 012 2v0a2 2 0 01-2 2M4 6v14a2 2 0 002 2h12a2 2 0 002-2V6" />
+                </svg>
+                {t('downloadProgram')} →
+              </a>
+            )}
+          </div>
           {metadata.poster && (
             <div className="md:w-1/3 flex-shrink-0 order-last">
               <Lightbox src={metadata.poster} alt={metadata.title} />
