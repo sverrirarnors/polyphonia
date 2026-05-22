@@ -15,6 +15,10 @@ export default async function ConcertsPage({
   // Get all concerts with metadata from MDX frontmatter
   const concerts = getAllConcerts(locale);
 
+  const todayStr = new Date().toLocaleDateString("en-CA", {
+    timeZone: "Europe/Zurich",
+  });
+
   return (
     <div>
       <h1 className="text-4xl font-serif font-semibold mb-10 text-neutral-900">
@@ -42,8 +46,7 @@ export default async function ConcertsPage({
 
             <div className="space-y-2">
               {concert.performances.map((performance, index) => {
-                const performanceIsUpcoming =
-                  new Date(performance.date) >= new Date();
+                const performanceIsUpcoming = performance.date >= todayStr;
 
                 return (
                   <div

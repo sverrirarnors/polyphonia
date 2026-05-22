@@ -16,8 +16,11 @@ export default async function HomePage({
   
   // Get upcoming concerts (future dates only)
   const allConcerts = getAllConcerts(locale);
+  const todayStr = new Date().toLocaleDateString('en-CA', {
+    timeZone: 'Europe/Zurich',
+  });
   const upcomingConcerts = allConcerts.filter(
-    concert => concert.performances.some(p => new Date(p.date) >= new Date())
+    concert => concert.performances.some(p => p.date >= todayStr)
   );
 
   return (
@@ -90,7 +93,7 @@ export default async function HomePage({
 
                     <div className="space-y-4">
                       {concert.performances.map((performance, index) => {
-                        const isUpcoming = new Date(performance.date) >= new Date();
+                        const isUpcoming = performance.date >= todayStr;
 
                         return (
                           <div

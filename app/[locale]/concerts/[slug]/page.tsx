@@ -30,8 +30,11 @@ export default async function ConcertPage({ params }: ConcertPageProps) {
 
     // Dynamically import the MDX file based on locale from content directory
     const Content = (await import(`@/content/concerts/${slug}/${locale}.mdx`)).default;
+    const todayStr = new Date().toLocaleDateString('en-CA', {
+      timeZone: 'Europe/Zurich',
+    });
     const upcomingPerformances = metadata.performances.filter(
-      p => new Date(p.date) >= new Date()
+      p => p.date >= todayStr
     );
 
     return (
