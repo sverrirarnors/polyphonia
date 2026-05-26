@@ -1,6 +1,62 @@
 [
   {
-    "date": "2025-12-03",
+    "date": "2026-02-24",
+    "time": "21:00-23:00",
+    "location": "Aki Hirschengraben 86, 8001 Zürich",
+    "notes_de": "Test 1",
+    "notes_en": "Test 1",
+    "section": "tutti"
+  },
+  {
+    "date": "2026-02-24",
+    "time": "10:00-22:00",
+    "location": "Aki Hirschengraben 86, 8001 Zürich",
+    "notes_de": "Test 3",
+    "notes_en": "Test 3",
+    "section": "tutti"
+  },
+  {
+    "date": "2026-02-24",
+    "time": "22:00-23:00",
+    "location": "Aki Hirschengraben 86, 8001 Zürich",
+    "notes_de": "Test 4",
+    "notes_en": "Test 4",
+    "section": "tutti"
+  },
+  {
+    "date": "2026-02-24",
+    "time": "21:50-22:00",
+    "location": "Aki Hirschengraben 86, 8001 Zürich",
+    "notes_de": "Test 5",
+    "notes_en": "Test 5",
+    "section": "tutti"
+  },
+  {
+    "date": "2026-02-28",
+    "time": "16:00-17:00",
+    "location": "Aki Hirschengraben 86, 8001 Zürich",
+    "notes_de": "Test 6",
+    "notes_en": "Test 6",
+    "section": "tutti"
+  },
+  {
+    "date": "2026-02-25",
+    "time": "16:00-17:00",
+    "location": "Aki Hirschengraben 86, 8001 Zürich",
+    "notes_de": "Test 7",
+    "notes_en": "Test 7",
+    "section": "tutti"
+  },
+  {
+    "date": "2026-02-20",
+    "time": "16:00-17:00",
+    "location": "Aki Hirschengraben 86, 8001 Zürich",
+    "notes_de": "Test 2",
+    "notes_en": "Test 2",
+    "section": "tutti"
+  },
+  {
+    "date": "2026-12-03",
     "time": "18:00-21:00",
     "location": "Aki Hirschengraben 86, 8001 Zürich",
     "notes_de": "Saisonstart",

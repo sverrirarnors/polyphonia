@@ -12,23 +12,23 @@ export function get_rehearsals(): Rehearsal[] {
 
 export function get_chrono_rehearsals() {
 
-  const now = new Date()
-  const yesterday = new Date(now);
-  yesterday.setDate(now.getDate() - 1); // subtract 1 day; we want to display all events that happen today as well.
-  
+
+  const now = new Date();
   const rehearsals = get_rehearsals();
 
   const getDateTime = (rehearsal: { date: string; time: string }) => {
-    const startTime = rehearsal.time.trim().split("–")[0];
-    return new Date(`${rehearsal.date}T${startTime}`).getTime();
+    const startTime = rehearsal.time.trim().split("-")[0];
+    const dateTime = new Date(`${rehearsal.date}T${startTime}`);
+    return dateTime.getTime();
   }
+  /* sort by date only */
   let past = rehearsals.filter(a => {
-    const b = new Date(`${a.date}`);
-    return b < yesterday;
+    const b = new Date(`${a.date}T23:59`);
+    return b < now;
   });
   let future = rehearsals.filter(a => {
-    const b = new Date(`${a.date}`);
-    return b >= yesterday;
+    const b = new Date(`${a.date}T23:59`);
+    return b >= now;
   });
 
   future = future.sort((a, b) => getDateTime(a) - getDateTime(b));
@@ -58,19 +58,16 @@ export function get_grouped_rehearsals(
   locale: string
 ): Record<string, Rehearsal[]> {
   return rehearsals.reduce((acc, rehearsal) => {
-    const date = new Date(rehearsal.date);
+    const date = new Date(`${rehearsal.date}T23:59`);
     const now = new Date();
-    const yesterday = new Date(now);
-    yesterday.setDate(now.getDate() - 1); // subtract 1 day
 
     // this is a very ugly fix to distinguish between past and current months
     // be at the end & make them opaque of course this is very susceptible to trimming
-    // I bet this is gonna haunt somebody in the feature... 
+    // I bet this is gonna haunt somebody in the future...
     // ... shit it is probably gonna be me, right? right.
-    // It wasn't you, it was me...
 
     let t = "";
-    if (date < yesterday) t = " ";
+    if (date < now) t = " ";
 
     let monthKey = date.toLocaleDateString(locale, {
       year: "numeric",

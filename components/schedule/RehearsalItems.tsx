@@ -34,7 +34,7 @@ export function RehearsalItems({
             {monthRehearsals.map((rehearsal, index) => {
               const displayTime = getTime(rehearsal, locale);
               const timeMatch = displayTime.match(/^(\d{1,2}:\d{2})/);
-              const timeForDate = timeMatch ? timeMatch[1] : "12:00";
+              const timeForDate = timeMatch ? timeMatch[1] : "00:01";
               const date = new Date(`${rehearsal.date}T${timeForDate}`);
               const isPast = date < new Date();
               const note = getNote(rehearsal, locale);
