@@ -49,6 +49,7 @@ export default async function HomePage({
 
       <div className="space-y-20 mt-10">
 
+      {upcomingConcerts.length > 0 && (
       <section>
         <div className="flex items-center justify-between mb-6">
           <h2 className="text-2xl md:text-3xl font-serif font-semibold text-neutral-900">
@@ -63,8 +64,7 @@ export default async function HomePage({
         </div>
         
         <div className="space-y-6">
-          {upcomingConcerts.length > 0 ? (
-            upcomingConcerts.map((concert) => (
+          {upcomingConcerts.map((concert) => (
               <div
                 key={concert.slug}
                 className="bg-stone-100 p-8 rounded-lg border border-stone-300"
@@ -141,14 +141,10 @@ export default async function HomePage({
                   </div>
                 </div>
               </div>
-            ))
-          ) : (
-            <p className="text-neutral-700 text-center py-8">
-              {t('noUpcomingConcerts')}
-            </p>
-          )}
+          ))}
         </div>
       </section>
+      )}
 
       <section className="bg-stone-100 rounded-lg p-8 md:p-10 border border-stone-300">
         <h2 className="text-2xl md:text-3xl font-serif font-semibold mb-4 text-neutral-900">
