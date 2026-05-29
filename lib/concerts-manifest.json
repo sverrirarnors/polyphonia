@@ -558,5 +558,43 @@
         }
       ]
     }
+  },
+  "hs26": {
+    "de": {
+      "title": "Herbstsemesterkonzert 2026",
+      "composers": "Vaughan Williams, Chaminade, Dvořák",
+      "performances": [
+        {
+          "date": "2026-12-17",
+          "time": "19:30",
+          "location": "Kirche Neumünster Zürich",
+          "ticketUrl": ""
+        },
+        {
+          "date": "2026-12-18",
+          "time": "19:30",
+          "location": "Grosser Saal des Konservatoriums Zürich",
+          "ticketUrl": ""
+        }
+      ]
+    },
+    "en": {
+      "title": "Autumn Concerts 2026",
+      "composers": "Vaughan Williams, Chaminade, Dvořák",
+      "performances": [
+        {
+          "date": "2026-12-17",
+          "time": "19:30",
+          "location": "Kirche Neumünster Zürich",
+          "ticketUrl": ""
+        },
+        {
+          "date": "2026-12-18",
+          "time": "19:30",
+          "location": "Grosser Saal des Konservatoriums Zürich",
+          "ticketUrl": ""
+        }
+      ]
+    }
   }
 }
