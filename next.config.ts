@@ -8,6 +8,10 @@ const withNextIntl = createNextIntlPlugin('./i18n.ts');
 
 const nextConfig: NextConfig = {
   pageExtensions: ['mdx', 'ts', 'tsx'],
+  images: {
+    loader: 'custom',
+    loaderFile: './imageLoader.ts',
+  },
   async redirects() {
     return [
       { source: '/kontakt', destination: '/ueber-uns', permanent: true },
