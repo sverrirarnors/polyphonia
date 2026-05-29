@@ -6,8 +6,6 @@ import { locales } from "@/i18n";
 import Navigation from "@/components/Navigation";
 import Footer from "@/components/Footer";
 import type { Metadata } from "next";
-import { SpeedInsights } from "@vercel/speed-insights/next";
-import { Analytics } from "@vercel/analytics/next";
 import { Work_Sans, Playfair_Display } from "next/font/google";
 import "../globals.css";
 
@@ -23,6 +21,7 @@ const playfair = Playfair_Display({
 });
 
 export const metadata: Metadata = {
+  metadataBase: new URL("https://polyphonia.ch"),
   title: "Universitätsorchester Polyphonia Zürich",
   description: "Sinfonisches Orchester der ETH und Universität Zürich",
 };
@@ -56,8 +55,6 @@ export default async function LocaleLayout({
           </main>
           <Footer />
         </NextIntlClientProvider>
-        <Analytics />
-        <SpeedInsights />
       </body>
     </html>
   );

@@ -1,7 +1,6 @@
 // lib/concerts.ts
-import fs from 'fs';
-import path from 'path';
-import matter from 'gray-matter';
+import concertsManifest from './concerts-manifest.json';
+import galleryManifest from './gallery-manifest.json';
 
 export interface Performance {
   date: string;
@@ -19,57 +18,33 @@ export interface ConcertMetadata {
   program?: string;
 }
 
-// Get all concert slugs by reading the concerts directory
+type ConcertEntry = Omit<ConcertMetadata, 'slug'>;
+type ConcertsManifest = Record<string, Record<string, ConcertEntry>>;
+
+const manifest = concertsManifest as ConcertsManifest;
+
 export function getAllConcertSlugs(): string[] {
-  const concertsDir = path.join(process.cwd(), 'content/concerts');
-  const entries = fs.readdirSync(concertsDir, { withFileTypes: true });
-
-  return entries
-    .filter(entry => entry.isDirectory() && !entry.name.startsWith('.'))
-    .map(entry => entry.name);
+  return Object.keys(manifest);
 }
 
-// Get metadata for a specific concert in a specific locale
 export function getConcertMetadata(slug: string, locale: string): ConcertMetadata {
-  const filePath = path.join(
-    process.cwd(),
-    'content/concerts',
-    slug,
-    `${locale}.mdx`
-  );
-
-  const fileContents = fs.readFileSync(filePath, 'utf8');
-  const { data } = matter(fileContents);
-
-  return {
-    slug,
-    title: data.title,
-    composers: data.composers,
-    performances: data.performances || [],
-    poster: data.poster,
-    program: data.program,
-  };
+  const entry = manifest[slug]?.[locale];
+  if (!entry) {
+    throw new Error(`No concert metadata for slug="${slug}" locale="${locale}"`);
+  }
+  return { slug, ...entry };
 }
 
-// Get all concerts with their metadata for a specific locale
 export function getAllConcerts(locale: string): ConcertMetadata[] {
-  const slugs = getAllConcertSlugs();
-
-  return slugs
+  return getAllConcertSlugs()
     .map(slug => getConcertMetadata(slug, locale))
     .sort((a, b) => {
-      // Sort by first performance date, newest first
       const dateA = a.performances[0]?.date || '';
       const dateB = b.performances[0]?.date || '';
       return new Date(dateB).getTime() - new Date(dateA).getTime();
     });
 }
 
-// Gallery manifest generated at build time
-import galleryManifest from './gallery-manifest.json';
-
-// Get gallery images for a specific concert
 export function getConcertGalleryImages(slug: string): string[] {
   return (galleryManifest as Record<string, string[]>)[slug] || [];
 }
-

@@ -1,0 +1,562 @@
+{
+  "fs17": {
+    "de": {
+      "title": "Frühlingskonzerte 2017",
+      "composers": "Schumann, Dvořák",
+      "performances": [
+        {
+          "date": "2017-05-12",
+          "time": "19:30",
+          "location": "Aula der Universität Zürich",
+          "ticketUrl": ""
+        },
+        {
+          "date": "2017-05-16",
+          "time": "19:30",
+          "location": "Aula der Universität Zürich",
+          "ticketUrl": ""
+        }
+      ],
+      "poster": "/images/concerts/fs17.jpg"
+    },
+    "en": {
+      "title": "Spring Concerts 2017",
+      "composers": "Schumann, Dvořák",
+      "performances": [
+        {
+          "date": "2017-05-12",
+          "time": "19:30",
+          "location": "Aula der Universität Zürich",
+          "ticketUrl": ""
+        },
+        {
+          "date": "2017-05-16",
+          "time": "19:30",
+          "location": "Aula der Universität Zürich",
+          "ticketUrl": ""
+        }
+      ],
+      "poster": "/images/concerts/fs17.jpg"
+    }
+  },
+  "fs18": {
+    "de": {
+      "title": "Frühlingskonzerte 2018",
+      "composers": "Elgar, Dvořák",
+      "performances": [
+        {
+          "date": "2018-05-22",
+          "time": "19:30",
+          "location": "Aula der Universität Zürich",
+          "ticketUrl": ""
+        },
+        {
+          "date": "2018-05-24",
+          "time": "19:30",
+          "location": "Aula der Universität Zürich",
+          "ticketUrl": ""
+        }
+      ],
+      "poster": "/images/concerts/fs18.jpg"
+    },
+    "en": {
+      "title": "Spring Concerts 2018",
+      "composers": "Elgar, Dvořák",
+      "performances": [
+        {
+          "date": "2018-05-22",
+          "time": "19:30",
+          "location": "Aula der Universität Zürich",
+          "ticketUrl": ""
+        },
+        {
+          "date": "2018-05-24",
+          "time": "19:30",
+          "location": "Aula der Universität Zürich",
+          "ticketUrl": ""
+        }
+      ],
+      "poster": "/images/concerts/fs18.jpg"
+    }
+  },
+  "fs19": {
+    "de": {
+      "title": "Frühlingskonzerte 2019",
+      "composers": "Salieri, Saint-Saëns, Beethoven",
+      "performances": [
+        {
+          "date": "2019-05-13",
+          "time": "19:30",
+          "location": "Aula der Universität Zürich",
+          "ticketUrl": ""
+        },
+        {
+          "date": "2019-05-18",
+          "time": "19:30",
+          "location": "Aula der Universität Zürich",
+          "ticketUrl": ""
+        }
+      ],
+      "poster": "/images/concerts/fs19.jpg"
+    },
+    "en": {
+      "title": "Spring Concerts 2019",
+      "composers": "Salieri, Saint-Saëns, Beethoven",
+      "performances": [
+        {
+          "date": "2019-05-13",
+          "time": "19:30",
+          "location": "Aula der Universität Zürich",
+          "ticketUrl": ""
+        },
+        {
+          "date": "2019-05-18",
+          "time": "19:30",
+          "location": "Aula der Universität Zürich",
+          "ticketUrl": ""
+        }
+      ],
+      "poster": "/images/concerts/fs19.jpg"
+    }
+  },
+  "fs23": {
+    "de": {
+      "title": "Frühlingskonzerte 2023",
+      "composers": "Debussy, Bosmans, Boulanger, Madetoja",
+      "performances": [
+        {
+          "date": "2023-05-16",
+          "time": "19:30",
+          "location": "Aula der Universität Zürich",
+          "ticketUrl": ""
+        },
+        {
+          "date": "2023-05-26",
+          "time": "19:30",
+          "location": "Volkshaus Zürich",
+          "ticketUrl": ""
+        }
+      ],
+      "poster": "/images/concerts/fs23.jpg"
+    },
+    "en": {
+      "title": "Spring Concerts 2023",
+      "composers": "Debussy, Bosmans, Boulanger, Madetoja",
+      "performances": [
+        {
+          "date": "2023-05-16",
+          "time": "19:30",
+          "location": "Aula der Universität Zürich",
+          "ticketUrl": ""
+        },
+        {
+          "date": "2023-05-26",
+          "time": "19:30",
+          "location": "Volkshaus Zürich",
+          "ticketUrl": ""
+        }
+      ],
+      "poster": "/images/concerts/fs23.jpg"
+    }
+  },
+  "fs24": {
+    "de": {
+      "title": "Frühlingskonzerte 2024",
+      "composers": "Kussewizki, Brahms",
+      "performances": [
+        {
+          "date": "2024-05-24",
+          "time": "19:30",
+          "location": "Grosser Saal des Konservatoriums Zürich",
+          "ticketUrl": ""
+        },
+        {
+          "date": "2024-05-28",
+          "time": "19:30",
+          "location": "Pauluskirche Zürich",
+          "ticketUrl": ""
+        }
+      ],
+      "poster": "/images/concerts/fs24.jpg"
+    },
+    "en": {
+      "title": "Spring Concerts 2024",
+      "composers": "Koussevitzky, Brahms",
+      "performances": [
+        {
+          "date": "2024-05-24",
+          "time": "19:30",
+          "location": "Grosser Saal des Konservatoriums Zürich",
+          "ticketUrl": ""
+        },
+        {
+          "date": "2024-05-28",
+          "time": "19:30",
+          "location": "Pauluskirche Zürich",
+          "ticketUrl": ""
+        }
+      ],
+      "poster": "/images/concerts/fs24.jpg"
+    }
+  },
+  "fs26": {
+    "de": {
+      "title": "Frühlingssemesterkonzert 2026",
+      "composers": "Gershwin, Anderson, Márquez, Still",
+      "performances": [
+        {
+          "date": "2026-05-22",
+          "time": "19:30",
+          "location": "Kirche Neumünster Zürich",
+          "ticketUrl": "https://eventfrog.ch/PolyphoniaFS26_1"
+        },
+        {
+          "date": "2026-05-26",
+          "time": "19:30",
+          "location": "Kirche St. Peter Zürich",
+          "ticketUrl": "https://eventfrog.ch/PolyphoniaFS26_2"
+        }
+      ],
+      "poster": "/images/concerts/fs26.jpg",
+      "program": "/pdfs/Programmheft_FS26_english.pdf"
+    },
+    "en": {
+      "title": "Spring Concerts 2026",
+      "composers": "Gershwin, Anderson, Márquez, Still",
+      "performances": [
+        {
+          "date": "2026-05-22",
+          "time": "19:30",
+          "location": "Kirche Neumünster Zürich",
+          "ticketUrl": "https://eventfrog.ch/PolyphoniaFS26_1"
+        },
+        {
+          "date": "2026-05-26",
+          "time": "19:30",
+          "location": "Kirche St. Peter Zürich",
+          "ticketUrl": "https://eventfrog.ch/PolyphoniaFS26_2"
+        }
+      ],
+      "poster": "/images/concerts/fs26.jpg",
+      "program": "/pdfs/Programmheft_FS26_english.pdf"
+    }
+  },
+  "hs17": {
+    "de": {
+      "title": "Winterkonzerte 2017",
+      "composers": "Mozart, Haydn",
+      "performances": [
+        {
+          "date": "2017-12-12",
+          "time": "19:30",
+          "location": "Aula der Universität Zürich",
+          "ticketUrl": ""
+        },
+        {
+          "date": "2017-12-15",
+          "time": "19:30",
+          "location": "Aula der Universität Zürich",
+          "ticketUrl": ""
+        }
+      ],
+      "poster": "/images/concerts/hs17.jpg"
+    },
+    "en": {
+      "title": "Winter Concerts 2017",
+      "composers": "Mozart, Haydn",
+      "performances": [
+        {
+          "date": "2017-12-12",
+          "time": "19:30",
+          "location": "Aula der Universität Zürich",
+          "ticketUrl": ""
+        },
+        {
+          "date": "2017-12-15",
+          "time": "19:30",
+          "location": "Aula der Universität Zürich",
+          "ticketUrl": ""
+        }
+      ],
+      "poster": "/images/concerts/hs17.jpg"
+    }
+  },
+  "hs18": {
+    "de": {
+      "title": "Winterkonzerte 2018",
+      "composers": "Tschaikowsky, Borodin",
+      "performances": [
+        {
+          "date": "2018-11-30",
+          "time": "19:30",
+          "location": "Aula der Universität Zürich",
+          "ticketUrl": ""
+        },
+        {
+          "date": "2018-12-19",
+          "time": "19:30",
+          "location": "Aula der Universität Zürich",
+          "ticketUrl": ""
+        }
+      ],
+      "poster": "/images/concerts/hs18.png"
+    },
+    "en": {
+      "title": "Winter Concerts 2018",
+      "composers": "Tchaikovsky, Borodin",
+      "performances": [
+        {
+          "date": "2018-11-30",
+          "time": "19:30",
+          "location": "Aula der Universität Zürich",
+          "ticketUrl": ""
+        },
+        {
+          "date": "2018-12-19",
+          "time": "19:30",
+          "location": "Aula der Universität Zürich",
+          "ticketUrl": ""
+        }
+      ],
+      "poster": "/images/concerts/hs18.png"
+    }
+  },
+  "hs19": {
+    "de": {
+      "title": "Winterkonzerte 2019",
+      "composers": "Weber, Mahler, Saint-Saëns",
+      "performances": [
+        {
+          "date": "2019-12-13",
+          "time": "19:30",
+          "location": "Aula der Universität Zürich",
+          "ticketUrl": ""
+        },
+        {
+          "date": "2019-12-18",
+          "time": "19:30",
+          "location": "Aula der Universität Zürich",
+          "ticketUrl": ""
+        }
+      ],
+      "poster": "/images/concerts/hs19.jpg"
+    },
+    "en": {
+      "title": "Winter Concerts 2019",
+      "composers": "Weber, Mahler, Saint-Saëns",
+      "performances": [
+        {
+          "date": "2019-12-13",
+          "time": "19:30",
+          "location": "Aula der Universität Zürich",
+          "ticketUrl": ""
+        },
+        {
+          "date": "2019-12-18",
+          "time": "19:30",
+          "location": "Aula der Universität Zürich",
+          "ticketUrl": ""
+        }
+      ],
+      "poster": "/images/concerts/hs19.jpg"
+    }
+  },
+  "hs21": {
+    "de": {
+      "title": "Winterkonzerte 2021: Grosse Meisterinnen",
+      "composers": "Hensel, Smith, Mayer",
+      "performances": [
+        {
+          "date": "2021-12-17",
+          "time": "19:30",
+          "location": "Aula der Universität Zürich",
+          "ticketUrl": ""
+        },
+        {
+          "date": "2021-12-22",
+          "time": "19:30",
+          "location": "Aula der Universität Zürich",
+          "ticketUrl": ""
+        }
+      ],
+      "poster": "/images/concerts/hs21.png"
+    },
+    "en": {
+      "title": "Winter Concerts 2021: Female Greats",
+      "composers": "Hensel, Smith, Mayer",
+      "performances": [
+        {
+          "date": "2021-12-17",
+          "time": "19:30",
+          "location": "Aula der Universität Zürich",
+          "ticketUrl": ""
+        },
+        {
+          "date": "2021-12-22",
+          "time": "19:30",
+          "location": "Aula der Universität Zürich",
+          "ticketUrl": ""
+        }
+      ],
+      "poster": "/images/concerts/hs21.png"
+    }
+  },
+  "hs22": {
+    "de": {
+      "title": "Winterkonzerte 2022",
+      "composers": "Beethoven, Brahms, Raff",
+      "performances": [
+        {
+          "date": "2022-12-16",
+          "time": "19:30",
+          "location": "Grosser Saal des Konservatoriums Zürich",
+          "ticketUrl": ""
+        },
+        {
+          "date": "2022-12-21",
+          "time": "19:30",
+          "location": "Aula der Universität Zürich",
+          "ticketUrl": ""
+        }
+      ],
+      "poster": "/images/concerts/hs22.jpg"
+    },
+    "en": {
+      "title": "Winter Concerts 2022",
+      "composers": "Beethoven, Brahms, Raff",
+      "performances": [
+        {
+          "date": "2022-12-16",
+          "time": "19:30",
+          "location": "Grosser Saal des Konservatoriums Zürich",
+          "ticketUrl": ""
+        },
+        {
+          "date": "2022-12-21",
+          "time": "19:30",
+          "location": "Aula der Universität Zürich",
+          "ticketUrl": ""
+        }
+      ],
+      "poster": "/images/concerts/hs22.jpg"
+    }
+  },
+  "hs23": {
+    "de": {
+      "title": "Winterkonzerte 2023",
+      "composers": "Salieri, R. Strauss, Dvořák",
+      "performances": [
+        {
+          "date": "2023-12-15",
+          "time": "19:30",
+          "location": "Aula der Universität Zürich",
+          "ticketUrl": ""
+        },
+        {
+          "date": "2023-12-20",
+          "time": "19:30",
+          "location": "Grosser Saal des Konservatoriums Zürich",
+          "ticketUrl": ""
+        }
+      ],
+      "poster": "/images/concerts/hs23.jpg"
+    },
+    "en": {
+      "title": "Winter Concerts 2023",
+      "composers": "Salieri, R. Strauss, Dvořák",
+      "performances": [
+        {
+          "date": "2023-12-15",
+          "time": "19:30",
+          "location": "Aula der Universität Zürich",
+          "ticketUrl": ""
+        },
+        {
+          "date": "2023-12-20",
+          "time": "19:30",
+          "location": "Grosser Saal des Konservatoriums Zürich",
+          "ticketUrl": ""
+        }
+      ],
+      "poster": "/images/concerts/hs23.jpg"
+    }
+  },
+  "hs24": {
+    "de": {
+      "title": "Winterkonzerte 2024",
+      "composers": "Sibelius, Svendsen, Grieg",
+      "performances": [
+        {
+          "date": "2024-12-11",
+          "time": "19:30",
+          "location": "Kirche Neumünster Zürich",
+          "ticketUrl": ""
+        },
+        {
+          "date": "2024-12-17",
+          "time": "19:30",
+          "location": "Grosser Saal des Konservatoriums Zürich",
+          "ticketUrl": ""
+        }
+      ],
+      "poster": "/images/concerts/hs24.jpg"
+    },
+    "en": {
+      "title": "Winter Concerts 2024",
+      "composers": "Sibelius, Svendsen, Grieg",
+      "performances": [
+        {
+          "date": "2024-12-11",
+          "time": "19:30",
+          "location": "Kirche Neumünster Zürich",
+          "ticketUrl": ""
+        },
+        {
+          "date": "2024-12-17",
+          "time": "19:30",
+          "location": "Grosser Saal des Konservatoriums Zürich",
+          "ticketUrl": ""
+        }
+      ],
+      "poster": "/images/concerts/hs24.jpg"
+    }
+  },
+  "hs25": {
+    "de": {
+      "title": "Herbstsemesterkonzert 2025",
+      "composers": "Borodin, Bruch, Kalinnikow",
+      "performances": [
+        {
+          "date": "2025-12-12",
+          "time": "19:30",
+          "location": "Kirche Neumünster Zürich",
+          "ticketUrl": ""
+        },
+        {
+          "date": "2025-12-17",
+          "time": "19:30",
+          "location": "Grosser Saal des Konservatoriums Zürich",
+          "ticketUrl": ""
+        }
+      ]
+    },
+    "en": {
+      "title": "Autumn Concerts 2025",
+      "composers": "Borodin, Bruch, Kalinnikov",
+      "performances": [
+        {
+          "date": "2025-12-12",
+          "time": "19:30",
+          "location": "Kirche Neumünster Zürich",
+          "ticketUrl": ""
+        },
+        {
+          "date": "2025-12-17",
+          "time": "19:30",
+          "location": "Grosser Saal des Konservatoriums Zürich",
+          "ticketUrl": ""
+        }
+      ]
+    }
+  }
+}
