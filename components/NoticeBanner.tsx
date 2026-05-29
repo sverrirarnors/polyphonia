@@ -29,7 +29,7 @@ export default function NoticeBanner() {
     { label: t('winds'), instruments: t('windsInstruments') },
     { label: t('brass'), instruments: t('brassInstruments') },
     { label: t('percussion'), instruments: '' },
-  ].filter((section) => section.instruments);
+  ];
 
   return (
     <div className="bg-stone-100 p-8 rounded-lg border border-stone-300">
