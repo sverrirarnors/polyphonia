@@ -76,12 +76,13 @@
   },
   "Notice": {
     "recruitmentNotice": "Wir suchen neue Mitglieder für das Herbstsemester 2026!",
+    "concertmaster": "Konzertmeister/-in",
     "strings": "Streicher",
     "stringsInstruments": "Violine, Bratsche, Kontrabass",
     "winds": "Holzbläser",
     "windsInstruments": "",
     "brass": "Blechbläser",
-    "brassInstruments": "Posaune",
+    "brassInstruments": "Bass- und Tenorposaune",
     "percussion": "Schlagzeug, Banjo",
     "learnMore": "Mehr erfahren",
     "joinUs": "Mehr über das Mitmachen"

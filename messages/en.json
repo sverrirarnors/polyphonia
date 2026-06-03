@@ -76,12 +76,13 @@
   },
   "Notice": {
     "recruitmentNotice": "We are recruiting new members for autumn 2026!",
+    "concertmaster": "Concert master",
     "strings": "Strings",
     "stringsInstruments": "Violin, Viola, Double bass",
     "winds": "Winds",
     "windsInstruments": "",
     "brass": "Brass",
-    "brassInstruments": "Trombone",
+    "brassInstruments": "Bass and tenor trombone",
     "percussion": "Percussion, Banjo",
     "learnMore": "Learn More",
     "joinUs": "Learn more about joining"
