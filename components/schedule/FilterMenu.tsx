@@ -35,7 +35,7 @@ export function FilterMenu({
 
   return (
     <div className="flex flex-wrap items-center gap-2">
-      <span className="mr-1 text-sm font-semibold uppercase tracking-wide text-neutral-700">
+      <span className="mr-1 text-sm font-semibold text-neutral-700">
         {t("filterLabel")}
       </span>
       {SECTIONS.map((section) => {
