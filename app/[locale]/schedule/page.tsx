@@ -43,14 +43,15 @@ export default async function SchedulePage({
       <h1 className="text-4xl font-serif font-semibold mb-3 text-neutral-900">
         {t("title")}
       </h1>
-      <p className="text-neutral-800 mb-10 text-sm">{t("subtitle")}</p>
-
-      <div className="mb-6">
-        <DownloadICSButton locale={locale} />
-      </div>
+      <p className="text-neutral-800 mb-2 text-sm">{t("subtitle")}</p>
+      <p className="text-neutral-800 mb-10 text-sm">{t("arrivalNote")}</p>
 
       <div className="mb-6">
         <FilterMenu activeSection={section} />
+      </div>
+
+      <div className="mb-6">
+        <DownloadICSButton locale={locale} />
       </div>
 
       <RehearsalItems groupedRehearsals={groupedRehearsals} locale={locale} />

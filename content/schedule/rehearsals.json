@@ -1,6 +1,6 @@
 [
   {
-    "date": "2026-02-18",
+    "date": "2026-09-16",
     "time": "18:00-21:00",
     "location": "Aki Hirschengraben 86, 8001 Zürich",
     "notes_de": "Leseprobe (Tutti)",
@@ -8,172 +8,170 @@
     "section": "tutti"
   },
   {
-    "date": "2026-02-22",
-    "time": "10:00-16:00",
-    "location": "TBA",
-    "notes_de": "Streicherprobe",
-    "notes_en": "String sectional",
-    "section": "strings"
-  },
-  {
-    "date": "2026-02-25",
+    "date": "2026-09-23",
     "time": "18:00-21:00",
     "location": "Aki Hirschengraben 86, 8001 Zürich",
-    "notes_de": "Tutti (Márquez & Gershwin)",
-    "notes_en": "Tutti (Márquez & Gershwin)",
+    "notes_de": "Tutti (Dvořák)",
+    "notes_en": "Tutti (Dvořák)",
     "section": "tutti"
   },
   {
-    "date": "2026-03-04",
+    "date": "2026-09-29",
     "time": "18:00-21:00",
     "location": "Aki Hirschengraben 86, 8001 Zürich",
-    "notes_de": "Tutti (Anderson & Still)",
-    "notes_en": "Tutti (Anderson & Still)",
-    "section": "tutti"
-  },
-  {
-    "date": "2026-03-05",
-    "time": "18:00-21:00",
-    "location": "RAA-E-08 Rämistrasse 59, 8001 Zürich",
-    "notes_de": "Holzbläser (Márquez & Gershwin)",
-    "notes_en": "Woodwinds (Márquez & Gershwin)",
+    "notes_de": "Holzbläser (Dvořák + ev. Rest)",
+    "notes_en": "Woodwinds (Dvořák + poss. rest)",
     "section": "woodwinds"
   },
   {
-    "date": "2026-03-10",
+    "date": "2026-09-30",
     "time": "18:00-21:00",
-    "location": "RAA-E-08 Rämistrasse 59, 8001 Zürich",
-    "notes_de": "Blechbläser (Márquez & Gershwin)",
-    "notes_en": "Brass (Márquez & Gershwin)",
+    "location": "Aki Hirschengraben 86, 8001 Zürich",
+    "notes_de": "Tutti (Williams & Chaminade & ev. Dvořák)",
+    "notes_en": "Tutti (Williams & Chaminade & poss. Dvořák)",
+    "section": "tutti"
+  },
+  {
+    "date": "2026-10-01",
+    "time": "18:00-21:00",
+    "location": "Aki Hirschengraben 86, 8001 Zürich",
+    "notes_de": "Blechbläser (Dvořák + ev. Rest)",
+    "notes_en": "Brass (Dvořák + poss. rest)",
     "section": "brass"
   },
   {
-    "date": "2026-03-11",
+    "date": "2026-10-07",
     "time": "18:00-21:00",
     "location": "Aki Hirschengraben 86, 8001 Zürich",
-    "notes_de": "Streicher (Márquez & Gershwin)",
-    "notes_en": "Strings (Márquez & Gershwin)",
+    "notes_de": "Streicher (Dvořák)",
+    "notes_en": "Strings (Dvořák)",
     "section": "strings"
   },
   {
-    "date": "2026-03-12",
+    "date": "2026-10-08",
     "time": "18:00-21:00",
-    "location": "RAA-E-08 Rämistrasse 59, 8001 Zürich",
-    "notes_de": "Holzbläser (Anderson & Still)",
-    "notes_en": "Woodwinds (Anderson & Still)",
+    "location": "Aki Hirschengraben 86, 8001 Zürich",
+    "notes_de": "Holzbläser (Williams & Chaminade & ev. Dvořák)",
+    "notes_en": "Woodwinds (Williams & Chaminade & poss. Dvořák)",
     "section": "woodwinds"
   },
   {
-    "date": "2026-03-18",
+    "date": "2026-10-13",
     "time": "18:00-21:00",
     "location": "Aki Hirschengraben 86, 8001 Zürich",
-    "notes_de": "Streicher (Anderson & Still)",
-    "notes_en": "Strings (Anderson & Still)",
-    "section": "strings"
-  },
-  {
-    "date": "2026-03-19",
-    "time": "18:00-21:00",
-    "location": "RAA-E-08 Rämistrasse 59, 8001 Zürich",
-    "notes_de": "Blechbläser (Anderson & Still)",
-    "notes_en": "Brass (Anderson & Still)",
+    "notes_de": "Blechbläser (Williams & Chaminade & ev. Dvořák)",
+    "notes_en": "Brass (Williams & Chaminade & poss. Dvořák)",
     "section": "brass"
   },
   {
-    "date": "2026-03-25",
+    "date": "2026-10-14",
     "time": "18:00-21:00",
     "location": "Aki Hirschengraben 86, 8001 Zürich",
-    "notes_de": "Tutti (Márquez & Gershwin)",
-    "notes_en": "Tutti (Márquez & Gershwin)",
+    "notes_de": "Streicher (Williams & Chaminade & ev. Dvořák)",
+    "notes_en": "Strings (Williams & Chaminade & poss. Dvořák)",
+    "section": "strings"
+  },
+  {
+    "date": "2026-10-21",
+    "time": "18:00-21:00",
+    "location": "Aki Hirschengraben 86, 8001 Zürich",
+    "notes_de": "Tutti (Dvořák 4+1)",
+    "notes_en": "Tutti (Dvořák 4+1)",
     "section": "tutti"
   },
   {
-    "date": "2026-04-01",
+    "date": "2026-10-28",
     "time": "18:00-21:00",
     "location": "Aki Hirschengraben 86, 8001 Zürich",
-    "notes_de": "Tutti (Anderson & Still)",
-    "notes_en": "Tutti (Anderson & Still)",
+    "notes_de": "Tutti (Dvořák 3+2)",
+    "notes_en": "Tutti (Dvořák 3+2)",
     "section": "tutti"
   },
   {
-    "date": "2026-04-15",
+    "date": "2026-11-01",
+    "time": "10:00-13:00 / 14:00-17:00",
+    "location": "Aki Hirschengraben 86, 8001 Zürich",
+    "notes_de": "Vormittag: Dvořák / Nachmittag: restliches Programm (ev. Dvořák)",
+    "notes_en": "Morning: Dvořák / Afternoon: rest of program (poss. Dvořák)",
+    "section": "tutti",
+    "highlight": true
+  },
+  {
+    "date": "2026-11-04",
+    "time": "18:00-21:00",
+    "location": "Aki Hirschengraben 86, 8001 Zürich",
+    "notes_de": "Tutti (Williams & Chaminade)",
+    "notes_en": "Tutti (Williams & Chaminade)",
+    "section": "tutti"
+  },
+  {
+    "date": "2026-11-11",
+    "time": "18:00-21:00",
+    "location": "Aki Hirschengraben 86, 8001 Zürich",
+    "notes_de": "Holz- & Blechbläser (mit Gregor)",
+    "notes_en": "Woodwinds & Brass (with Gregor)",
+    "section": "winds"
+  },
+  {
+    "date": "2026-11-11",
     "time": "18:00-21:00",
     "location": "Aki Hirschengraben 86, 8001 Zürich",
     "notes_de": "Streicherregisterprobe (mit Stimmführern)",
-    "notes_en": "String Sectionals (with section leader)",
+    "notes_en": "String sectionals (with section leaders)",
     "section": "strings"
   },
   {
-    "date": "2026-04-15",
+    "date": "2026-11-18",
     "time": "18:00-21:00",
     "location": "Aki Hirschengraben 86, 8001 Zürich",
-    "notes_de": "Bläser & Perkussion (mit Gregor)",
-    "notes_en": "Winds & Percussion (with Gregor)",
-    "section": "winds"
-  },
-  {
-    "date": "2026-04-22",
-    "time": "18:00-21:00",
-    "location": "Aki Hirschengraben 86, 8001 Zürich",
-    "notes_de": "Tutti (Márquez & Gershwin)",
-    "notes_en": "Tutti (Márquez & Gershwin)",
+    "notes_de": "Tutti (Dvořák 1+4)",
+    "notes_en": "Tutti (Dvořák 1+4)",
     "section": "tutti"
   },
   {
-    "date": "2026-04-23",
+    "date": "2026-11-25",
     "time": "18:00-21:00",
     "location": "Aki Hirschengraben 86, 8001 Zürich",
-    "notes_de": "Bläser",
-    "notes_en": "Winds",
-    "section": "winds"
-  },
-  {
-    "date": "2026-04-29",
-    "time": "18:00-21:00",
-    "location": "Aki Hirschengraben 86, 8001 Zürich",
-    "notes_de": "Tutti (Anderson & Still)",
-    "notes_en": "Tutti (Anderson & Still)",
+    "notes_de": "Tutti (Dvořák 2+3)",
+    "notes_en": "Tutti (Dvořák 2+3)",
     "section": "tutti"
   },
   {
-    "date": "2026-05-01",
-    "date_end": "2026-05-03",
-    "time": "",
-    "time_de": "Fr 1. - So 3. Mai",
-    "time_en": "Fri 1 - Sun 3 May",
-    "location": "Vignogn",
-    "notes_de": "Probewochenende",
-    "notes_en": "Rehearsal weekend",
+    "date": "2026-12-02",
+    "time": "18:00-21:00",
+    "location": "Aki Hirschengraben 86, 8001 Zürich",
+    "notes_de": "Tutti (Williams & Chaminade + ev. Dvořák)",
+    "notes_en": "Tutti (Williams & Chaminade + poss. Dvořák)",
+    "section": "tutti"
+  },
+  {
+    "date": "2026-12-06",
+    "time": "10:00-13:00 / 14:00-17:00",
+    "location": "Aki Hirschengraben 86, 8001 Zürich",
+    "notes_de": "Vormittag: Dvořák / Nachmittag: alles",
+    "notes_en": "Morning: Dvořák / Afternoon: everything",
     "section": "tutti",
     "highlight": true
   },
   {
-    "date": "2026-05-06",
+    "date": "2026-12-09",
     "time": "18:00-21:00",
     "location": "Aki Hirschengraben 86, 8001 Zürich",
-    "notes_de": "Tutti",
-    "notes_en": "Tutti",
+    "notes_de": "Dvořák (1+2+3+4)",
+    "notes_en": "Dvořák (1+2+3+4)",
     "section": "tutti"
   },
   {
-    "date": "2026-05-13",
+    "date": "2026-12-16",
     "time": "18:00-21:00",
     "location": "Aki Hirschengraben 86, 8001 Zürich",
-    "notes_de": "Tutti",
-    "notes_en": "Tutti",
-    "section": "tutti"
-  },
-  {
-    "date": "2026-05-20",
-    "time": "18:00-21:00",
-    "location": "TBD",
-    "notes_de": "Generalprobe",
-    "notes_en": "Dress rehearsal",
+    "notes_de": "Generalprobe (Konzertreihenfolge + Korrekturen)",
+    "notes_en": "Dress rehearsal (concert order + corrections)",
     "section": "tutti",
     "highlight": true
   },
   {
-    "date": "2026-05-22",
+    "date": "2026-12-17",
     "time": "19:30-22:00",
     "location": "Kirche Neumünster",
     "notes_de": "Konzert",
@@ -182,9 +180,9 @@
     "highlight": true
   },
   {
-    "date": "2026-05-26",
+    "date": "2026-12-18",
     "time": "19:30-22:00",
-    "location": "Kirche St. Peter",
+    "location": "Grosser Saal des Konservatoriums Zürich",
     "notes_de": "Konzert",
     "notes_en": "Concert",
     "section": "tutti",
