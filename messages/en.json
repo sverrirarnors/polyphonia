@@ -45,6 +45,7 @@
   "Schedule": {
     "title": "Rehearsal Schedule",
     "subtitle": "Unless specifically indicated, rehearsals take place at Aki, Hirschengraben 86, 8001 Zürich",
+    "arrivalNote": "Please arrive by 18:00 to set up, warm up, and tune — rehearsals start at 18:15. Attendance at highlighted events is mandatory.",
     "date": "Date",
     "time": "Time",
     "location": "Location",

@@ -45,6 +45,7 @@
   "Schedule": {
     "title": "Probenplan",
     "subtitle": "Sofern nicht anders angegeben, finden die Proben im Aki, Hirschengraben 86, 8001 Zürich statt.",
+    "arrivalNote": "Bitte sei um 18:00 Uhr da, um aufzubauen, dich aufzuwärmen und zu stimmen — die Probe beginnt um 18:15 Uhr. Die Teilnahme an hervorgehobenen Terminen ist verpflichtend.",
     "date": "Datum",
     "time": "Zeit",
     "location": "Ort",
