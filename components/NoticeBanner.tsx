@@ -37,17 +37,17 @@ export default function NoticeBanner() {
         <h3 className="text-xl font-serif font-semibold mb-4 text-neutral-900 group-hover:text-orange-600 transition-colors">
           {t(noticeConfig.messageKey)}
         </h3>
-        <div className="text-neutral-700 mb-4 space-y-2">
-          <div>
+        <ul className="text-neutral-700 mb-4 space-y-2 list-disc pl-5 marker:text-orange-600">
+          <li>
             <span className="font-medium">{t('concertmaster')}</span>
-          </div>
+          </li>
           {sections.map((section, index) => (
-            <div key={index}>
+            <li key={index}>
               <span className="font-medium">{section.label}</span>
               {section.instruments && <>: {section.instruments}</>}
-            </div>
+            </li>
           ))}
-        </div>
+        </ul>
         <span className="text-sm text-orange-600 group-hover:text-orange-700 transition-colors">
           {t('joinUs')} →
         </span>
