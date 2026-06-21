@@ -48,14 +48,6 @@
     "section": "strings"
   },
   {
-    "date": "2026-10-08",
-    "time": "18:00-21:00",
-    "location": "Aki Hirschengraben 86, 8001 Zürich",
-    "notes_de": "Holzbläser (Williams & Chaminade & ev. Dvořák)",
-    "notes_en": "Woodwinds (Williams & Chaminade & poss. Dvořák)",
-    "section": "woodwinds"
-  },
-  {
     "date": "2026-10-13",
     "time": "18:00-21:00",
     "location": "Aki Hirschengraben 86, 8001 Zürich",
@@ -70,6 +62,14 @@
     "notes_de": "Streicher (Williams & Chaminade & ev. Dvořák)",
     "notes_en": "Strings (Williams & Chaminade & poss. Dvořák)",
     "section": "strings"
+  },
+  {
+    "date": "2026-10-15",
+    "time": "18:00-21:00",
+    "location": "Aki Hirschengraben 86, 8001 Zürich",
+    "notes_de": "Holzbläser (Williams & Chaminade & ev. Dvořák)",
+    "notes_en": "Woodwinds (Williams & Chaminade & poss. Dvořák)",
+    "section": "woodwinds"
   },
   {
     "date": "2026-10-21",
