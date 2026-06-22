@@ -70,6 +70,17 @@ export default function Footer() {
           <p className="text-sm text-stone-300">
             © {new Date().getFullYear()} Universitätsorchester Polyphonia Zürich
           </p>
+          <p className="mt-2 text-xs text-stone-400">
+            Photo: {' '}
+            <a
+              href="https://www.instagram.com/photograberry_/"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="hover:text-stone-200 transition-colors"
+            >
+              Berenika Murray
+            </a>
+          </p>
         </div>
       </div>
     </footer>
