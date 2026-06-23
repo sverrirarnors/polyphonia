@@ -26,14 +26,14 @@ export default async function HomePage({
   return (
     <div>
       {/* Hero Section with Image */}
-      <section className="relative -mx-6 -mt-20 mb-0 h-[45vh] min-h-[350px] max-h-[500px] flex items-end justify-center">
+      <section className="relative -mx-6 -mt-20 mb-0 h-[52vh] min-h-[410px] max-h-[580px] flex items-end justify-center">
         <div 
           className="absolute inset-0 bg-cover bg-center"
           style={{ 
-            backgroundImage: 'url(/images/layout/header_background.jpg)',
+            backgroundImage: 'url(/images/layout/header_background_fs26.jpg)',
           }}
         >
-          <div className="absolute inset-0 bg-gradient-to-t from-stone-200 via-transparent to-transparent" style={{ backgroundImage: 'linear-gradient(to top, rgb(231 229 228) 0%, transparent 30%)' }} />
+          <div className="absolute inset-0 bg-gradient-to-t from-stone-200 via-transparent to-transparent" style={{ backgroundImage: 'linear-gradient(to top, rgb(231 229 228) 0%, rgb(231 229 228 / 0.72) 14%, transparent 34%)' }} />
         </div>
         
         <div className="relative z-10 text-center px-6 pb-0 translate-y-8 md:translate-y-12">
