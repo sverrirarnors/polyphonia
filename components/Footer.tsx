@@ -1,38 +1,38 @@
 // components/Footer.tsx
-import { useTranslations } from 'next-intl';
+import { useTranslations } from "next-intl";
 
 export default function Footer() {
-  const t = useTranslations('Footer');
+  const t = useTranslations("Footer");
 
   const sponsors = [
     {
-      name: 'AKI',
-      logo: '/images/layout/aki_logo.svg',
-      url: 'https://aki-zh.ch',
+      name: "AKI",
+      logo: "/images/layout/aki_logo.svg",
+      url: "https://aki-zh.ch",
       width: 245,
       height: 76,
     },
     {
-      name: 'VSETH',
-      logo: '/images/layout/vseth_logo.svg',
-      url: 'https://vseth.ethz.ch/',
+      name: "VSETH",
+      logo: "/images/layout/vseth_logo.svg",
+      url: "https://vseth.ethz.ch/",
       width: 458,
       height: 121,
     },
     {
-      name: 'VSUZH',
-      logo: '/images/layout/vsuzh_logo.svg',
-      url: 'https://www.vsuzh.ch/',
+      name: "VSUZH",
+      logo: "/images/layout/vsuzh_logo.svg",
+      url: "https://www.vsuzh.ch/",
       width: 4637,
       height: 4863,
     },
     {
-      name: 'UZH',
-      logo: '/images/layout/uzh_logo.svg',
-      url: 'https://www.uzh.ch/',
+      name: "UZH",
+      logo: "/images/layout/uzh_logo.svg",
+      url: "https://www.uzh.ch/",
       width: 248,
       height: 81,
-    }
+    },
   ];
 
   return (
@@ -41,7 +41,7 @@ export default function Footer() {
         {/* Sponsors Section */}
         <div className="mb-8">
           <h3 className="text-sm font-medium text-stone-200 mb-6 text-center">
-            {t('supportedBy')}
+            {t("supportedBy")}
           </h3>
           <div className="flex flex-wrap justify-center items-center gap-8 md:gap-12">
             {sponsors.map((sponsor) => (
@@ -71,7 +71,7 @@ export default function Footer() {
             © {new Date().getFullYear()} Universitätsorchester Polyphonia Zürich
           </p>
           <p className="mt-2 text-xs text-stone-400">
-            Photo: {' '}
+            Cover Photo:{" "}
             <a
               href="https://www.instagram.com/photograberry_/"
               target="_blank"
