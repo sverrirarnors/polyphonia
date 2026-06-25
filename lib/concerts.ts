@@ -1,6 +1,8 @@
 // lib/concerts.ts
 import concertsManifest from './concerts-manifest.json';
 import galleryManifest from './gallery-manifest.json';
+import { getCloudflareContext } from '@opennextjs/cloudflare';
+import { getMediaUrl } from './media';
 
 export interface Performance {
   date: string;
@@ -32,7 +34,12 @@ export function getConcertMetadata(slug: string, locale: string): ConcertMetadat
   if (!entry) {
     throw new Error(`No concert metadata for slug="${slug}" locale="${locale}"`);
   }
-  return { slug, ...entry };
+  return {
+    slug,
+    ...entry,
+    poster: entry.poster ? getMediaUrl(entry.poster) : undefined,
+    program: entry.program ? getMediaUrl(entry.program) : undefined,
+  };
 }
 
 export function getAllConcerts(locale: string): ConcertMetadata[] {
@@ -45,6 +52,41 @@ export function getAllConcerts(locale: string): ConcertMetadata[] {
     });
 }
 
-export function getConcertGalleryImages(slug: string): string[] {
-  return (galleryManifest as Record<string, string[]>)[slug] || [];
+const GALLERY_IMAGE_PATTERN = /\.(avif|gif|jpe?g|png|webp)$/i;
+
+function getManifestGalleryImages(slug: string): string[] {
+  return ((galleryManifest as Record<string, string[]>)[slug] || []).map(getMediaUrl);
+}
+
+export async function getConcertGalleryImages(slug: string): Promise<string[]> {
+  if (process.env.WORKERS_CI !== '1') {
+    return getManifestGalleryImages(slug);
+  }
+
+  const prefix = `images/gallery/${slug}/`;
+
+  try {
+    const { env } = await getCloudflareContext({ async: true });
+    const objectKeys: string[] = [];
+    let cursor: string | undefined;
+
+    do {
+      const result = await env.MEDIA.list({ prefix, cursor });
+      objectKeys.push(...result.objects.map(object => object.key));
+      cursor = result.truncated ? result.cursor : undefined;
+    } while (cursor);
+
+    const images = objectKeys
+      .filter(key => GALLERY_IMAGE_PATTERN.test(key))
+      .sort((a, b) => a.localeCompare(b))
+      .map(key => getMediaUrl(`/${key}`));
+
+    return images;
+  } catch (error) {
+    console.warn(
+      `Could not list R2 gallery "${slug}"; using the checked-in manifest instead.`,
+      error instanceof Error ? error.message : error
+    );
+    return getManifestGalleryImages(slug);
+  }
 }

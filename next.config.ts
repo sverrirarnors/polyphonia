@@ -4,6 +4,12 @@ import createNextIntlPlugin from 'next-intl/plugin';
 import remarkFrontmatter from 'remark-frontmatter';
 import remarkMdxFrontmatter from 'remark-mdx-frontmatter';
 
+if (process.env.WORKERS_CI === '1') {
+  import('@opennextjs/cloudflare').then(({ initOpenNextCloudflareForDev }) =>
+    initOpenNextCloudflareForDev()
+  );
+}
+
 const withNextIntl = createNextIntlPlugin('./i18n.ts');
 
 const nextConfig: NextConfig = {

@@ -26,7 +26,7 @@ export default async function ConcertPage({ params }: ConcertPageProps) {
   try {
     // Get metadata for poster
     const metadata = getConcertMetadata(slug, locale);
-    const galleryImages = getConcertGalleryImages(slug);
+    const galleryImages = await getConcertGalleryImages(slug);
 
     // Dynamically import the MDX file based on locale from content directory
     const Content = (await import(`@/content/concerts/${slug}/${locale}.mdx`)).default;
@@ -135,4 +135,3 @@ export default async function ConcertPage({ params }: ConcertPageProps) {
     notFound();
   }
 }
-

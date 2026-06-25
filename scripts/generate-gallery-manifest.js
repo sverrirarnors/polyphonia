@@ -7,6 +7,11 @@ const outputPath = path.join(__dirname, '../lib/gallery-manifest.json');
 
 const manifest = {};
 
+if (!fs.existsSync(galleryDir)) {
+  console.log('No local gallery directory found; keeping the checked-in fallback manifest');
+  process.exit(0);
+}
+
 // Read all concert folders
 const concerts = fs.readdirSync(galleryDir, { withFileTypes: true })
   .filter(entry => entry.isDirectory())
