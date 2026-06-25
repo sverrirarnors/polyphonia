@@ -36,3 +36,4 @@ cloudflare-env.d.ts
 # typescript
 *.tsbuildinfo
 next-env.d.ts
+public/images/layout/IMG_3022.jpg
