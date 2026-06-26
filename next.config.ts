@@ -4,10 +4,29 @@ import createNextIntlPlugin from 'next-intl/plugin';
 import remarkFrontmatter from 'remark-frontmatter';
 import remarkMdxFrontmatter from 'remark-mdx-frontmatter';
 
+if (process.env.WORKERS_CI === '1') {
+  import('@opennextjs/cloudflare').then(({ initOpenNextCloudflareForDev }) =>
+    initOpenNextCloudflareForDev()
+  );
+}
+
 const withNextIntl = createNextIntlPlugin('./i18n.ts');
+
+const productionBranches = new Set(['main']);
+const workersBranch = process.env.WORKERS_CI_BRANCH;
+const shouldBypassImageTransforms =
+  process.env.NEXT_PUBLIC_BYPASS_IMAGE_TRANSFORMS === '1' ||
+  Boolean(
+    process.env.WORKERS_CI === '1' &&
+      workersBranch &&
+      !productionBranches.has(workersBranch)
+  );
 
 const nextConfig: NextConfig = {
   pageExtensions: ['mdx', 'ts', 'tsx'],
+  env: {
+    NEXT_PUBLIC_BYPASS_IMAGE_TRANSFORMS: shouldBypassImageTransforms ? '1' : '0',
+  },
   images: {
     loader: 'custom',
     loaderFile: './imageLoader.ts',

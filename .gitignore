@@ -31,8 +31,13 @@ yarn-error.log*
 # cloudflare / opennext
 .open-next
 .wrangler
-cloudflare-env.d.ts
+
+# R2-backed media
+public/images/concerts/
+public/images/gallery/
+public/pdfs/
 
 # typescript
 *.tsbuildinfo
 next-env.d.ts
+public/images/layout/IMG_3022.jpg

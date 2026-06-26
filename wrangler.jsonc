@@ -9,6 +9,13 @@
     "directory": ".open-next/assets",
     "binding": "ASSETS"
   },
+  "r2_buckets": [
+    {
+      "binding": "MEDIA",
+      "bucket_name": "polyphonia-media",
+      "remote": true
+    }
+  ],
   "observability": {
     "enabled": true
   }

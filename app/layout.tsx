@@ -1,4 +1,10 @@
 // app/layout.tsx
+import type { Metadata } from "next";
+
+export const metadata: Metadata = {
+  metadataBase: new URL("https://polyphonia.ch"),
+};
+
 export default function RootLayout({
   children,
 }: {
