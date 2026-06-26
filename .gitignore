@@ -32,6 +32,11 @@ yarn-error.log*
 .open-next
 .wrangler
 
+# R2-backed media
+public/images/concerts/
+public/images/gallery/
+public/pdfs/
+
 # typescript
 *.tsbuildinfo
 next-env.d.ts

@@ -9,11 +9,11 @@ const REMOTE_MEDIA_PREFIXES = [
 function getMediaOrigin(): string {
   const configuredOrigin = process.env.NEXT_PUBLIC_MEDIA_URL?.replace(/\/+$/, '');
 
-  if (configuredOrigin) {
+  if (configuredOrigin !== undefined) {
     return configuredOrigin;
   }
 
-  return process.env.NODE_ENV === 'production' ? DEFAULT_MEDIA_ORIGIN : '';
+  return DEFAULT_MEDIA_ORIGIN;
 }
 
 export function getMediaUrl(path: string): string {
