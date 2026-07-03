@@ -18,6 +18,8 @@
   },
   "Concerts": {
     "title": "Concerts",
+    "upcoming": "Upcoming",
+    "archive": "Archive",
     "date": "Date",
     "time": "Time",
     "location": "Location",
