@@ -199,9 +199,61 @@
       "poster": "/images/concerts/fs24.jpg"
     }
   },
+  "fs25": {
+    "de": {
+      "title": "10-Jahr-Jubiläumskonzerte",
+      "composers": "Kálmán",
+      "performances": [
+        {
+          "date": "2025-05-22",
+          "time": "19:30",
+          "location": "Grosser Saal des Konservatoriums Zürich",
+          "ticketUrl": ""
+        },
+        {
+          "date": "2025-05-23",
+          "time": "19:30",
+          "location": "Grosser Saal des Konservatoriums Zürich",
+          "ticketUrl": ""
+        },
+        {
+          "date": "2025-05-26",
+          "time": "19:30",
+          "location": "Grosser Saal des Konservatoriums Zürich",
+          "ticketUrl": ""
+        }
+      ],
+      "poster": "/images/concerts/fs25.jpg"
+    },
+    "en": {
+      "title": "10th Anniversary Concerts",
+      "composers": "Kálmán",
+      "performances": [
+        {
+          "date": "2025-05-22",
+          "time": "19:30",
+          "location": "Grosser Saal des Konservatoriums Zürich",
+          "ticketUrl": ""
+        },
+        {
+          "date": "2025-05-23",
+          "time": "19:30",
+          "location": "Grosser Saal des Konservatoriums Zürich",
+          "ticketUrl": ""
+        },
+        {
+          "date": "2025-05-26",
+          "time": "19:30",
+          "location": "Grosser Saal des Konservatoriums Zürich",
+          "ticketUrl": ""
+        }
+      ],
+      "poster": "/images/concerts/fs25.jpg"
+    }
+  },
   "fs26": {
     "de": {
-      "title": "Frühlingssemesterkonzerte 2026",
+      "title": "Frühlingskonzerte 2026",
       "composers": "Gershwin, Anderson, Márquez, Still",
       "performances": [
         {
@@ -523,7 +575,7 @@
   },
   "hs25": {
     "de": {
-      "title": "Herbstsemesterkonzerte 2025",
+      "title": "Winterkonzerte 2025",
       "composers": "Borodin, Bruch, Kalinnikow",
       "performances": [
         {
@@ -541,7 +593,7 @@
       ]
     },
     "en": {
-      "title": "Autumn Concerts 2025",
+      "title": "Winter Concerts 2025",
       "composers": "Borodin, Bruch, Kalinnikov",
       "performances": [
         {
@@ -561,7 +613,7 @@
   },
   "hs26": {
     "de": {
-      "title": "Herbstsemesterkonzerte 2026",
+      "title": "Winterkonzerte 2026",
       "composers": "Vaughan Williams, Chaminade, Dvořák",
       "performances": [
         {
@@ -579,7 +631,7 @@
       ]
     },
     "en": {
-      "title": "Autumn Concerts 2026",
+      "title": "Winter Concerts 2026",
       "composers": "Vaughan Williams, Chaminade, Dvořák",
       "performances": [
         {

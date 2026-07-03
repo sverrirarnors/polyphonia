@@ -18,6 +18,8 @@
   },
   "Concerts": {
     "title": "Konzerte",
+    "upcoming": "Kommende Konzerte",
+    "archive": "Archiv",
     "date": "Datum",
     "time": "Uhrzeit",
     "location": "Ort",
