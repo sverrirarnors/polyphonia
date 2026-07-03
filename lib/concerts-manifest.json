@@ -590,7 +590,8 @@
           "location": "Grosser Saal des Konservatoriums Zürich",
           "ticketUrl": ""
         }
-      ]
+      ],
+      "poster": "/images/concerts/hs25.jpg"
     },
     "en": {
       "title": "Winter Concerts 2025",
@@ -608,7 +609,8 @@
           "location": "Grosser Saal des Konservatoriums Zürich",
           "ticketUrl": ""
         }
-      ]
+      ],
+      "poster": "/images/concerts/hs25.jpg"
     }
   },
   "hs26": {
