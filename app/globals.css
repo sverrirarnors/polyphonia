@@ -44,6 +44,7 @@
     margin-bottom: 1em;
     line-height: 1.4;
     font-weight: 600;
+    color: #171717;
     font-family: var(--font-playfair), serif;
   }
 
@@ -72,5 +73,4 @@
     margin-bottom: 0.5em;
   }
 }
-
 
