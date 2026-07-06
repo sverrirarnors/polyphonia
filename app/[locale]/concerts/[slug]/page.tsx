@@ -51,7 +51,7 @@ export default async function ConcertPage({ params }: ConcertPageProps) {
 
         <div className="flex flex-col md:flex-row gap-8">
           <div className={`flex flex-col gap-6 ${metadata.poster ? 'md:w-2/3' : 'w-full'}`}>
-            <article className="prose concert-prose prose-lg dark:prose-invert break-words hyphens-auto">
+            <article className="prose prose-lg dark:prose-invert break-words hyphens-auto">
               <Content />
             </article>
             {metadata.program && (

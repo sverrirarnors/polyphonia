@@ -39,25 +39,6 @@
   }
 
   .prose h2 {
-    font-size: 1.5em;
-    margin-top: 2em;
-    margin-bottom: 1em;
-    line-height: 1.4;
-    font-weight: 600;
-    color: #171717;
-    font-family: var(--font-playfair), serif;
-  }
-
-  .prose h3 {
-    font-size: 1.25em;
-    margin-top: 1.6em;
-    margin-bottom: 0.6em;
-    line-height: 1.5;
-    font-weight: 600;
-    font-family: var(--font-playfair), serif;
-  }
-
-  .prose.concert-prose h2 {
     font-size: 1.25rem;
     margin-top: 2.5rem;
     margin-bottom: 1rem;
@@ -65,11 +46,11 @@
     font-weight: 600;
     letter-spacing: 0;
     text-transform: none;
-    color: #c2410c;
+    color: #171717;
     font-family: var(--font-playfair), serif;
   }
 
-  .prose.concert-prose h3 {
+  .prose h3 {
     font-size: 1.1rem;
     margin-top: 1.25rem;
     margin-bottom: 0.25rem;
