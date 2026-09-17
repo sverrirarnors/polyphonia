@@ -9,7 +9,7 @@ export interface Notice {
 }
 
 export const noticeConfig: Notice = {
-  enabled: true, // Set to true when actively recruiting
+  enabled: false, // Set to true when actively recruiting
   type: 'info',
   messageKey: 'recruitmentNotice', // Will look up 'Notice.recruitmentNotice' in translations
 };
