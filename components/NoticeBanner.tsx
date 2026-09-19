@@ -38,9 +38,6 @@ export default function NoticeBanner() {
           {t(noticeConfig.messageKey)}
         </h3>
         <ul className="text-neutral-700 mb-4 space-y-2 list-disc pl-5 marker:text-orange-600">
-          <li>
-            <span className="font-medium">{t('concertmaster')}</span>
-          </li>
           {sections.map((section, index) => (
             <li key={index}>
               <span className="font-medium">{section.label}</span>
