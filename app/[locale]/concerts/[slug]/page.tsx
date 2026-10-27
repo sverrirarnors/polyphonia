@@ -2,7 +2,7 @@
 import { notFound } from 'next/navigation';
 import { getAllConcertSlugs, getConcertMetadata, getConcertGalleryImages } from '@/lib/concerts';
 import { Link } from '@/routing';
-import { getTranslations } from 'next-intl/server';
+import { getTranslations, setRequestLocale } from 'next-intl/server';
 import Gallery from '@/components/Gallery';
 import Lightbox from '@/components/Lightbox';
 
@@ -21,6 +21,7 @@ export function generateStaticParams() {
 
 export default async function ConcertPage({ params }: ConcertPageProps) {
   const { locale, slug } = await params;
+  setRequestLocale(locale);
   const t = await getTranslations('Concerts');
 
   try {

@@ -1,5 +1,5 @@
 // app/[locale]/concerts/page.tsx
-import { getTranslations } from "next-intl/server";
+import { getTranslations, setRequestLocale } from "next-intl/server";
 import Image from "next/image";
 import { Link } from "@/routing";
 import { getAllConcerts, type ConcertMetadata } from "@/lib/concerts";
@@ -10,6 +10,7 @@ export default async function ConcertsPage({
   params: Promise<{ locale: string }>;
 }) {
   const { locale } = await params;
+  setRequestLocale(locale);
 
   const t = await getTranslations("Concerts");
 
