@@ -7,7 +7,7 @@ Website for Universitätsorchester Polyphonia Zürich - a symphonic university o
 - 🌍 Full internationalization (German/English) using next-intl
 - 📝 MDX-based content management
 - 🎨 Tailwind CSS styling
-- ⚡ Next.js 15 with App Router
+- ⚡ Next.js 16 with App Router
 - 📱 Fully responsive design
 - 🎵 Concert program management with multiple performances
 - 👥 Recruitment notices system
@@ -381,7 +381,7 @@ The banner appears on the home page when enabled.
 
 ## Tech Stack
 
-- **Framework**: Next.js 15 (App Router)
+- **Framework**: Next.js 16 (App Router)
 - **Language**: TypeScript
 - **Styling**: Tailwind CSS v4
 - **Content**: MDX with gray-matter for frontmatter

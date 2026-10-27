@@ -1,6 +1,6 @@
 // app/[locale]/schedule/page.tsx
 
-import { getTranslations } from "next-intl/server";
+import { getTranslations, setRequestLocale } from "next-intl/server";
 import {
   filter_rehearsals,
   get_grouped_rehearsals,
@@ -24,6 +24,7 @@ export default async function SchedulePage({
   }>;
 }) {
   const { locale } = await params;
+  setRequestLocale(locale);
   const sp = await searchParams;
 
   const section: PlayerSection = VALID_SECTIONS.includes(sp.section as PlayerSection)

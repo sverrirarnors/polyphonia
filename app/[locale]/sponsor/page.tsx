@@ -1,4 +1,5 @@
 // app/[locale]/sponsor/page.tsx
+import { setRequestLocale } from 'next-intl/server';
 import { MDXPage } from '@/lib/mdx-page';
 import { SponsorFormProvider } from '@/components/SponsorFormEmbed';
 
@@ -8,6 +9,7 @@ export default async function SponsorPage({
   params: Promise<{ locale: string }>;
 }) {
   const { locale } = await params;
+  setRequestLocale(locale);
   return (
     <SponsorFormProvider>
       <MDXPage locale={locale} segment="sponsor" />

@@ -1,6 +1,6 @@
 # Polyphonia Website
 
-Website for Polyphonia, a student orchestra based in Zurich. Built with Next.js 15, TypeScript, Tailwind CSS 4, and next-intl for i18n.
+Website for Polyphonia, a student orchestra based in Zurich. Built with Next.js 16, TypeScript, Tailwind CSS 4, and next-intl for i18n.
 
 ## Quick Reference
 
@@ -74,4 +74,3 @@ Each concert is a directory under `content/concerts/` with a slug like `fs26` or
 
 - `pnpm dev` — local dev server
 - `pnpm build` — production build (runs `scripts/generate-gallery-manifest.js` first)
-- `pnpm lint` — ESLint

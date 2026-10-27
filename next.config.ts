@@ -1,8 +1,6 @@
 import type { NextConfig } from 'next';
 import createMDX from '@next/mdx';
 import createNextIntlPlugin from 'next-intl/plugin';
-import remarkFrontmatter from 'remark-frontmatter';
-import remarkMdxFrontmatter from 'remark-mdx-frontmatter';
 
 if (process.env.WORKERS_CI === '1') {
   import('@opennextjs/cloudflare').then(({ initOpenNextCloudflareForDev }) =>
@@ -42,7 +40,8 @@ const nextConfig: NextConfig = {
 
 const withMDX = createMDX({
   options: {
-    remarkPlugins: [remarkFrontmatter, remarkMdxFrontmatter],
+    // Plugins are passed by name so the options stay serializable for Turbopack
+    remarkPlugins: ['remark-frontmatter', 'remark-mdx-frontmatter'],
   },
 });
 
