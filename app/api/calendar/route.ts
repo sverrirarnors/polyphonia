@@ -23,66 +23,88 @@ function escapeText(text: string): string {
     .replace(/\n/g, '\\n');
 }
 
+function buildEvent(e: {
+  uid: string;
+  dtstart: string;
+  dtend: string;
+  allDay: boolean;
+  summary: string;
+  location?: string;
+}): string {
+  const dtstamp = new Date().toISOString().replace(/[-:]/g, '').split('.')[0] + 'Z';
+  const tzProp = e.allDay ? ';VALUE=DATE' : ';TZID=Europe/Zurich';
+
+  const lines = [
+    'BEGIN:VEVENT',
+    `UID:${e.uid}`,
+    `DTSTAMP:${dtstamp}`,
+    `DTSTART${tzProp}:${e.dtstart}`,
+    `DTEND${tzProp}:${e.dtend}`,
+    `SUMMARY:${escapeText(e.summary)}`,
+  ];
+
+  if (e.location) {
+    lines.push(`LOCATION:${escapeText(e.location)}`);
+  }
+
+  lines.push('END:VEVENT');
+  return lines.join('\r\n');
+}
+
+// Parses "HH:MM-HH:MM", or several ranges separated by "/" (e.g. "10:00-13:00 / 14:00-17:00").
+// Returns null if any part is not a valid range.
+function parseTimeRanges(time: string): { start: string; end: string }[] | null {
+  const ranges = time.split('/').map((part) => {
+    const match = part.trim().match(/^(\d{1,2}):(\d{2})\s*-\s*(\d{1,2}):(\d{2})$/);
+    if (!match) return null;
+    const [, sh, sm, eh, em] = match;
+    return { start: `${sh.padStart(2, '0')}:${sm}`, end: `${eh.padStart(2, '0')}:${em}` };
+  });
+  return ranges.every((r) => r !== null) ? (ranges as { start: string; end: string }[]) : null;
+}
+
 function generateICS(rehearsals: Rehearsal[], locale: string): string {
   const events = rehearsals
-    .map((rehearsal) => {
+    .flatMap((rehearsal) => {
       const summaryText =
         (locale === 'de' ? rehearsal.notes_de : rehearsal.notes_en)
         ?? rehearsal.notes ?? '';
       const summary = `Polyphonia – ${summaryText}`;
       const uid = `${rehearsal.date}-${summaryText.replace(/\s/g, '-').toLowerCase()}@polyphonia.ch`;
 
+      // Timed events: a single VEVENT from the first start to the last end
+      if (rehearsal.time) {
+        const ranges = parseTimeRanges(rehearsal.time) ?? [{ start: '12:00', end: '13:00' }];
+        return [
+          buildEvent({
+            uid,
+            dtstart: formatICSDate(rehearsal.date, ranges[0].start),
+            dtend: formatICSDate(rehearsal.date, ranges[ranges.length - 1].end),
+            allDay: false,
+            summary,
+            location: rehearsal.location,
+          }),
+        ];
+      }
+
       let dtstart: string;
       let dtend: string;
-      let allDay = false;
 
-      if (rehearsal.time) {
-        const match = rehearsal.time.match(/^(\d{1,2}):(\d{2})-(\d{1,2}):(\d{2})$/);
-        if (match) {
-          const [_, sh, sm, eh, em] = match;
-          const startTime = `${sh.padStart(2, '0')}:${sm}`;
-          const endTime = `${eh.padStart(2, '0')}:${em}`;
-          dtstart = formatICSDate(rehearsal.date, startTime);
-          dtend = formatICSDate(rehearsal.date, endTime);
-        } else {
-          dtstart = formatICSDate(rehearsal.date, '12:00');
-          dtend = formatICSDate(rehearsal.date, '13:00');
-        }
-      } else if (rehearsal.date_end) {
+      if (rehearsal.date_end) {
         const end = new Date(rehearsal.date_end);
         end.setDate(end.getDate() + 1);
         const endStr = end.toISOString().split('T')[0];
         dtstart = formatICSDate(rehearsal.date);
         dtend = formatICSDate(endStr);
-        allDay = true;
       } else {
         const end = new Date(rehearsal.date);
         end.setDate(end.getDate() + 1);
         const endStr = end.toISOString().split('T')[0];
         dtstart = formatICSDate(rehearsal.date);
         dtend = formatICSDate(endStr);
-        allDay = true;
       }
 
-      const now = new Date();
-      const dtstamp = now.toISOString().replace(/[-:]/g, '').split('.')[0] + 'Z';
-      const tzProp = allDay ? ';VALUE=DATE' : ';TZID=Europe/Zurich';
-
-      const lines = [
-        'BEGIN:VEVENT',
-        `UID:${uid}`,
-        `DTSTAMP:${dtstamp}`,
-        `DTSTART${tzProp}:${dtstart}`,
-        `DTEND${tzProp}:${dtend}`,
-        `SUMMARY:${escapeText(summary)}`,
-      ];
-
-      if (rehearsal.location) {
-        lines.push(`LOCATION:${escapeText(rehearsal.location)}`);
-      }
-
-      lines.push('END:VEVENT');
-      return lines.join('\r\n');
+      return [buildEvent({ uid, dtstart, dtend, allDay: true, summary, location: rehearsal.location })];
     })
     .join('\r\n');
 
