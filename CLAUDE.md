@@ -12,6 +12,7 @@ Website for Polyphonia, a student orchestra based in Zurich. Built with Next.js 
 | Types | `types/index.ts` |
 | Route definitions | `routing.ts` |
 | Notice banner config | `lib/notice.ts` |
+| Link previews (Open Graph) | `lib/seo.ts` — concert pages use the poster, home uses the next concert poster, else `public/images/og-logo.png` |
 
 ## Project Structure
 

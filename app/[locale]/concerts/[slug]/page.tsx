@@ -5,6 +5,8 @@ import { Link } from '@/routing';
 import { getTranslations, setRequestLocale } from 'next-intl/server';
 import Gallery from '@/components/Gallery';
 import Lightbox from '@/components/Lightbox';
+import { buildShareMetadata, concertShareImage, describeConcert } from '@/lib/seo';
+import type { Metadata } from 'next';
 
 interface ConcertPageProps {
   params: Promise<{
@@ -17,6 +19,23 @@ interface ConcertPageProps {
 export function generateStaticParams() {
   const slugs = getAllConcertSlugs();
   return slugs.map(slug => ({ slug }));
+}
+
+export async function generateMetadata({ params }: ConcertPageProps): Promise<Metadata> {
+  const { locale, slug } = await params;
+  try {
+    const concert = getConcertMetadata(slug, locale);
+    return buildShareMetadata({
+      locale,
+      href: { pathname: '/concerts/[slug]', params: { slug } },
+      title: concert.title,
+      description: describeConcert(concert, locale),
+      image: concertShareImage(concert),
+      type: 'article',
+    });
+  } catch {
+    return {};
+  }
 }
 
 export default async function ConcertPage({ params }: ConcertPageProps) {
