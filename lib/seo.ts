@@ -78,20 +78,30 @@ export function buildShareMetadata({
   };
 }
 
+/**
+ * Compact performance dates, e.g. "17. & 18. Dezember 2026" / "17 & 18 December 2026".
+ * Falls back to full dates when performances span several months.
+ */
+export function formatConcertDates(concert: ConcertMetadata, locale: string): string {
+  const intl = locale === 'de' ? 'de-CH' : 'en-GB';
+  const dates = concert.performances.map(p => new Date(`${p.date}T12:00:00Z`));
+  const fmt = (d: Date, opts: Intl.DateTimeFormatOptions) =>
+    d.toLocaleDateString(intl, { timeZone: 'UTC', ...opts });
+  const join = (parts: string[]) =>
+    parts.length > 1 ? `${parts.slice(0, -1).join(', ')} & ${parts.at(-1)}` : parts.join('');
+
+  if (dates.length === 0) return '';
+  const sameMonth = dates.every(d => fmt(d, { month: 'numeric', year: 'numeric' }) === fmt(dates[0], { month: 'numeric', year: 'numeric' }));
+  if (!sameMonth) {
+    return join(dates.map(d => fmt(d, { day: 'numeric', month: 'long', year: 'numeric' })));
+  }
+  const days = dates.map(d => fmt(d, { day: 'numeric' }) + (locale === 'de' ? '.' : ''));
+  return `${join(days)} ${fmt(dates[0], { month: 'long', year: 'numeric' })}`;
+}
+
 /** e.g. "Vaughan Williams, Chaminade, Dvořák · 17. & 18. Dezember 2026" */
 export function describeConcert(concert: ConcertMetadata, locale: string): string {
-  const dates = concert.performances.map(p =>
-    new Date(`${p.date}T12:00:00Z`).toLocaleDateString(locale === 'de' ? 'de-CH' : 'en-GB', {
-      day: 'numeric',
-      month: 'long',
-      year: 'numeric',
-      timeZone: 'Europe/Zurich',
-    })
-  );
-  const places = [...new Set(concert.performances.map(p => p.location).filter(Boolean))];
-  return [concert.composers, dates.join(locale === 'de' ? ' und ' : ' and '), places.join(', ')]
-    .filter(Boolean)
-    .join(' · ');
+  return [concert.composers, formatConcertDates(concert, locale)].filter(Boolean).join(' · ');
 }
 
 export function concertShareImage(concert: ConcertMetadata) {
