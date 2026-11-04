@@ -4,10 +4,11 @@ import { Link } from '@/routing';
 import { getAllConcerts } from '@/lib/concerts';
 import NoticeBanner from '@/components/NoticeBanner';
 import Lightbox from '@/components/Lightbox';
-import { buildShareMetadata, concertShareImage, formatConcertDates } from '@/lib/seo';
+import { buildShareMetadata, concertShareImage } from '@/lib/seo';
 import type { Metadata } from 'next';
 
-// When the homepage is shared, preview the next upcoming concert's poster.
+// When the homepage is shared: general description, with the next upcoming
+// concert's poster as the image (logo if none).
 export async function generateMetadata({
   params
 }: {
@@ -23,9 +24,7 @@ export async function generateMetadata({
   return buildShareMetadata({
     locale,
     href: '/',
-    description: nextConcert
-      ? `${nextConcert.title} · ${formatConcertDates(nextConcert, locale)}`
-      : t('description'),
+    description: t('description'),
     image: nextConcert ? concertShareImage(nextConcert) : undefined,
   });
 }
