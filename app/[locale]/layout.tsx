@@ -1,6 +1,7 @@
 // app/[locale]/layout.tsx
 import { NextIntlClientProvider } from "next-intl";
-import { getMessages, setRequestLocale } from "next-intl/server";
+import { getMessages, getTranslations, setRequestLocale } from "next-intl/server";
+import { buildShareMetadata, SITE_NAME, SITE_URL } from "@/lib/seo";
 import { notFound } from "next/navigation";
 import { locales } from "@/i18n";
 import Navigation from "@/components/Navigation";
@@ -20,11 +21,20 @@ const playfair = Playfair_Display({
   weight: ["400", "600", "700"],
 });
 
-export const metadata: Metadata = {
-  metadataBase: new URL("https://polyphonia.ch"),
-  title: "Universitätsorchester Polyphonia Zürich",
-  description: "Sinfonisches Orchester der ETH und Universität Zürich",
-};
+export async function generateMetadata({
+  params,
+}: {
+  params: Promise<{ locale: string }>;
+}): Promise<Metadata> {
+  const { locale } = await params;
+  const t = await getTranslations({ locale, namespace: "Meta" });
+
+  return {
+    metadataBase: new URL(SITE_URL),
+    title: { default: SITE_NAME, template: `%s | Polyphonia` },
+    ...buildShareMetadata({ locale, description: t("description") }),
+  };
+}
 
 export function generateStaticParams() {
   return locales.map((locale) => ({ locale }));
