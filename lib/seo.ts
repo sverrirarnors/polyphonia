@@ -1,6 +1,7 @@
 import type { Metadata } from 'next';
 import { getPathname } from '@/routing';
 import type { ConcertMetadata } from '@/lib/concerts';
+import { getTranslations } from 'next-intl/server';
 
 export const SITE_NAME = 'Universitätsorchester Polyphonia Zürich';
 export const SITE_URL = 'https://polyphonia.ch';
@@ -106,4 +107,28 @@ export function describeConcert(concert: ConcertMetadata, locale: string): strin
 
 export function concertShareImage(concert: ConcertMetadata) {
   return concert.poster ? { url: concert.poster, alt: concert.title } : DEFAULT_SHARE_IMAGE;
+}
+
+/**
+ * Share metadata for a plain page: title from the nav label, description from
+ * the general site description. Every page should set its own og:url, which
+ * the layout can't provide.
+ */
+export async function pageShareMetadata({
+  locale,
+  href,
+  titleKey,
+}: {
+  locale: string;
+  href: Href;
+  titleKey: 'concerts' | 'schedule' | 'about' | 'join' | 'sponsor';
+}): Promise<Metadata> {
+  const nav = await getTranslations({ locale, namespace: 'Navigation' });
+  const meta = await getTranslations({ locale, namespace: 'Meta' });
+  return buildShareMetadata({
+    locale,
+    href,
+    title: nav(titleKey),
+    description: meta('description'),
+  });
 }

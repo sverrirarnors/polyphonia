@@ -1,8 +1,18 @@
+import { pageShareMetadata } from '@/lib/seo';
 // app/[locale]/concerts/page.tsx
 import { getTranslations, setRequestLocale } from "next-intl/server";
 import Image from "next/image";
 import { Link } from "@/routing";
 import { getAllConcerts, type ConcertMetadata } from "@/lib/concerts";
+
+export async function generateMetadata({
+  params,
+}: {
+  params: Promise<{ locale: string }>;
+}) {
+  const { locale } = await params;
+  return pageShareMetadata({ locale, href: '/concerts', titleKey: 'concerts' });
+}
 
 export default async function ConcertsPage({
   params,
