@@ -99,9 +99,9 @@ export function formatConcertDates(concert: ConcertMetadata, locale: string): st
   return `${join(days)} ${fmt(dates[0], { month: 'long', year: 'numeric' })}`;
 }
 
-/** e.g. "Vaughan Williams, Chaminade, Dvořák · 17. & 18. Dezember 2026" */
+/** e.g. "Vaughan Williams, Chaminade, Dvořák – 17. & 18. Dezember 2026" */
 export function describeConcert(concert: ConcertMetadata, locale: string): string {
-  return [concert.composers, formatConcertDates(concert, locale)].filter(Boolean).join(' · ');
+  return [concert.composers, formatConcertDates(concert, locale)].filter(Boolean).join(' – ');
 }
 
 export function concertShareImage(concert: ConcertMetadata) {
