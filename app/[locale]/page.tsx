@@ -4,6 +4,30 @@ import { Link } from '@/routing';
 import { getAllConcerts } from '@/lib/concerts';
 import NoticeBanner from '@/components/NoticeBanner';
 import Lightbox from '@/components/Lightbox';
+import { buildShareMetadata, concertShareImage } from '@/lib/seo';
+import type { Metadata } from 'next';
+
+// When the homepage is shared: general description, with the next upcoming
+// concert's poster as the image (logo if none).
+export async function generateMetadata({
+  params
+}: {
+  params: Promise<{ locale: string }>;
+}): Promise<Metadata> {
+  const { locale } = await params;
+  const t = await getTranslations({ locale, namespace: 'Meta' });
+  const todayStr = new Date().toLocaleDateString('en-CA', { timeZone: 'Europe/Zurich' });
+  const nextConcert = getAllConcerts(locale)
+    .filter(c => c.poster && c.performances.some(p => p.date >= todayStr))
+    .at(-1); // list is newest-first, so the last upcoming one is the soonest
+
+  return buildShareMetadata({
+    locale,
+    href: '/',
+    description: t('description'),
+    image: nextConcert ? concertShareImage(nextConcert) : undefined,
+  });
+}
 
 export default async function HomePage({
   params

@@ -79,6 +79,6 @@ export const routing = defineRouting({
 
 // Export navigation utilities - these are locale-aware
 // Always use these instead of Next.js's built-in versions
-export const { Link, redirect, usePathname, useRouter } =
+export const { Link, redirect, usePathname, useRouter, getPathname } =
   createNavigation(routing);
 
