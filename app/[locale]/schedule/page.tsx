@@ -1,3 +1,4 @@
+import { pageShareMetadata } from '@/lib/seo';
 // app/[locale]/schedule/page.tsx
 
 import { getTranslations, setRequestLocale } from "next-intl/server";
@@ -13,6 +14,15 @@ import { getFiltersForSection } from "@/types/index";
 import type { PlayerSection } from "@/types/index";
 
 const VALID_SECTIONS: PlayerSection[] = ["all", "strings", "woodwinds", "brass"];
+
+export async function generateMetadata({
+  params,
+}: {
+  params: Promise<{ locale: string }>;
+}) {
+  const { locale } = await params;
+  return pageShareMetadata({ locale, href: '/schedule', titleKey: 'schedule' });
+}
 
 export default async function SchedulePage({
   params,
